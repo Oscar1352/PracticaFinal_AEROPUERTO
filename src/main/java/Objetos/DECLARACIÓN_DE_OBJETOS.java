@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Objetos;
 
 /**
  *
  * @author Oscar Luna
  */
-public enum ESTADO_CIVIL {
-    //Establezco el estado civil del usuario
-    SOLTERO,CASADO,DIVORCIADO;
+public class DECLARACIÓN_DE_OBJETOS {
+  
     
 }
