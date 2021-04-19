@@ -11,15 +11,15 @@ import Abstracts.AEROPUERTO;
  *
  * @author Oscar Luna
  */
-public class AEROPUERTO_DESTINO extends AEROPUERTO{
+public class AEROPUERTO_ORIGEN extends AEROPUERTO{
 
     //Declaro mi Constructor
-    public AEROPUERTO_DESTINO(String NOMBRE_AEROPUERTO_DESTINO, String CIUDAD, String PAIS, int CANTIDAD_DE_AVIONES) {
+    public AEROPUERTO_ORIGEN(String NOMBRE_AEROPUERTO_DESTINO, String CIUDAD, String PAIS, int CANTIDAD_DE_AVIONES) {
         super(NOMBRE_AEROPUERTO_DESTINO, CIUDAD, PAIS, CANTIDAD_DE_AVIONES);
     }
+
     
-    
-//Declaro mis getters y setters de mi clase abstracta
+    //Declaro mis getters y setters de mi clase abstracta
     @Override
     public void setCANTIDAD_DE_AVIONES(int CANTIDAD_DE_AVIONES) {
         super.setCANTIDAD_DE_AVIONES(CANTIDAD_DE_AVIONES); //To change body of generated methods, choose Tools | Templates.
@@ -59,4 +59,31 @@ public class AEROPUERTO_DESTINO extends AEROPUERTO{
     public String getNOMBRE_AEROPUERTO_DESTINO() {
         return super.getNOMBRE_AEROPUERTO_DESTINO(); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }

@@ -5,6 +5,7 @@
  */
 package com.mycompany.practicafinal;
 
+import Objetos.DECLARACIÓN_DE_OBJETOS;
 import Objetos.PASAPORTE;
 
 /**
@@ -12,7 +13,4 @@ import Objetos.PASAPORTE;
  * @author Oscar Luna
  */
 public class PruebaMain {
-    public static void main(String[] args) {
-        System.out.println("Oscar Luna");
-    }
 }
