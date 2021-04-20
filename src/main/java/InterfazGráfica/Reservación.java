@@ -43,7 +43,7 @@ public class Reservación extends javax.swing.JPanel {
         jLabel2.setText("No. Pasaporte:");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##-##-##-##")));
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -53,7 +53,7 @@ public class Reservación extends javax.swing.JPanel {
         jLabel4.setText("No.Tarjeta: ");
 
         try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####-####-####")));
+            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
