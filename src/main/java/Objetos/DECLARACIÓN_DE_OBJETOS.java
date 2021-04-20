@@ -5,6 +5,9 @@
  */
 package Objetos;
 
+import Enums.ESTADO_CIVIL;
+import Enums.SEXO;
+
 
 /**
  *
@@ -13,4 +16,5 @@ package Objetos;
 public class DECLARACIÓN_DE_OBJETOS {
   public static AEROPUERTO_DESTINO aeropuerto_destino= new AEROPUERTO_DESTINO("","","",5);
   public static AEROPUERTO_ORIGEN aeropuerto_origen= new AEROPUERTO_ORIGEN("","","",5);
+  public static PASAPORTE pasaporte= new PASAPORTE(0,"","",ESTADO_CIVIL.SOLTERO,"","",SEXO.MASCULINO,"",0);
 }
