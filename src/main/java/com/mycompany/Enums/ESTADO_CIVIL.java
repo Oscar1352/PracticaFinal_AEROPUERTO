@@ -1,19 +1,15 @@
+package com.mycompany.Enums;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Objetos;
-
 /**
  *
  * @author Oscar Luna
  */
-public class DISTANCIA {
-
-    //Declaro mis atributos
-    
-    /**
-     * @param args the command line arguments
-     */
+public enum ESTADO_CIVIL {
+    //Establezco el estado civil del usuario
+    SOLTERO,CASADO,DIVORCIADO;
 }

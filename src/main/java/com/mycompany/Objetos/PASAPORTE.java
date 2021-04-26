@@ -1,6 +1,6 @@
-package Objetos;
-import Enums.ESTADO_CIVIL;
-import Enums.SEXO;
+package com.mycompany.Objetos;
+import com.mycompany.Enums.ESTADO_CIVIL;
+import com.mycompany.Enums.SEXO;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

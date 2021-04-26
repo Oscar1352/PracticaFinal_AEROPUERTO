@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Enums;
+package com.mycompany.Enums;
+
 /**
  *
  * @author Oscar Luna
  */
-public enum ESTADO_DE_VUELO {
-    //Establezco mis estados de vuelo
-    EN_ESPERA, COMPLETADO, CANCELADO, RETRASADO;
-    
+public enum SEXO {
+    MASCULINO, FEMENINO, SIN_DEFINIR;
 }

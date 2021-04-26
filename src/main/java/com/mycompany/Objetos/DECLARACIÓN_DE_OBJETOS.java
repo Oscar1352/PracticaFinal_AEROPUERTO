@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Objetos;
+package com.mycompany.Objetos;
 
-import Enums.ESTADO_CIVIL;
-import Enums.SEXO;
+import com.mycompany.Enums.ESTADO_CIVIL;
+import com.mycompany.Enums.SEXO;
 
 
 /**

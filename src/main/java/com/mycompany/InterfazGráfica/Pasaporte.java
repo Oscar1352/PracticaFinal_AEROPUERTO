@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package InterfazGráfica;
+package com.mycompany.InterfazGráfica;
 
-import Objetos.DECLARACIÓN_DE_OBJETOS;
+import com.mycompany.Objetos.DECLARACIÓN_DE_OBJETOS;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
