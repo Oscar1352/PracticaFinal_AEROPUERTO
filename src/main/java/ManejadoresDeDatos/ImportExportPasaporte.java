@@ -120,18 +120,11 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
                 String[] parte2 = partes[1].split("\\)");
                 String[] data = parte2[0].split(",");
 
-                if ((partes[0].equalsIgnoreCase("Pasaporte")) && (data.length == 12)) {
+                if ((partes[0].equalsIgnoreCase("Pasaporte")) && (data.length == 12) && Integer.valueOf(data[0].length())>=8) {
                     vent.actualizarPasaporte(Integer.valueOf(data[0]),data[1],darFormatoAFecha(data[2]),data[3],data[4],data[5],data[6],data[7],darFormatoAFecha(data[8]),darFormatoAFecha(data[9]),data[10],Integer.valueOf(data[11]));
                 } else {
                     System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
                 }
-
-                //     System.out.println(partes[0]); pelicula
-                //    System.out.println(partes[1]);
-                //     System.out.println(parte2[0]);
-                //  System.out.println(data[0]); nombre pelicula
-                //   System.out.println(data[1]); year
-                // System.out.println(data[2]); Productor
             } catch (Exception e) {
                 System.out.println(" la linea x no tiene un formato adecuado exception" + line);
                 System.out.println(e);
