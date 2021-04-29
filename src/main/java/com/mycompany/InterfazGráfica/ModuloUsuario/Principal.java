@@ -5,33 +5,11 @@
  */
 package com.mycompany.InterfazGráfica.ModuloUsuario;
 
-import ManejadoresDeDatos.ImportExportPasaporte;
-import com.mycompany.Objetos.PASAPORTE;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Vector;
-import javax.swing.JComboBox;
-
 /**
  *
  * @author Oscar Luna
  */
-public class Principal extends javax.swing.JFrame implements ActionListener{
-     private Vector listaPasaportes = new Vector();
-    private PASAPORTE pasaporteActual;
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        JComboBox comboBox = (JComboBox) e.getSource();
-        pasaporteActual = (PASAPORTE) comboBox.getSelectedItem();
-        System.out.println(pasaporteActual.toString());
-        System.out.println(pasaporteActual.getNO_PASAPORTE());
-    }
-    public void actualizarPasaporte(Integer NO_PASAPORTE, String CONTRASEÑA, String Nacionalidad, String estado_civil, String NOMBRE, String APELLIDOS, String sexo, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS){
-        if (NO_PASAPORTE!=null)
-            listaPasaportes.remove(NO_PASAPORTE);
-        listaPasaportes.add(new PASAPORTE(NO_PASAPORTE,CONTRASEÑA,Nacionalidad,estado_civil,NOMBRE,APELLIDOS,sexo,PAIS_ACTUAL,MILLAS_RECORRIDAS));
-    }
+public class Principal extends javax.swing.JFrame {
 
     /**
      * Creates new form Principal
@@ -60,22 +38,6 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jPanel4 = new javax.swing.JPanel();
         RegistrarPasaportejButton1 = new javax.swing.JButton();
         RenovarPasaportejButton1 = new javax.swing.JButton();
-        comboBoxListaPasaportes = comboBoxListaPasaportes = new JComboBox(listaPasaportes);
-        comboBoxListaPasaportes.addActionListener( this );
-        /*comboBoxListaPasaportes.addActionListener( new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                JComboBox comboBox = (JComboBox)e.getSource();
-                Pelicula item = (Pelicula)comboBox.getSelectedItem();
-                System.out.println( item.toString());
-                System.out.println( item.getId());
-            }
-        } );*/
-        comboBoxListaPasaportes.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
-
-        ;
-        jLabel13 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         CompraBoletojButton1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -166,12 +128,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jTabbedPane1.addTab("METODO DE PAGO", jPanel3);
 
-        RegistrarPasaportejButton1.setText("CARGAR PASAPORTE");
-        RegistrarPasaportejButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RegistrarPasaportejButton1MouseClicked(evt);
-            }
-        });
+        RegistrarPasaportejButton1.setText("REGISTRAR SU PASAPORTE");
         RegistrarPasaportejButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RegistrarPasaportejButton1ActionPerformed(evt);
@@ -185,43 +142,25 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        comboBoxListaPasaportes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxListaPasaportesActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setText("Pasaportes Registrados");
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(111, Short.MAX_VALUE)
                 .addComponent(RegistrarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(RenovarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addGap(18, 18, 18)
-                .addComponent(comboBoxListaPasaportes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(78, 78, 78))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboBoxListaPasaportes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(RenovarPasaportejButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(RegistrarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("PASAPORTE", jPanel4);
@@ -430,11 +369,10 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
     private void RegistrarPasaportejButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarPasaportejButton1ActionPerformed
         // TODO add your handling code here:
-
+        Pasaporte pasaporte= new Pasaporte();
+        pasaporte.setVisible(true);
     }//GEN-LAST:event_RegistrarPasaportejButton1ActionPerformed
 
-    
-    
     private void RenovarPasaportejButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RenovarPasaportejButton1ActionPerformed
         // TODO add your handling code here:
         RenovarPasaporte renovarpasaporte= new RenovarPasaporte();
@@ -461,15 +399,6 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         ConsultarReservación consultarReservación= new ConsultarReservación();
         consultarReservación.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void comboBoxListaPasaportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListaPasaportesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxListaPasaportesActionPerformed
-
-    private void RegistrarPasaportejButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistrarPasaportejButton1MouseClicked
-        // TODO add your handling code here:
-        new ImportExportPasaporte(this);
-    }//GEN-LAST:event_RegistrarPasaportejButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -515,13 +444,11 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JButton RegistrarPasaportejButton1;
     private javax.swing.JButton RenovarPasaportejButton1;
     private javax.swing.JMenu UsuariojMenu3;
-    private javax.swing.JComboBox<String> comboBoxListaPasaportes;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
