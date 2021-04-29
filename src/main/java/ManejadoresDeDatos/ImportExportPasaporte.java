@@ -8,6 +8,7 @@ package ManejadoresDeDatos;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.PASAPORTE;
 import data.ManejoArchivos;
+import java.time.LocalDate;
 import java.util.List;
 import javax.swing.JFileChooser;
 
@@ -119,8 +120,8 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
                 String[] parte2 = partes[1].split("\\)");
                 String[] data = parte2[0].split(",");
 
-                if ((partes[0].equalsIgnoreCase("Pasaporte")) && (data.length == 9)) {
-                    vent.actualizarPasaporte(Integer.valueOf(data[0]),data[1],data[2],data[3],data[4],data[5],data[6],data[7],Integer.valueOf(data[8]));
+                if ((partes[0].equalsIgnoreCase("Pasaporte")) && (data.length == 12)) {
+                    vent.actualizarPasaporte(Integer.valueOf(data[0]),data[1],darFormatoAFecha(data[2]),data[3],data[4],data[5],data[6],data[7],darFormatoAFecha(data[8]),darFormatoAFecha(data[9]),data[10],Integer.valueOf(data[11]));
                 } else {
                     System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
                 }
@@ -139,7 +140,13 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_buttonArchivoEntradaCargarMouseClicked
-
+public static LocalDate darFormatoAFecha(String fechaCadena){
+        String[] fechaDividida=fechaCadena.split("/");
+        int dia = Integer.valueOf(fechaDividida[0]);
+        int mes = Integer.valueOf(fechaDividida[1]);
+        int anio = Integer.valueOf(fechaDividida[2]);
+        return LocalDate.of(anio, mes, dia);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonArchivoEntradaCargar;

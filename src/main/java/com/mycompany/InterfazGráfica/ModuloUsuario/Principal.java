@@ -9,6 +9,7 @@ import ManejadoresDeDatos.ImportExportPasaporte;
 import com.mycompany.Objetos.PASAPORTE;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.Vector;
 import javax.swing.JComboBox;
 
@@ -27,10 +28,10 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         System.out.println(pasaporteActual.toString());
         System.out.println(pasaporteActual.getNO_PASAPORTE());
     }
-    public void actualizarPasaporte(Integer NO_PASAPORTE, String CONTRASEÑA, String Nacionalidad, String estado_civil, String NOMBRE, String APELLIDOS, String sexo, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS){
+    public void actualizarPasaporte(Integer NO_PASAPORTE, String CONTRASEÑA, LocalDate FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, LocalDate FECHA_VENCIMIENTO, LocalDate FECHA_EMISION, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS){
         if (NO_PASAPORTE!=null)
             listaPasaportes.remove(NO_PASAPORTE);
-        listaPasaportes.add(new PASAPORTE(NO_PASAPORTE,CONTRASEÑA,Nacionalidad,estado_civil,NOMBRE,APELLIDOS,sexo,PAIS_ACTUAL,MILLAS_RECORRIDAS));
+        listaPasaportes.add(new PASAPORTE(NO_PASAPORTE,CONTRASEÑA,FECHA_NACIMIENTO,NACIONALIDAD,ESTADO_CIVIL,NOMBRE,APELLIDOS,SEXO,FECHA_VENCIMIENTO,FECHA_EMISION,PAIS_ACTUAL,MILLAS_RECORRIDAS));
     }
 
     /**
