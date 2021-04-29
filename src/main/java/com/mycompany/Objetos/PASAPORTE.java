@@ -1,6 +1,5 @@
 package com.mycompany.Objetos;
-import com.mycompany.Enums.ESTADO_CIVIL;
-import com.mycompany.Enums.SEXO;
+import java.util.Objects;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,18 +13,19 @@ import com.mycompany.Enums.SEXO;
 public class PASAPORTE {
     
     //Defino mis atributos
-    private static int NO_PASAPORTE;
+    private Integer NO_PASAPORTE;
     private String CONTRASEÑA;
     private String Nacionalidad;
-    private ESTADO_CIVIL estado_civil;
+    private String estado_civil;
     private String NOMBRE;
     private String APELLIDOS;
-    private SEXO sexo;
+    private String sexo;
     private String PAIS_ACTUAL;
-    private int MILLAS_RECORRIDAS;
+    private Integer MILLAS_RECORRIDAS;
 
     //Declaro mi constructor
-    public PASAPORTE(int NO_PASAPORTE, String CONTRASEÑA, String Nacionalidad, ESTADO_CIVIL estado_civil, String NOMBRE, String APELLIDOS, SEXO sexo, String PAIS_ACTUAL, int MILLAS_RECORRIDAS) {
+
+    public PASAPORTE(Integer NO_PASAPORTE, String CONTRASEÑA, String Nacionalidad, String estado_civil, String NOMBRE, String APELLIDOS, String sexo, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS) {
         this.NO_PASAPORTE = NO_PASAPORTE;
         this.CONTRASEÑA = CONTRASEÑA;
         this.Nacionalidad = Nacionalidad;
@@ -36,13 +36,14 @@ public class PASAPORTE {
         this.PAIS_ACTUAL = PAIS_ACTUAL;
         this.MILLAS_RECORRIDAS = MILLAS_RECORRIDAS;
     }
-
+    
     //Declaro mis getters y setters
-    public int getNO_PASAPORTE() {
+
+    public Integer getNO_PASAPORTE() {
         return NO_PASAPORTE;
     }
 
-    public void setNO_PASAPORTE(int NO_PASAPORTE) {
+    public void setNO_PASAPORTE(Integer NO_PASAPORTE) {
         this.NO_PASAPORTE = NO_PASAPORTE;
     }
 
@@ -62,11 +63,11 @@ public class PASAPORTE {
         this.Nacionalidad = Nacionalidad;
     }
 
-    public ESTADO_CIVIL getEstado_civil() {
+    public String getEstado_civil() {
         return estado_civil;
     }
 
-    public void setEstado_civil(ESTADO_CIVIL estado_civil) {
+    public void setEstado_civil(String estado_civil) {
         this.estado_civil = estado_civil;
     }
 
@@ -86,11 +87,11 @@ public class PASAPORTE {
         this.APELLIDOS = APELLIDOS;
     }
 
-    public SEXO getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(SEXO sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -102,11 +103,76 @@ public class PASAPORTE {
         this.PAIS_ACTUAL = PAIS_ACTUAL;
     }
 
-    public int getMILLAS_RECORRIDAS() {
+    public Integer getMILLAS_RECORRIDAS() {
         return MILLAS_RECORRIDAS;
     }
 
-    public void setMILLAS_RECORRIDAS(int MILLAS_RECORRIDAS) {
+    public void setMILLAS_RECORRIDAS(Integer MILLAS_RECORRIDAS) {
         this.MILLAS_RECORRIDAS = MILLAS_RECORRIDAS;
-    } 
+    }
+
+    @Override
+    public String toString() {
+        return "NO_PASAPORTE:" + NO_PASAPORTE + ", CONTRASEÑA:" + CONTRASEÑA + ", Nacionalidad:" + Nacionalidad + ", estado_civil:" + estado_civil + ", NOMBRE:" + NOMBRE + ", APELLIDOS:" + APELLIDOS + ", sexo:" + sexo + ", PAIS_ACTUAL:" + PAIS_ACTUAL + ", MILLAS_RECORRIDAS:" + MILLAS_RECORRIDAS + '}';
+    }
+    
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.NO_PASAPORTE);
+        hash = 97 * hash + Objects.hashCode(this.CONTRASEÑA);
+        hash = 97 * hash + Objects.hashCode(this.Nacionalidad);
+        hash = 97 * hash + Objects.hashCode(this.estado_civil);
+        hash = 97 * hash + Objects.hashCode(this.NOMBRE);
+        hash = 97 * hash + Objects.hashCode(this.APELLIDOS);
+        hash = 97 * hash + Objects.hashCode(this.sexo);
+        hash = 97 * hash + Objects.hashCode(this.PAIS_ACTUAL);
+        hash = 97 * hash + Objects.hashCode(this.MILLAS_RECORRIDAS);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PASAPORTE other = (PASAPORTE) obj;
+        if (!Objects.equals(this.CONTRASEÑA, other.CONTRASEÑA)) {
+            return false;
+        }
+        if (!Objects.equals(this.Nacionalidad, other.Nacionalidad)) {
+            return false;
+        }
+        if (!Objects.equals(this.NOMBRE, other.NOMBRE)) {
+            return false;
+        }
+        if (!Objects.equals(this.APELLIDOS, other.APELLIDOS)) {
+            return false;
+        }
+        if (!Objects.equals(this.PAIS_ACTUAL, other.PAIS_ACTUAL)) {
+            return false;
+        }
+        if (!Objects.equals(this.NO_PASAPORTE, other.NO_PASAPORTE)) {
+            return false;
+        }
+        if (this.estado_civil != other.estado_civil) {
+            return false;
+        }
+        if (this.sexo != other.sexo) {
+            return false;
+        }
+        if (!Objects.equals(this.MILLAS_RECORRIDAS, other.MILLAS_RECORRIDAS)) {
+            return false;
+        }
+        return true;
+    }
+   
+    
 }
