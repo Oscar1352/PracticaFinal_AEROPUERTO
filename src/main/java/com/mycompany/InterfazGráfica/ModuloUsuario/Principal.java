@@ -7,6 +7,7 @@ package com.mycompany.InterfazGráfica.ModuloUsuario;
 
 import ManejadoresDeDatos.ImportExportPasaporte;
 import ManejadoresDeDatos.ImportExportTarjeta;
+import com.mycompany.InterfazGráfica.ModuloAdministración.ModuloAdministracion;
 import com.mycompany.Objetos.PASAPORTE;
 import com.mycompany.Objetos.TARJETA;
 import java.awt.event.ActionEvent;
@@ -23,8 +24,10 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     //Pasaporte
     private Vector listaPasaportes = new Vector();
     private PASAPORTE pasaporteActual;
+    
     //Tarjeta
     private Vector listaTarjetas = new Vector();
+    private Vector NOTarjeta = new Vector();
     private TARJETA tarjetaactual;
     
     //Pasaporte
@@ -42,18 +45,12 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         listaPasaportes.add(new PASAPORTE(NO_PASAPORTE,CONTRASEÑA,FECHA_NACIMIENTO,NACIONALIDAD,ESTADO_CIVIL,NOMBRE,APELLIDOS,SEXO,FECHA_VENCIMIENTO,FECHA_EMISION,PAIS_ACTUAL,MILLAS_RECORRIDAS));
         
     }
+    
     //Tarjeta
-
-    public void actionPerformed1(ActionEvent e) {
-        JComboBox comboBox = (JComboBox) e.getSource();
-        tarjetaactual = (TARJETA) comboBox.getSelectedItem();
-        System.out.println(tarjetaactual.toString());
-        System.out.println(tarjetaactual.getNO_PASAPORTE());
-    }
-    //Pasaporte
     public void actualizarTarjeta(Integer NO_TARJETA, Integer NO_PASAPORTE, Integer DINERO_ACTUAL, Integer CODIGO_CVC){
             listaTarjetas.remove(NO_TARJETA);
         listaTarjetas.add(new TARJETA(NO_TARJETA,NO_PASAPORTE,DINERO_ACTUAL,CODIGO_CVC));
+        NOTarjeta.add(NO_TARJETA);
         
     }
     
@@ -82,8 +79,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         BaseDeDatosjButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         MetodoDePagojButton1 = new javax.swing.JButton();
-        comboBoxListaTarjetas = comboBoxListaPasaportes = new JComboBox(listaTarjetas);
-        comboBoxListaPasaportes.addActionListener( this );
+        comboBoxListaTarjetas = comboBoxListaPasaportes = new JComboBox(NOTarjeta);
         /*comboBoxListaPasaportes.addActionListener( new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent a)
@@ -470,6 +466,11 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jMenu1.add(UsuariojMenu3);
 
         jMenu4.setText("ADMINISTRATIVO");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenu1.add(jMenu4);
 
         jMenuBar1.add(jMenu1);
@@ -511,13 +512,9 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         renovarpasaporte.setVisible(true);
     }//GEN-LAST:event_RenovarPasaportejButton1ActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
-
     private void UsuariojMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuariojMenu3MouseClicked
         // TODO add your handling code here:
-        jTabbedPane1.setVisible(false);
+        jTabbedPane1.setVisible(true);
     }//GEN-LAST:event_UsuariojMenu3MouseClicked
 
     private void CompraBoletojButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompraBoletojButton1ActionPerformed
@@ -547,6 +544,12 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
     private void comboBoxListaTarjetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListaTarjetasActionPerformed
         // TODO add your handling code here:
+        //Tarjeta
+        
+        JComboBox comboBox = (JComboBox) evt.getSource();
+        tarjetaactual = (TARJETA) comboBox.getSelectedItem();
+        System.out.println(tarjetaactual.toString());
+        System.out.println(tarjetaactual.getNO_PASAPORTE());
     }//GEN-LAST:event_comboBoxListaTarjetasActionPerformed
 
     private void MetodoDePagojButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MetodoDePagojButton1MouseClicked
@@ -554,6 +557,16 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         
         
     }//GEN-LAST:event_MetodoDePagojButton1MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        // TODO add your handling code here:
+        ModuloAdministracion moduloAdministracion= new ModuloAdministracion();
+        moduloAdministracion.setVisible(true);
+    }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments
