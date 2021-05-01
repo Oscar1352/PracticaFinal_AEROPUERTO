@@ -5,14 +5,55 @@
  */
 package com.mycompany.InterfazGráfica.ModuloAdministración;
 
+import ManejadoresDeDatos.ImportExportAeropuerto;
+import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
+import com.mycompany.Objetos.AEROLINEA;
+import com.mycompany.Objetos.PASAPORTE;
+import com.mycompany.Objetos.TARJETA;
+import data.ManejoArchivos;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.JComboBox;
 
 /**
  *
  * @author Oscar Luna
  */
-public class Administracion extends javax.swing.JFrame {
-
+public class Administracion extends javax.swing.JFrame implements ActionListener {
+    
+//Aeropuerto
+    private Vector listaAeropuertos = new Vector();
+    private AEROPUERTO aeropuertoactual;
+    //Aerolinea
+    private Vector listaAerolineas = new Vector();
+    private AEROLINEA aerolineaactual;
+   
+    
+    //Aeropuerto
+    public void actualizarAeropuerto(String NOMBRE_AEROPUERTO, String CIUDAD, String PAIS){
+        if (NOMBRE_AEROPUERTO!=null)
+        listaAeropuertos.add(new AEROPUERTO(NOMBRE_AEROPUERTO,CIUDAD,PAIS) {});
+        
+    }
+    //Aeropuerto
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JComboBox comboBox = (JComboBox) e.getSource();
+        aeropuertoactual = (AEROPUERTO) comboBox.getSelectedItem();
+        System.out.println(aeropuertoactual.toString());
+        System.out.println(aeropuertoactual.getNOMBRE_AEROPUERTO());
+    }
+    //Aerolinea
+    public void actualizarAerolinea(AEROPUERTO aeropuerto, String NOMBRE_AEROLINEA){
+        if (aeropuerto!=null)
+        listaAeropuertos.add(new AEROLINEA(aeropuerto,NOMBRE_AEROLINEA) {});
+        
+    }
+    
     /**
      * Creates new form Administracion
      */
@@ -31,6 +72,39 @@ public class Administracion extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        comboBoxListaAeropuertos =  new JComboBox(listaAeropuertos);
+        comboBoxListaAeropuertos.addActionListener( this );
+        /*comboBoxListaAeropuertos.addActionListener( new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                JComboBox comboBox = (JComboBox)e.getSource();
+                Pelicula item = (Pelicula)comboBox.getSelectedItem();
+                System.out.println( item.toString());
+                System.out.println( item.getId());
+            }
+        } );*/
+        comboBoxListaAeropuertos.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
+
+        ;
+        comboBoxListaAerolineas =  new JComboBox(listaAerolineas);
+        comboBoxListaAerolineas.addActionListener( this );
+        /*comboBoxListaAeropuertos.addActionListener( new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                JComboBox comboBox = (JComboBox)e.getSource();
+                Pelicula item = (Pelicula)comboBox.getSelectedItem();
+                System.out.println( item.toString());
+                System.out.println( item.getId());
+            }
+        } );*/
+        comboBoxListaAeropuertos.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
+
+        ;
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -44,15 +118,64 @@ public class Administracion extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Area de Administración");
 
+        jLabel2.setText("Aeropuertos Actuales:");
+
+        jButton2.setText("CARGAR DATOS");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        comboBoxListaAeropuertos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxListaAeropuertosActionPerformed(evt);
+            }
+        });
+
+        comboBoxListaAerolineas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxListaAerolineasActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Aerolíneas Actuales: ");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comboBoxListaAerolineas, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(47, 47, 47)
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(comboBoxListaAeropuertos, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(194, 194, 194)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 232, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(comboBoxListaAeropuertos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(comboBoxListaAerolineas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78))
         );
 
         jTabbedPane1.addTab("CARGAR INFORMACIÓN", jPanel2);
@@ -75,7 +198,7 @@ public class Administracion extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(111, 111, 111)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +209,7 @@ public class Administracion extends javax.swing.JFrame {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(56, 56, 56)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("AEROPUERTOS", jPanel1);
@@ -115,10 +238,9 @@ public class Administracion extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,6 +258,20 @@ public class Administracion extends javax.swing.JFrame {
         Principal principal= new Principal();
         principal.setVisible(true);
     }//GEN-LAST:event_UsuariojMenu3MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+new ImportExportAeropuerto(this);
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void comboBoxListaAeropuertosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListaAeropuertosActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_comboBoxListaAeropuertosActionPerformed
+
+    private void comboBoxListaAerolineasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListaAerolineasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxListaAerolineasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,9 +310,14 @@ public class Administracion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu UsuariojMenu3;
+    private javax.swing.JComboBox<String> comboBoxListaAerolineas;
+    private javax.swing.JComboBox<String> comboBoxListaAeropuertos;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;

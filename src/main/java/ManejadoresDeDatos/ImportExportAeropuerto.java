@@ -5,7 +5,10 @@
  */
 package ManejadoresDeDatos;
 
+import com.mycompany.Abstracts.AEROPUERTO;
+import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
+import com.mycompany.Objetos.AEROLINEA;
 import com.mycompany.Objetos.PASAPORTE;
 import data.ManejoArchivos;
 import java.time.LocalDate;
@@ -16,14 +19,14 @@ import javax.swing.JFileChooser;
  *
  * @author Oscar
  */
-public class ImportExportPasaporte extends javax.swing.JFrame {
+public class ImportExportAeropuerto extends javax.swing.JFrame {
 
-    private Principal vent;
+    private Administracion vent;
 
     /**
      * Creates new form ImportExport
      */
-    public ImportExportPasaporte(Principal vent) {
+    public ImportExportAeropuerto(Administracion vent) {
 
         this.vent = vent;
         initComponents();
@@ -43,7 +46,7 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
         buttonArchivoEntradaCargar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Importar y exportar pasaportes");
+        setTitle("Importar y exportar GENERALES");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Cargar Archivo de entrada"));
 
@@ -88,8 +91,9 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -102,6 +106,7 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
 
     private void buttonArchivoEntradaCargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonArchivoEntradaCargarMouseClicked
         // TODO add your handling code here:
+        AEROPUERTO aeropuertoActual=null;
         JFileChooser fileChooser = new JFileChooser("Seleccione archivo de texto");
         fileChooser.showOpenDialog(null);
         System.out.println(fileChooser.getSelectedFile().getPath());
@@ -111,6 +116,8 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
         /*for(int i = 0; i< listaEntrada.size();i++){
             System.out.println(listaEntrada.get(i));
         }*/
+        
+        //Lectura de los Aeropuertos
         for (String line : listaEntrada) {
             //System.out.println(line);
             try {
@@ -119,8 +126,8 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
                 String[] parte2 = partes[1].split("\\)");
                 String[] data = parte2[0].split(",");
 
-                if ((partes[0].equalsIgnoreCase("Pasaporte")) && (data.length == 12) && Integer.valueOf(data[0].length())>=8) {
-                    vent.actualizarPasaporte(Integer.valueOf(data[0]),data[1],darFormatoAFecha(data[2]),data[3],data[4],data[5],data[6],data[7],darFormatoAFecha(data[8]),darFormatoAFecha(data[9]),data[10],Integer.valueOf(data[11]));
+                if ((partes[0].equalsIgnoreCase("Aeropuerto")) && (data.length == 3)) {
+                    vent.actualizarAeropuerto(data[0],data[1],data[2]);
                 } else {
                     System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
                 }
@@ -130,15 +137,30 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
             }
 
         }
+        
+        //Lectura de los Aerolineas
+        for (String line : listaEntrada) {
+            //System.out.println(line);
+            try {
+
+                String[] partes = line.split("\\(");
+                String[] parte2 = partes[1].split("\\)");
+                String[] data = parte2[0].split(",");
+
+                if ((partes[0].equalsIgnoreCase("Aerolinea")) && (data.length == 2)) {
+                    vent.actualizarAerolinea(aeropuertoActual,data[1]);
+                } else { 
+                    System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
+                }
+            } catch (Exception e) {
+                System.out.println(" la linea x no tiene un formato adecuado exception" + line);
+                System.out.println(e);
+            }
+
+        }
+        
 
     }//GEN-LAST:event_buttonArchivoEntradaCargarMouseClicked
-public static LocalDate darFormatoAFecha(String fechaCadena){
-        String[] fechaDividida=fechaCadena.split("/");
-        int dia = Integer.valueOf(fechaDividida[0]);
-        int mes = Integer.valueOf(fechaDividida[1]);
-        int anio = Integer.valueOf(fechaDividida[2]);
-        return LocalDate.of(anio, mes, dia);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonArchivoEntradaCargar;

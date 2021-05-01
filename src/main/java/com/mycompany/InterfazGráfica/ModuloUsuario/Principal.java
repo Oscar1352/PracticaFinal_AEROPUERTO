@@ -50,8 +50,6 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     public void actualizarTarjeta(Integer NO_TARJETA, Integer NO_PASAPORTE, Integer DINERO_ACTUAL, Integer CODIGO_CVC){
             listaTarjetas.remove(NO_TARJETA);
         listaTarjetas.add(new TARJETA(NO_TARJETA,NO_PASAPORTE,DINERO_ACTUAL,CODIGO_CVC));
-        NOTarjeta.add(NO_TARJETA);
-        
     }
     
 
@@ -79,10 +77,11 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         BaseDeDatosjButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         MetodoDePagojButton1 = new javax.swing.JButton();
-        comboBoxListaTarjetas = comboBoxListaPasaportes = new JComboBox(NOTarjeta);
+        comboBoxListaTarjetas = comboBoxListaPasaportes = new JComboBox(listaTarjetas);
+        comboBoxListaPasaportes.addActionListener( this );
         /*comboBoxListaPasaportes.addActionListener( new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent a)
+            public void actionPerformed(ActionEvent e)
             {
                 JComboBox comboBox = (JComboBox)e.getSource();
                 Pelicula item = (Pelicula)comboBox.getSelectedItem();
@@ -550,6 +549,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         tarjetaactual = (TARJETA) comboBox.getSelectedItem();
         System.out.println(tarjetaactual.toString());
         System.out.println(tarjetaactual.getNO_PASAPORTE());
+        
     }//GEN-LAST:event_comboBoxListaTarjetasActionPerformed
 
     private void MetodoDePagojButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MetodoDePagojButton1MouseClicked

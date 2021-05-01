@@ -7,6 +7,7 @@ package com.mycompany.InterfazGráfica.ModuloAdministración;
 
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.TARJETA;
+import java.util.Arrays;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
@@ -39,7 +40,7 @@ public class ModuloAdministracion extends javax.swing.JFrame {
         PuestojComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        ContraseñajPasswordField1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -78,7 +79,7 @@ public class ModuloAdministracion extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1))
         );
 
-        PuestojComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Departamento de Administración", "Gerencia de Aerlínea", "Operador De Vuelos", " ", " " }));
+        PuestojComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Departamento de Administración", "Gerencia de Aerolínea", "Operador De Vuelos" }));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Escoja su area de Trabajo:");
@@ -133,7 +134,7 @@ public class ModuloAdministracion extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(PuestojComboBox1, 0, 289, Short.MAX_VALUE)
-                            .addComponent(jPasswordField1)))
+                            .addComponent(ContraseñajPasswordField1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(189, 189, 189)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -150,7 +151,7 @@ public class ModuloAdministracion extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ContraseñajPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 44, Short.MAX_VALUE))
@@ -167,6 +168,20 @@ public class ModuloAdministracion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        if(PuestojComboBox1.getSelectedItem()=="Departamento de Administración"){
+            Administracion administracion = new Administracion();
+            administracion.setVisible(true);
+        }else if(PuestojComboBox1.getSelectedItem()=="Gerencia de Aerolínea"){
+            Gerencia gerencia = new Gerencia();
+            gerencia.setVisible(true);
+        }else if(PuestojComboBox1.getSelectedItem()=="Operador De Vuelos"){
+            Operador operador = new Operador();
+            operador.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "Datos incorrectos, por favor verifiquelos");
+            System.out.println(ContraseñajPasswordField1.getText());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -209,6 +224,7 @@ public class ModuloAdministracion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField ContraseñajPasswordField1;
     private javax.swing.JComboBox<String> PuestojComboBox1;
     private javax.swing.JMenu UsuariojMenu3;
     private javax.swing.JButton jButton1;
@@ -221,7 +237,6 @@ public class ModuloAdministracion extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
