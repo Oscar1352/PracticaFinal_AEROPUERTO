@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.Objetos;
+import com.mycompany.Enums.ESTADO_DE_VUELO;
 
 /**
  *
@@ -18,6 +19,7 @@ public class VUELO {
     private String NOMBRE_AEROPUERTO_DESTINO;
     private int PRECIO_BOLETO;
     private int FECHA_SALIDAD;
+    private static ESTADO_DE_VUELO estado_de_vuelo= ESTADO_DE_VUELO.EN_ESPERA;
 
     //Declaro mi constructor
     public VUELO(int CODIGO_VUELO, int CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, int PRECIO_BOLETO, int FECHA_SALIDAD) {
@@ -77,6 +79,14 @@ public class VUELO {
 
     public void setFECHA_SALIDAD(int FECHA_SALIDAD) {
         this.FECHA_SALIDAD = FECHA_SALIDAD;
+    }
+
+    public static ESTADO_DE_VUELO getEstado_de_vuelo() {
+        return estado_de_vuelo;
+    }
+
+    public static void setEstado_de_vuelo(ESTADO_DE_VUELO estado_de_vuelo) {
+        VUELO.estado_de_vuelo = estado_de_vuelo;
     }
     
 }
