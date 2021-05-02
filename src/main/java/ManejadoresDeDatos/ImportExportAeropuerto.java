@@ -105,7 +105,7 @@ public class ImportExportAeropuerto extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonArchivoEntradaCargarActionPerformed
 
     private void buttonArchivoEntradaCargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonArchivoEntradaCargarMouseClicked
-        // TODO add your handling code here:
+        // TODO add your handling code here:-
         AEROPUERTO aeropuertoActual=null;
         JFileChooser fileChooser = new JFileChooser("Seleccione archivo de texto");
         fileChooser.showOpenDialog(null);
@@ -137,29 +137,6 @@ public class ImportExportAeropuerto extends javax.swing.JFrame {
             }
 
         }
-        
-        //Lectura de los Aerolineas
-        for (String line : listaEntrada) {
-            //System.out.println(line);
-            try {
-
-                String[] partes = line.split("\\(");
-                String[] parte2 = partes[1].split("\\)");
-                String[] data = parte2[0].split(",");
-
-                if ((partes[0].equalsIgnoreCase("Aerolinea")) && (data.length == 2)) {
-                    vent.actualizarAerolinea(aeropuertoActual,data[1]);
-                } else { 
-                    System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
-                }
-            } catch (Exception e) {
-                System.out.println(" la linea x no tiene un formato adecuado exception" + line);
-                System.out.println(e);
-            }
-
-        }
-        
-
     }//GEN-LAST:event_buttonArchivoEntradaCargarMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
