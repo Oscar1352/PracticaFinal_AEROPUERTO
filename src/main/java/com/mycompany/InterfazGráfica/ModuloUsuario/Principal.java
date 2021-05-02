@@ -543,7 +543,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
     private void BuscarjButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarjButton1MouseClicked
         // TODO add your handling code here:
-        if(jPasswordField1.getText()==pasaporteActual.getCONTRASEÑA()){
+        if(jPasswordField1.getText().equals(pasaporteActual.getCONTRASEÑA())){
         new Login(pasaporteActual); 
         }else{
             JOptionPane.showMessageDialog(null, "Datos incorrectos");
