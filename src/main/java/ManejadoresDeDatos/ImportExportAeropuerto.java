@@ -11,9 +11,16 @@ import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.AEROLINEA;
 import com.mycompany.Objetos.PASAPORTE;
 import data.ManejoArchivos;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -138,7 +145,42 @@ public class ImportExportAeropuerto extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_buttonArchivoEntradaCargarMouseClicked
+ public ArrayList<AEROPUERTO> leerFichero(File archivo,JTextArea text) throws FileNotFoundException, IOException {
+        ArrayList<AEROPUERTO> vehiculos = new ArrayList<>();
+        AEROPUERTO aeropuertoActual=null;
+        JFileChooser fileChooser = new JFileChooser("Seleccione archivo de texto");
+        fileChooser.showOpenDialog(null);
+        System.out.println(fileChooser.getSelectedFile().getPath());
 
+        List<String> listaEntrada = ManejoArchivos.getLinesTextFile(fileChooser.getSelectedFile().getPath());
+
+        /*for(int i = 0; i< listaEntrada.size();i++){
+            System.out.println(listaEntrada.get(i));
+        }*/
+        
+        //Lectura de los Aeropuertos
+        for (String line : listaEntrada) {
+            //System.out.println(line);
+            try {
+
+                String[] partes = line.split("\\(");
+                String[] parte2 = partes[1].split("\\)");
+                String[] data = parte2[0].split(",");
+
+                if ((partes[0].equalsIgnoreCase("Aeropuerto")) && (data.length == 3)) {
+                    vent.actualizarAeropuerto(data[0],data[1],data[2]);
+                } else {
+                    System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
+                }
+            } catch (Exception e) {
+                System.out.println(" la linea x no tiene un formato adecuado exception" + line);
+                System.out.println(e);
+            }
+
+        }
+        return vehiculos;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonArchivoEntradaCargar;
     private javax.swing.JPanel jPanel1;
