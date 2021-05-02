@@ -26,6 +26,8 @@ public class PASAPORTE {
     private LocalDate FECHA_EMISION;
     private String PAIS_ACTUAL;
     private Integer MILLAS_RECORRIDAS;
+    private Integer GastosTarjeta;
+    private Integer BoletosComprados;
 
     //Declaro mi constructor
 
@@ -144,6 +146,23 @@ public class PASAPORTE {
         this.MILLAS_RECORRIDAS = MILLAS_RECORRIDAS;
     }
 
+    public Integer getGastosTarjeta() {
+        return GastosTarjeta;
+    }
+
+    public void setGastosTarjeta(Integer GastosTarjeta) {
+        this.GastosTarjeta = GastosTarjeta;
+    }
+
+    public Integer getBoletosComprados() {
+        return BoletosComprados;
+    }
+
+    public void setBoletosComprados(Integer BoletosComprados) {
+        this.BoletosComprados = BoletosComprados;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;

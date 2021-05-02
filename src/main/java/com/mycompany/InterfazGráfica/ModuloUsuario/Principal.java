@@ -5,6 +5,7 @@
  */
 package com.mycompany.InterfazGráfica.ModuloUsuario;
 
+import AñadirObjetos.EditarPasaporte;
 import ManejadoresDeDatos.ImportExportPasaporte;
 import ManejadoresDeDatos.ImportExportTarjeta;
 import com.mycompany.InterfazGráfica.ModuloAdministración.ModuloAdministracion;
@@ -15,12 +16,15 @@ import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.util.Vector;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Oscar Luna
  */
 public class Principal extends javax.swing.JFrame implements ActionListener{
+    
+    //Prncipal
     //Pasaporte
     private Vector listaPasaportes = new Vector();
     private PASAPORTE pasaporteActual;
@@ -116,15 +120,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         CompraBoletojButton1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel16 = new javax.swing.JLabel();
@@ -165,7 +161,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
+                .addContainerGap(118, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
@@ -201,15 +197,15 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(229, 229, 229)
-                .addComponent(MetodoDePagojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
-                .addComponent(comboBoxListaTarjetas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(comboBoxListaTarjetas, 0, 566, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(212, 212, 212)
+                .addComponent(MetodoDePagojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,9 +214,9 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxListaTarjetas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
                 .addComponent(MetodoDePagojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("METODO DE PAGO", jPanel3);
@@ -238,6 +234,11 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         });
 
         RenovarPasaportejButton1.setText("RENOVAR PASAPORTE");
+        RenovarPasaportejButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RenovarPasaportejButton1MouseClicked(evt);
+            }
+        });
         RenovarPasaportejButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RenovarPasaportejButton1ActionPerformed(evt);
@@ -276,7 +277,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxListaPasaportes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(RenovarPasaportejButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(RegistrarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -317,29 +318,13 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
                     .addComponent(CompraBoletojButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("VUELO", jPanel6);
 
-        jLabel9.setText("-");
-
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("LOGIN DE PASAJEROS");
-
-        jLabel4.setText("Boletos Comprados:");
-
-        jLabel5.setText("Gastos Por Tarjeta:");
-
-        jLabel6.setText("Datos Personales:");
-
-        jLabel7.setText("Millas Recorridas");
-
-        jLabel8.setText("-");
-
-        jLabel10.setText("-");
-
-        jLabel11.setText("-");
 
         jLabel12.setText("NO.PASAPORTE:");
 
@@ -352,6 +337,16 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jLabel16.setText("CONTRASEÑA:");
 
         BuscarjButton1.setText("BUSCAR");
+        BuscarjButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BuscarjButton1MouseClicked(evt);
+            }
+        });
+        BuscarjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarjButton1ActionPerformed(evt);
+            }
+        });
 
         PasaportesVinculados.addActionListener( this );
         PasaportesVinculados.addActionListener(new java.awt.event.ActionListener() {
@@ -369,25 +364,6 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(301, 301, 301)
                         .addComponent(jLabel3))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel10))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel8))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel11))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel9))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,23 +396,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(BuscarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel8))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel10))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel9))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("LOGIN USUARIO", jPanel5);
@@ -445,13 +405,17 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jMenu1.setText("MODULOS");
@@ -487,7 +451,9 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 60, Short.MAX_VALUE))
         );
 
         pack();
@@ -507,8 +473,6 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     
     private void RenovarPasaportejButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RenovarPasaportejButton1ActionPerformed
         // TODO add your handling code here:
-        RenovarPasaporte renovarpasaporte= new RenovarPasaporte();
-        renovarpasaporte.setVisible(true);
     }//GEN-LAST:event_RenovarPasaportejButton1ActionPerformed
 
     private void UsuariojMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuariojMenu3MouseClicked
@@ -568,6 +532,24 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
+    private void RenovarPasaportejButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RenovarPasaportejButton1MouseClicked
+        // TODO add your handling code here:
+        new EditarPasaporte(pasaporteActual,this); 
+    }//GEN-LAST:event_RenovarPasaportejButton1MouseClicked
+
+    private void BuscarjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarjButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarjButton1ActionPerformed
+
+    private void BuscarjButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarjButton1MouseClicked
+        // TODO add your handling code here:
+        if(jPasswordField1.getText()==pasaporteActual.getCONTRASEÑA()){
+        new Login(pasaporteActual); 
+        }else{
+            JOptionPane.showMessageDialog(null, "Datos incorrectos");
+        }
+    }//GEN-LAST:event_BuscarjButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -616,20 +598,12 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JComboBox<String> comboBoxListaTarjetas;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
