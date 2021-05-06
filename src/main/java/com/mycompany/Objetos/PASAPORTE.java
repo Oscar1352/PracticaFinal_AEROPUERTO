@@ -17,15 +17,14 @@ public class PASAPORTE {
     //Defino mis atributos
     private Integer NO_PASAPORTE;
     private String CONTRASEÑA;
-    private LocalDate FECHA_NACIMIENTO;
-    private String FECHA_NACIMIENTOPrueba="08/12/2002";
+    private String FECHA_NACIMIENTO;
     private String NACIONALIDAD;
     private String ESTADO_CIVIL;
     private String NOMBRE;
     private String APELLIDOS;
     private String SEXO;
-    private LocalDate FECHA_VENCIMIENTO;
-    private LocalDate FECHA_EMISION;
+    private String FECHA_VENCIMIENTO;
+    private String FECHA_EMISION;
     private String PAIS_ACTUAL;
     private Integer MILLAS_RECORRIDAS;
     private Integer GastosTarjeta;
@@ -33,7 +32,7 @@ public class PASAPORTE {
 
     //Declaro mi constructor
 
-    public PASAPORTE(Integer NO_PASAPORTE, LocalDate FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, LocalDate FECHA_VENCIMIENTO, LocalDate FECHA_EMISION, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS) {
+    public PASAPORTE(Integer NO_PASAPORTE, String FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, String FECHA_VENCIMIENTO, String FECHA_EMISION, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS) {
         this.NO_PASAPORTE = NO_PASAPORTE;
         this.FECHA_NACIMIENTO = FECHA_NACIMIENTO;
         this.NACIONALIDAD = NACIONALIDAD;
@@ -67,11 +66,11 @@ public class PASAPORTE {
         this.CONTRASEÑA = CONTRASEÑA;
     }
 
-    public LocalDate getFECHA_NACIMIENTO() {
+    public String getFECHA_NACIMIENTO() {
         return FECHA_NACIMIENTO;
     }
 
-    public void setFECHA_NACIMIENTO(LocalDate FECHA_NACIMIENTO) {
+    public void setFECHA_NACIMIENTO(String FECHA_NACIMIENTO) {
         this.FECHA_NACIMIENTO = FECHA_NACIMIENTO;
     }
 
@@ -115,19 +114,20 @@ public class PASAPORTE {
         this.SEXO = SEXO;
     }
 
-    public LocalDate getFECHA_VENCIMIENTO() {
+    public String getFECHA_VENCIMIENTO() {
         return FECHA_VENCIMIENTO;
     }
 
-    public void setFECHA_VENCIMIENTO(LocalDate FECHA_VENCIMIENTO) {
+    public void setFECHA_VENCIMIENTO(String FECHA_VENCIMIENTO) {
         this.FECHA_VENCIMIENTO = FECHA_VENCIMIENTO;
     }
+    
 
-    public LocalDate getFECHA_EMISION() {
+    public String getFECHA_EMISION() {
         return FECHA_EMISION;
     }
 
-    public void setFECHA_EMISION(LocalDate FECHA_EMISION) {
+    public void setFECHA_EMISION(String FECHA_EMISION) {
         this.FECHA_EMISION = FECHA_EMISION;
     }
 
@@ -161,14 +161,6 @@ public class PASAPORTE {
 
     public void setBoletosComprados(Integer BoletosComprados) {
         this.BoletosComprados = BoletosComprados;
-    }
-
-    public String getFECHA_NACIMIENTOPrueba() {
-        return FECHA_NACIMIENTOPrueba;
-    }
-
-    public void setFECHA_NACIMIENTOPrueba(String FECHA_NACIMIENTOPrueba) {
-        this.FECHA_NACIMIENTOPrueba = FECHA_NACIMIENTOPrueba;
     }
     
 
@@ -244,7 +236,9 @@ public class PASAPORTE {
 
     @Override
     public String toString() {
-        return "NO_PASAPORTE=" + NO_PASAPORTE + ", CONTRASEÑA=" + CONTRASEÑA + ", FECHA_NACIMIENTO=" + FECHA_NACIMIENTO + ", NACIONALIDAD=" + NACIONALIDAD + ", ESTADO_CIVIL=" + ESTADO_CIVIL + ", NOMBRE=" + NOMBRE + ", APELLIDOS=" + APELLIDOS + ", SEXO=" + SEXO + ", FECHA_VENCIMIENTO=" + FECHA_VENCIMIENTO + ", FECHA_EMISION=" + FECHA_EMISION + ", PAIS_ACTUAL=" + PAIS_ACTUAL + ", MILLAS_RECORRIDAS=" + MILLAS_RECORRIDAS + '}';
+        return "NO_PASAPORTE=" + NO_PASAPORTE + ", CONTRASEÑA=" + CONTRASEÑA + ", FECHA_NACIMIENTO=" + FECHA_NACIMIENTO + ", NACIONALIDAD=" + NACIONALIDAD + ", ESTADO_CIVIL=" + ESTADO_CIVIL + ", NOMBRE=" + NOMBRE + ", APELLIDOS=" + APELLIDOS + ", SEXO=" + SEXO + ", FECHA_VENCIMIENTO=" + FECHA_VENCIMIENTO + ", FECHA_EMISION=" + FECHA_EMISION + ", PAIS_ACTUAL=" + PAIS_ACTUAL + ", MILLAS_RECORRIDAS=" + MILLAS_RECORRIDAS + ", GastosTarjeta=" + GastosTarjeta + ", BoletosComprados=" + BoletosComprados + '}';
     }
+
+    
 
 }

@@ -276,7 +276,7 @@ public class AñadirPasaporte extends javax.swing.JFrame {
             System.out.println(year.getText());
             return;
         }*/
-        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),darFormatoAFecha(FechaNacimiento.getDateFormatString()),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(), Sexo.getText(), darFormatoAFecha(FechaVencimiento.getDateFormatString()),darFormatoAFecha(FechaEmisión.getDateFormatString()),PaisActual.getText(),Integer.valueOf(Millas.getText()));
+        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),FechaNacimiento.getDateFormatString(),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(), Sexo.getText(), FechaVencimiento.getDateFormatString(),FechaEmisión.getDateFormatString(),PaisActual.getText(),Integer.valueOf(Millas.getText()));
         this.dispose();
     }//GEN-LAST:event_GuardarjButton1MouseClicked
 

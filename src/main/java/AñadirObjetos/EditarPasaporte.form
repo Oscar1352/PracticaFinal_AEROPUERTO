@@ -57,22 +57,20 @@
                               <Component id="jLabel14" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="GuardarjButton1" min="-2" pref="117" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="Nacionalidad" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Nombre" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Sexo" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="PaisActual" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Millas" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="FechaNacimiento" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="FechaVencimiento" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="FechaEmisión" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="NOPasaprte" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Contraseña" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
-                                  <Component id="EstadoCivil" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
-                                  <Component id="Apellido1" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="Nacionalidad" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Nombre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Sexo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Millas" alignment="0" max="32767" attributes="0"/>
+                              <Component id="FechaNacimiento" alignment="0" max="32767" attributes="0"/>
+                              <Component id="FechaVencimiento" alignment="0" max="32767" attributes="0"/>
+                              <Component id="FechaEmisión" alignment="0" max="32767" attributes="0"/>
+                              <Component id="NOPasaprte" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Contraseña" alignment="0" pref="143" max="32767" attributes="0"/>
+                              <Component id="EstadoCivil" alignment="0" pref="143" max="32767" attributes="0"/>
+                              <Component id="Apellido1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Pais" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -139,10 +137,10 @@
                       <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="FechaEmisión" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="PaisActual" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Pais" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -151,7 +149,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="GuardarjButton1" min="-2" pref="79" max="-2" attributes="0"/>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace pref="42" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -185,11 +183,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="EstadoCivil">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="PaisActual">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
@@ -290,6 +283,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="Apellido1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="Pais">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>

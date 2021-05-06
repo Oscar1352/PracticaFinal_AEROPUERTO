@@ -38,25 +38,50 @@ public class EditarPasaporte extends javax.swing.JFrame {
             this.NOPasaprte.setText(String.valueOf(pasaporte.getNO_PASAPORTE()));
             this.Contraseña.setText(pasaporte.getCONTRASEÑA());
             
+            //Obtener Fecha de Vencimiento
                try {
-      String fecha =pasaporte.getFECHA_NACIMIENTOPrueba();
+      String fecha =pasaporte.getFECHA_NACIMIENTO();
       SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
       Date fechaDate = formato.parse(fecha);
       this.FechaNacimiento.setDate(fechaDate);
       } catch (ParseException ex) {
         Logger.getLogger(EditarPasaporte.class.getName()).log(Level.SEVERE, null, ex);
       }   
-            
+               
+              
             this.Nacionalidad.setText(pasaporte.getNACIONALIDAD());
             this.EstadoCivil.setText(pasaporte.getESTADO_CIVIL());
             this.Nombre.setText(pasaporte.getNOMBRE());
             this.Apellido1.setText(pasaporte.getAPELLIDOS());
-            this.Sexo.setText(pasaporte.getAPELLIDOS());
-            this.FechaVencimiento.setDateFormatString(pasaporte.getFECHA_VENCIMIENTO()+"");
-            this.FechaEmisión.setDateFormatString(pasaporte.getFECHA_EMISION()+"");
-            this.PaisActual.setText(pasaporte.getPAIS_ACTUAL());
+            this.Sexo.setText(pasaporte.getSEXO());
+            
+//Obtener Fecha de Nacimiento
+              try {
+      String fecha =pasaporte.getFECHA_VENCIMIENTO();
+      SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+      Date fechaDate = formato.parse(fecha);
+      this.FechaVencimiento.setDate(fechaDate);
+      } catch (ParseException ex) {
+        Logger.getLogger(EditarPasaporte.class.getName()).log(Level.SEVERE, null, ex);
+      }
+              
+              
+              //Obtener Fecha de Nacimiento
+              try {
+      String fecha =pasaporte.getFECHA_EMISION();
+      SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+      Date fechaDate = formato.parse(fecha);
+      this.FechaEmisión.setDate(fechaDate);
+      } catch (ParseException ex) {
+        Logger.getLogger(EditarPasaporte.class.getName()).log(Level.SEVERE, null, ex);
+      }
+       
+              
+            this.Pais.setText(pasaporte.getPAIS_ACTUAL());
             this.Millas.setText(String.valueOf(pasaporte.getMILLAS_RECORRIDAS()));
         }
+        
+        
         else{
             this.NOPasaprte.setText("");
             //nuevo
@@ -81,7 +106,6 @@ public class EditarPasaporte extends javax.swing.JFrame {
         Nombre = new javax.swing.JTextField();
         Sexo = new javax.swing.JTextField();
         EstadoCivil = new javax.swing.JTextField();
-        PaisActual = new javax.swing.JTextField();
         Millas = new javax.swing.JLabel();
         FechaNacimiento = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
@@ -102,6 +126,7 @@ public class EditarPasaporte extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         Apellido1 = new javax.swing.JTextField();
+        Pais = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AÑADIR");
@@ -126,8 +151,6 @@ public class EditarPasaporte extends javax.swing.JFrame {
         Sexo.setEditable(false);
 
         EstadoCivil.setEditable(false);
-
-        PaisActual.setEditable(false);
 
         Millas.setText("-");
 
@@ -178,6 +201,8 @@ public class EditarPasaporte extends javax.swing.JFrame {
 
         Apellido1.setEditable(false);
 
+        Pais.setEditable(false);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -199,21 +224,20 @@ public class EditarPasaporte extends javax.swing.JFrame {
                             .addComponent(jLabel13)
                             .addComponent(jLabel14))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(GuardarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Nacionalidad)
-                                .addComponent(Nombre)
-                                .addComponent(Sexo)
-                                .addComponent(PaisActual)
-                                .addComponent(Millas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FechaVencimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FechaEmisión, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(NOPasaprte)
-                                .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(EstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Apellido1))))
+                            .addComponent(Nacionalidad)
+                            .addComponent(Nombre)
+                            .addComponent(Sexo)
+                            .addComponent(Millas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FechaVencimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FechaEmisión, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(NOPasaprte)
+                            .addComponent(Contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                            .addComponent(EstadoCivil, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                            .addComponent(Apellido1)
+                            .addComponent(Pais)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
                         .addComponent(jLabel22)))
@@ -264,17 +288,17 @@ public class EditarPasaporte extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addComponent(FechaEmisión, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(PaisActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Pais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14)
                     .addComponent(Millas))
                 .addGap(18, 18, 18)
                 .addComponent(GuardarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -297,7 +321,7 @@ public class EditarPasaporte extends javax.swing.JFrame {
 
     private void GuardarjButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarjButton1MouseClicked
         // TODO add your handling code here:
-        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),darFormatoAFecha(FechaNacimiento.getDateFormatString()),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(),Sexo.getText(),darFormatoAFecha(FechaVencimiento.getDateFormatString()),darFormatoAFecha(FechaEmisión.getDateFormatString()),PaisActual.getText(),Integer.valueOf(Millas.getText()));
+        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),FechaNacimiento.getDateFormatString(),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(),Sexo.getText(),FechaVencimiento.getDateFormatString(),FechaEmisión.getDateFormatString(),Pais.getText(),Integer.valueOf(Millas.getText()));
         this.dispose();
     }//GEN-LAST:event_GuardarjButton1MouseClicked
 
@@ -337,7 +361,7 @@ public class EditarPasaporte extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField NOPasaprte;
     private javax.swing.JTextField Nacionalidad;
     private javax.swing.JTextField Nombre;
-    private javax.swing.JTextField PaisActual;
+    private javax.swing.JTextField Pais;
     private javax.swing.JTextField Sexo;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
