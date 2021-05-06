@@ -1,5 +1,6 @@
 package com.mycompany.Objetos;
 import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Objects;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +18,7 @@ public class PASAPORTE {
     private Integer NO_PASAPORTE;
     private String CONTRASEÑA;
     private LocalDate FECHA_NACIMIENTO;
+    private String FECHA_NACIMIENTOPrueba="08/12/2002";
     private String NACIONALIDAD;
     private String ESTADO_CIVIL;
     private String NOMBRE;
@@ -31,9 +33,8 @@ public class PASAPORTE {
 
     //Declaro mi constructor
 
-    public PASAPORTE(Integer NO_PASAPORTE, String CONTRASEÑA, LocalDate FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, LocalDate FECHA_VENCIMIENTO, LocalDate FECHA_EMISION, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS) {
+    public PASAPORTE(Integer NO_PASAPORTE, LocalDate FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, LocalDate FECHA_VENCIMIENTO, LocalDate FECHA_EMISION, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS) {
         this.NO_PASAPORTE = NO_PASAPORTE;
-        this.CONTRASEÑA = CONTRASEÑA;
         this.FECHA_NACIMIENTO = FECHA_NACIMIENTO;
         this.NACIONALIDAD = NACIONALIDAD;
         this.ESTADO_CIVIL = ESTADO_CIVIL;
@@ -162,6 +163,15 @@ public class PASAPORTE {
         this.BoletosComprados = BoletosComprados;
     }
 
+    public String getFECHA_NACIMIENTOPrueba() {
+        return FECHA_NACIMIENTOPrueba;
+    }
+
+    public void setFECHA_NACIMIENTOPrueba(String FECHA_NACIMIENTOPrueba) {
+        this.FECHA_NACIMIENTOPrueba = FECHA_NACIMIENTOPrueba;
+    }
+    
+
     
     @Override
     public int hashCode() {
@@ -237,7 +247,4 @@ public class PASAPORTE {
         return "NO_PASAPORTE=" + NO_PASAPORTE + ", CONTRASEÑA=" + CONTRASEÑA + ", FECHA_NACIMIENTO=" + FECHA_NACIMIENTO + ", NACIONALIDAD=" + NACIONALIDAD + ", ESTADO_CIVIL=" + ESTADO_CIVIL + ", NOMBRE=" + NOMBRE + ", APELLIDOS=" + APELLIDOS + ", SEXO=" + SEXO + ", FECHA_VENCIMIENTO=" + FECHA_VENCIMIENTO + ", FECHA_EMISION=" + FECHA_EMISION + ", PAIS_ACTUAL=" + PAIS_ACTUAL + ", MILLAS_RECORRIDAS=" + MILLAS_RECORRIDAS + '}';
     }
 
-    
-   
-    
 }

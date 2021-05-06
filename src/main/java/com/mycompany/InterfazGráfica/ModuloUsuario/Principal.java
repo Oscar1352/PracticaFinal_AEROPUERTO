@@ -5,6 +5,7 @@
  */
 package com.mycompany.InterfazGráfica.ModuloUsuario;
 
+import AñadirObjetos.AñadirPasaporte;
 import AñadirObjetos.EditarPasaporte;
 import ManejadoresDeDatos.ImportExportPasaporte;
 import ManejadoresDeDatos.ImportExportTarjeta;
@@ -43,10 +44,10 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         System.out.println(pasaporteActual.getNO_PASAPORTE());
     }
     //Pasaporte
-    public void actualizarPasaporte(Integer NO_PASAPORTE, String CONTRASEÑA, LocalDate FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, LocalDate FECHA_VENCIMIENTO, LocalDate FECHA_EMISION, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS){
+    public void actualizarPasaporte(Integer NO_PASAPORTE, LocalDate FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, LocalDate FECHA_VENCIMIENTO, LocalDate FECHA_EMISION, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS){
         if (NO_PASAPORTE!=null)
             listaPasaportes.remove(NO_PASAPORTE);
-        listaPasaportes.add(new PASAPORTE(NO_PASAPORTE,CONTRASEÑA,FECHA_NACIMIENTO,NACIONALIDAD,ESTADO_CIVIL,NOMBRE,APELLIDOS,SEXO,FECHA_VENCIMIENTO,FECHA_EMISION,PAIS_ACTUAL,MILLAS_RECORRIDAS));
+        listaPasaportes.add(new PASAPORTE(NO_PASAPORTE,FECHA_NACIMIENTO,NACIONALIDAD,ESTADO_CIVIL,NOMBRE,APELLIDOS,SEXO,FECHA_VENCIMIENTO,FECHA_EMISION,PAIS_ACTUAL,MILLAS_RECORRIDAS));
         
     }
     
@@ -78,7 +79,6 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        BaseDeDatosjButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         MetodoDePagojButton1 = new javax.swing.JButton();
         comboBoxListaTarjetas = comboBoxListaPasaportes = new JComboBox(listaTarjetas);
@@ -116,6 +116,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         ;
         jLabel13 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         CompraBoletojButton1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
@@ -140,8 +141,6 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText(" gusto y sea atendido como usted se lo merece, disfruta tu viaje.");
 
-        BaseDeDatosjButton1.setText("BASE DE DATOS");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -149,13 +148,10 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(61, 61, 61))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(BaseDeDatosjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(141, 141, 141)))
+                        .addGap(61, 61, 61)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -165,9 +161,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(BaseDeDatosjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67))
+                .addGap(188, 188, 188))
         );
 
         jTabbedPane1.addTab("BIENVENIDA", jPanel2);
@@ -200,7 +194,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addContainerGap()
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
-                .addComponent(comboBoxListaTarjetas, 0, 566, Short.MAX_VALUE)
+                .addComponent(comboBoxListaTarjetas, 0, 626, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(212, 212, 212)
@@ -253,21 +247,36 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jLabel13.setText("Pasaportes Registrados");
 
+        jButton2.setText("NUEVOS PASAPORTE");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(RegistrarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(RenovarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel13)
-                .addGap(18, 18, 18)
-                .addComponent(comboBoxListaPasaportes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(comboBoxListaPasaportes, 0, 608, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(RegistrarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(RenovarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -277,11 +286,12 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxListaPasaportes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(RenovarPasaportejButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RegistrarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56))
+                    .addComponent(RegistrarPasaportejButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
         );
 
         jTabbedPane1.addTab("PASAPORTE", jPanel4);
@@ -309,7 +319,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addComponent(CompraBoletojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,7 +389,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(250, 250, 250)
                         .addComponent(BuscarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addContainerGap(295, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -451,9 +461,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 60, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -550,6 +558,16 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         }
     }//GEN-LAST:event_BuscarjButton1MouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new AñadirPasaporte(null, this);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -586,7 +604,6 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BaseDeDatosjButton1;
     private javax.swing.JButton BuscarjButton1;
     private javax.swing.JButton CompraBoletojButton1;
     private javax.swing.JButton MetodoDePagojButton1;
@@ -597,6 +614,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JComboBox<String> comboBoxListaPasaportes;
     private javax.swing.JComboBox<String> comboBoxListaTarjetas;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;

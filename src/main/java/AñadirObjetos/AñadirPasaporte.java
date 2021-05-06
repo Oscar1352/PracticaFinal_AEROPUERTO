@@ -9,44 +9,28 @@ import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.PASAPORTE;
-import com.mycompany.Objetos.TARJETA;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Oscar Luna
  */
-public class EditarPasaporte extends javax.swing.JFrame {
-
-    
+public class AñadirPasaporte extends javax.swing.JFrame {
     private PASAPORTE pasaporte;
     private Principal vent;
+
     /**
-     * Creates new form AñadirAeropuertos
+     * Creates new form AñadirPasaporte
      */
-    public EditarPasaporte(PASAPORTE pasaporte,Principal vent) {
+    public AñadirPasaporte(PASAPORTE pasaporte,Principal vent) {
         initComponents();
-        this.pasaporte = pasaporte;
+          this.pasaporte = pasaporte;
         this.vent = vent;
         if (pasaporte!= null){
             //edición 
             this.NOPasaprte.setText(String.valueOf(pasaporte.getNO_PASAPORTE()));
+            this.FechaNacimiento.setDateFormatString(pasaporte.getFECHA_NACIMIENTO()+"");
             this.Contraseña.setText(pasaporte.getCONTRASEÑA());
-            
-               try {
-      String fecha =pasaporte.getFECHA_NACIMIENTOPrueba();
-      SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-      Date fechaDate = formato.parse(fecha);
-      this.FechaNacimiento.setDate(fechaDate);
-      } catch (ParseException ex) {
-        Logger.getLogger(EditarPasaporte.class.getName()).log(Level.SEVERE, null, ex);
-      }   
-            
             this.Nacionalidad.setText(pasaporte.getNACIONALIDAD());
             this.EstadoCivil.setText(pasaporte.getESTADO_CIVIL());
             this.Nombre.setText(pasaporte.getNOMBRE());
@@ -59,11 +43,20 @@ public class EditarPasaporte extends javax.swing.JFrame {
         }
         else{
             this.NOPasaprte.setText("");
+            this.FechaNacimiento.setDateFormatString("");
+            this.Contraseña.setText("");
+            this.Nacionalidad.setText("");
+            this.EstadoCivil.setText("");;
+            this.Nombre.setText("");
+            this.Apellido1.setText("");
+            this.Sexo.setText("");
+            this.FechaVencimiento.setDateFormatString("");
+            this.FechaEmisión.setDateFormatString("");
+            this.PaisActual.setText("");
+            this.Millas.setText("");
             //nuevo
         }
-        
         this.setVisible(true);
-        
     }
 
     /**
@@ -75,11 +68,10 @@ public class EditarPasaporte extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        GuardarjButton1 = new javax.swing.JButton();
-        Nombre = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         Sexo = new javax.swing.JTextField();
+        Apellido1 = new javax.swing.JTextField();
         EstadoCivil = new javax.swing.JTextField();
         PaisActual = new javax.swing.JTextField();
         Millas = new javax.swing.JLabel();
@@ -98,36 +90,16 @@ public class EditarPasaporte extends javax.swing.JFrame {
         Contraseña = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         NOPasaprte = new javax.swing.JFormattedTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        Apellido1 = new javax.swing.JTextField();
+        GuardarjButton1 = new javax.swing.JButton();
+        Nombre = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("AÑADIR");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel22.setText("Renovación De Pasaporte");
+        jLabel7.setText("ESTADO CIVIL:");
 
-        GuardarjButton1.setText("GUARDAR");
-        GuardarjButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                GuardarjButton1MouseClicked(evt);
-            }
-        });
-        GuardarjButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarjButton1ActionPerformed(evt);
-            }
-        });
-
-        Nombre.setEditable(false);
-
-        Sexo.setEditable(false);
-
-        EstadoCivil.setEditable(false);
-
-        PaisActual.setEditable(false);
+        jLabel16.setText("CONTRASEÑA:");
 
         Millas.setText("-");
 
@@ -147,9 +119,6 @@ public class EditarPasaporte extends javax.swing.JFrame {
 
         jLabel14.setText("MILLAS RECORRIDAS:");
 
-        Nacionalidad.setEditable(false);
-
-        Contraseña.setEditable(false);
         Contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ContraseñaActionPerformed(evt);
@@ -160,7 +129,9 @@ public class EditarPasaporte extends javax.swing.JFrame {
 
         jLabel6.setText("NACIONALIDAD:");
 
-        NOPasaprte.setEditable(false);
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel22.setText("Añadir De Pasaporte");
+
         try {
             NOPasaprte.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-####")));
         } catch (java.text.ParseException ex) {
@@ -172,134 +143,117 @@ public class EditarPasaporte extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("ESTADO CIVIL:");
-
-        jLabel16.setText("CONTRASEÑA:");
-
-        Apellido1.setEditable(false);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(GuardarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Nacionalidad)
-                                .addComponent(Nombre)
-                                .addComponent(Sexo)
-                                .addComponent(PaisActual)
-                                .addComponent(Millas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FechaVencimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(FechaEmisión, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(NOPasaprte)
-                                .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(EstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Apellido1))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel22)))
-                .addGap(61, 61, 61))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel22)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(NOPasaprte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(Nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(EstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(Apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(Sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(FechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(FechaEmisión, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel13)
-                    .addComponent(PaisActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(Millas))
-                .addGap(18, 18, 18)
-                .addComponent(GuardarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
-        );
+        GuardarjButton1.setText("GUARDAR");
+        GuardarjButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GuardarjButton1MouseClicked(evt);
+            }
+        });
+        GuardarjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarjButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(GuardarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Nacionalidad)
+                        .addComponent(Nombre)
+                        .addComponent(Sexo)
+                        .addComponent(PaisActual)
+                        .addComponent(Millas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FechaVencimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FechaEmisión, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(NOPasaprte)
+                        .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(EstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Apellido1)))
+                .addGap(61, 61, 61))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabel22)
+                .addGap(97, 97, 97))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(NOPasaprte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(Nacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(EstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(Apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(Sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(FechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addComponent(FechaEmisión, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13)
+                    .addComponent(PaisActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(Millas))
+                .addGap(18, 18, 18)
+                .addComponent(GuardarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void GuardarjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarjButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GuardarjButton1ActionPerformed
-
-    private void GuardarjButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarjButton1MouseClicked
-        // TODO add your handling code here:
-        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),darFormatoAFecha(FechaNacimiento.getDateFormatString()),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(),Sexo.getText(),darFormatoAFecha(FechaVencimiento.getDateFormatString()),darFormatoAFecha(FechaEmisión.getDateFormatString()),PaisActual.getText(),Integer.valueOf(Millas.getText()));
-        this.dispose();
-    }//GEN-LAST:event_GuardarjButton1MouseClicked
 
     private void ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaActionPerformed
         // TODO add your handling code here:
@@ -309,21 +263,36 @@ public class EditarPasaporte extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NOPasaprteActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    
-    public static LocalDate darFormatoAFecha(String fechaCadena){
+    private void GuardarjButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarjButton1MouseClicked
+        // TODO add your handling code here:
+                System.out.println("hola amigos");
+        /*int peliYear = 0;
+        try{
+            peliYear = Integer.valueOf(year.toString().trim());
+
+        }
+        catch(Exception e){
+            //popup debe de ingresar un número
+            System.out.println(year.getText());
+            return;
+        }*/
+        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),darFormatoAFecha(FechaNacimiento.getDateFormatString()),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(), Sexo.getText(), darFormatoAFecha(FechaVencimiento.getDateFormatString()),darFormatoAFecha(FechaEmisión.getDateFormatString()),PaisActual.getText(),Integer.valueOf(Millas.getText()));
+        this.dispose();
+    }//GEN-LAST:event_GuardarjButton1MouseClicked
+
+    private void GuardarjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarjButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GuardarjButton1ActionPerformed
+public static LocalDate darFormatoAFecha(String fechaCadena){
         String[] fechaDividida=fechaCadena.split("/");
         int dia = Integer.valueOf(fechaDividida[0]);
         int mes = Integer.valueOf(fechaDividida[1]);
         int anio = Integer.valueOf(fechaDividida[2]);
         return LocalDate.of(anio, mes, dia);
     }
-    public void ObtenerFechaEmsión(PASAPORTE pasaporte){
-        pasaporte.getFECHA_EMISION();
-        System.out.println(pasaporte.getFECHA_EMISION());
-    }
+    /**
+     * @param args the command line arguments
+     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Apellido1;
@@ -352,6 +321,5 @@ public class EditarPasaporte extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
