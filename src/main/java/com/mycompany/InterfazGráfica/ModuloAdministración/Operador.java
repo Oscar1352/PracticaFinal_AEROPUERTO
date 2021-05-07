@@ -5,21 +5,50 @@
  */
 package com.mycompany.InterfazGráfica.ModuloAdministración;
 
+import AñadirObjetos.AñadirVuelos;
+import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.VUELO;
+import java.util.Vector;
 
 /**
  *
  * @author Oscar Luna
  */
 public class Operador extends javax.swing.JFrame {
-
+   //Aeropuerto
+    private Vector listaAeropuertos;
+    private Vector NombreAeropuertos = new Vector();
+    private AEROPUERTO aeropuertoactual;
+    
+    //Aeropuerto
+    public void actualizarAeropuerto(String NOMBRE_AEROPUERTO, String CIUDAD, String PAIS){
+        if (NOMBRE_AEROPUERTO!=null)
+        listaAeropuertos.add(new AEROPUERTO(NOMBRE_AEROPUERTO,CIUDAD,PAIS) {});
+        NombreAeropuertos.add(NOMBRE_AEROPUERTO); 
+    }
+    
+     //AVuelo
+    private Vector listaVuelos = new Vector();
+    private Vector VueloOrigen = new Vector();
+    private Vector VueloDestino = new Vector();
+    private VUELO vueloactual;
+    
+   
+    //Vuelo
+    public void actualizarVuelo(Integer CODIGO_VUELO, Integer CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer PRECIO_BOLETO, String FECHA_SALIDAD){
+        if (CODIGO_VUELO!=0)
+        listaVuelos.add(new VUELO(CODIGO_VUELO,CODIGO_AVION,NOMBRE_AEROPUERTO_ORIGEN,NOMBRE_AEROPUERTO_DESTINO,PRECIO_BOLETO,FECHA_SALIDAD) {});
+        VueloOrigen.add(NOMBRE_AEROPUERTO_ORIGEN);
+        VueloDestino.add(NOMBRE_AEROPUERTO_DESTINO);
+    }
     /**
      * Creates new form Operador
      */
     public Operador() {
         initComponents();
         this.EstadoVuelo.setText(String.valueOf(VUELO.getEstado_de_vuelo()));
+        
     }
 
     /**
@@ -40,6 +69,7 @@ public class Operador extends javax.swing.JFrame {
         EstadoVuelo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         Vuelos = new javax.swing.JComboBox<>();
+        jButton4 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         UsuariojMenu3 = new javax.swing.JMenu();
@@ -51,7 +81,12 @@ public class Operador extends javax.swing.JFrame {
 
         jButton1.setText("CANCELAR");
 
-        jButton2.setText("INICIAR");
+        jButton2.setText("CREAR VUELO");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText("POSPONER VUELO");
 
@@ -59,27 +94,34 @@ public class Operador extends javax.swing.JFrame {
 
         jLabel2.setText("Vuelo:");
 
+        jButton4.setText("INICIAR");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(EstadoVuelo, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                    .addComponent(Vuelos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(EstadoVuelo, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                            .addComponent(Vuelos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -93,12 +135,14 @@ public class Operador extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(EstadoVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Vuelos", jPanel1);
@@ -143,6 +187,11 @@ public class Operador extends javax.swing.JFrame {
         principal.setVisible(true);
     }//GEN-LAST:event_UsuariojMenu3MouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        new AñadirVuelos(null,this);
+    }//GEN-LAST:event_jButton2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -185,6 +234,7 @@ public class Operador extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;

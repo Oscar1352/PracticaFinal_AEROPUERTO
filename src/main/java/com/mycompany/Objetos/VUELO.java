@@ -5,6 +5,7 @@
  */
 package com.mycompany.Objetos;
 import com.mycompany.Enums.ESTADO_DE_VUELO;
+import java.util.Objects;
 
 /**
  *
@@ -13,16 +14,16 @@ import com.mycompany.Enums.ESTADO_DE_VUELO;
 public class VUELO {
     
     //Declaro mis atributos
-    private int CODIGO_VUELO;
-    private int CODIGO_AVION;
+    private Integer CODIGO_VUELO;
+    private Integer CODIGO_AVION;
     private String NOMBRE_AEROPUERTO_ORIGEN;
     private String NOMBRE_AEROPUERTO_DESTINO;
-    private int PRECIO_BOLETO;
-    private int FECHA_SALIDAD;
+    private Integer PRECIO_BOLETO;
+    private String FECHA_SALIDAD;
     private static ESTADO_DE_VUELO estado_de_vuelo= ESTADO_DE_VUELO.EN_ESPERA;
 
     //Declaro mi constructor
-    public VUELO(int CODIGO_VUELO, int CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, int PRECIO_BOLETO, int FECHA_SALIDAD) {
+    public VUELO(Integer CODIGO_VUELO, Integer CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer PRECIO_BOLETO, String FECHA_SALIDAD) {
         this.CODIGO_VUELO = CODIGO_VUELO;
         this.CODIGO_AVION = CODIGO_AVION;
         this.NOMBRE_AEROPUERTO_ORIGEN = NOMBRE_AEROPUERTO_ORIGEN;
@@ -30,22 +31,21 @@ public class VUELO {
         this.PRECIO_BOLETO = PRECIO_BOLETO;
         this.FECHA_SALIDAD = FECHA_SALIDAD;
     }
-
     
-    //Declaro mis getters y setters
-    public int getCODIGO_VUELO() {
+
+    public Integer getCODIGO_VUELO() {
         return CODIGO_VUELO;
     }
 
-    public void setCODIGO_VUELO(int CODIGO_VUELO) {
+    public void setCODIGO_VUELO(Integer CODIGO_VUELO) {
         this.CODIGO_VUELO = CODIGO_VUELO;
     }
 
-    public int getCODIGO_AVION() {
+    public Integer getCODIGO_AVION() {
         return CODIGO_AVION;
     }
 
-    public void setCODIGO_AVION(int CODIGO_AVION) {
+    public void setCODIGO_AVION(Integer CODIGO_AVION) {
         this.CODIGO_AVION = CODIGO_AVION;
     }
 
@@ -65,19 +65,19 @@ public class VUELO {
         this.NOMBRE_AEROPUERTO_DESTINO = NOMBRE_AEROPUERTO_DESTINO;
     }
 
-    public int getPRECIO_BOLETO() {
+    public Integer getPRECIO_BOLETO() {
         return PRECIO_BOLETO;
     }
 
-    public void setPRECIO_BOLETO(int PRECIO_BOLETO) {
+    public void setPRECIO_BOLETO(Integer PRECIO_BOLETO) {
         this.PRECIO_BOLETO = PRECIO_BOLETO;
     }
 
-    public int getFECHA_SALIDAD() {
+    public String getFECHA_SALIDAD() {
         return FECHA_SALIDAD;
     }
 
-    public void setFECHA_SALIDAD(int FECHA_SALIDAD) {
+    public void setFECHA_SALIDAD(String FECHA_SALIDAD) {
         this.FECHA_SALIDAD = FECHA_SALIDAD;
     }
 
@@ -85,8 +85,54 @@ public class VUELO {
         return estado_de_vuelo;
     }
 
-    public static void setEstado_de_vuelo(ESTADO_DE_VUELO estado_de_vuelo) {
+    //Declaro mis getters y setters
+    public static void setEstado_de_vuelo(ESTADO_DE_VUELO estado_de_vuelo) {    
         VUELO.estado_de_vuelo = estado_de_vuelo;
     }
+
+    @Override
+    public String toString() {
+        return "CODIGO_VUELO=" + CODIGO_VUELO + ", CODIGO_AVION=" + CODIGO_AVION + ", NOMBRE_AEROPUERTO_ORIGEN=" + NOMBRE_AEROPUERTO_ORIGEN + ", NOMBRE_AEROPUERTO_DESTINO=" + NOMBRE_AEROPUERTO_DESTINO + ", PRECIO_BOLETO=" + PRECIO_BOLETO + ", FECHA_SALIDAD=" + FECHA_SALIDAD + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final VUELO other = (VUELO) obj;
+        if (this.CODIGO_VUELO != other.CODIGO_VUELO) {
+            return false;
+        }
+        if (this.CODIGO_AVION != other.CODIGO_AVION) {
+            return false;
+        }
+        if (this.PRECIO_BOLETO != other.PRECIO_BOLETO) {
+            return false;
+        }
+        if (!Objects.equals(this.NOMBRE_AEROPUERTO_ORIGEN, other.NOMBRE_AEROPUERTO_ORIGEN)) {
+            return false;
+        }
+        if (!Objects.equals(this.NOMBRE_AEROPUERTO_DESTINO, other.NOMBRE_AEROPUERTO_DESTINO)) {
+            return false;
+        }
+        if (!Objects.equals(this.FECHA_SALIDAD, other.FECHA_SALIDAD)) {
+            return false;
+        }
+        return true;
+    }
+    
     
 }

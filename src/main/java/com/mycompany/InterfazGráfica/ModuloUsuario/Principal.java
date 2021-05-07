@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
  */
 public class Principal extends javax.swing.JFrame implements ActionListener{
     
-    //Prncipal
+    //Principal
     //Pasaporte
     private Vector listaPasaportes = new Vector();
     private PASAPORTE pasaporteActual;
@@ -351,6 +351,9 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BuscarjButton1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BuscarjButton1MouseEntered(evt);
+            }
         });
         BuscarjButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -560,13 +563,17 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        
+        new AñadirPasaporte(null, this);
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        new AñadirPasaporte(null, this);
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void BuscarjButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarjButton1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BuscarjButton1MouseEntered
 
     /**
      * @param args the command line arguments

@@ -24,7 +24,7 @@ public class AñadirPasaporte extends javax.swing.JFrame {
      */
     public AñadirPasaporte(PASAPORTE pasaporte,Principal vent) {
         initComponents();
-          this.pasaporte = pasaporte;
+        this.pasaporte = pasaporte;
         this.vent = vent;
         if (pasaporte!= null){
             //edición 
@@ -95,7 +95,7 @@ public class AñadirPasaporte extends javax.swing.JFrame {
         GuardarjButton1 = new javax.swing.JButton();
         Nombre = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel7.setText("ESTADO CIVIL:");
 
@@ -119,6 +119,7 @@ public class AñadirPasaporte extends javax.swing.JFrame {
 
         jLabel14.setText("MILLAS RECORRIDAS:");
 
+        Contraseña.setEditable(false);
         Contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ContraseñaActionPerformed(evt);

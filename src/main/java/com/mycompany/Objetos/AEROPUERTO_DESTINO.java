@@ -84,5 +84,17 @@ public class AEROPUERTO_DESTINO extends AEROPUERTO{
     protected Object clone() throws CloneNotSupportedException {
         return super.clone(); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void RestaDeAviones(Integer CANTIDAD_DE_AVIONES) {
+        super.RestaDeAviones(CANTIDAD_DE_AVIONES); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void SumadorDeAviones(Integer CANTIDAD_DE_AVIONES) {
+        super.SumadorDeAviones(CANTIDAD_DE_AVIONES); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
 }

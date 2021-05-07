@@ -108,6 +108,14 @@ public abstract class AEROPUERTO {
         return sb.toString();
     }
     
+    public void SumadorDeAviones(Integer CANTIDAD_DE_AVIONES){
+        this.CANTIDAD_DE_AVIONES=CANTIDAD_DE_AVIONES;
+        CANTIDAD_DE_AVIONES=CANTIDAD_DE_AVIONES+1;
+    }
     
+    public void RestaDeAviones(Integer CANTIDAD_DE_AVIONES){
+        this.CANTIDAD_DE_AVIONES=CANTIDAD_DE_AVIONES;
+        CANTIDAD_DE_AVIONES=CANTIDAD_DE_AVIONES-1;
+    }
     
 }
