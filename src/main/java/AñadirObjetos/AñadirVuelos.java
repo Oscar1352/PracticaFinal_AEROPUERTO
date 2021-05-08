@@ -148,7 +148,7 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
 
         jLabel7.setText("Fecha De Salida:");
 
-        PrecioBoleto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        PrecioBoleto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         CodigoVuelo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 

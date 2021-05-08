@@ -7,6 +7,7 @@ package com.mycompany.InterfazGráfica.ModuloAdministración;
 
 import AñadirObjetos.AñadirVuelos;
 import com.mycompany.Abstracts.AEROPUERTO;
+import com.mycompany.Enums.ESTADO_DE_VUELO;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.PASAPORTE;
 import com.mycompany.Objetos.VUELO;
@@ -33,7 +34,7 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JComboBox comboBox = (JComboBox) e.getSource();
         vueloactual = (VUELO) comboBox.getSelectedItem();
-        this.EstadoVuelo.setText(String.valueOf(VUELO.getEstado_de_vuelo()));
+        this.EstadoVuelo.setText(String.valueOf(vueloactual.getEstado_de_vuelo()));
     }
     
      //Vuelo
@@ -83,6 +84,11 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
         setTitle("Area de Operador de Vuelo");
 
         jButton1.setText("CANCELAR");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setText("CREAR VUELO");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -96,6 +102,7 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
         jLabel1.setText("Estado Vuelo:");
 
         EstadoVuelo.setEditable(false);
+        EstadoVuelo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         EstadoVuelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EstadoVueloActionPerformed(evt);
@@ -116,36 +123,41 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
             }
         } );*/
         Vuelos.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
+        Vuelos.setAutoscrolls(true);
 
         jButton4.setText("INICIAR");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                .addContainerGap(18, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(EstadoVuelo, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                            .addComponent(Vuelos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Vuelos, 0, 815, Short.MAX_VALUE)
+                            .addComponent(EstadoVuelo))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(299, 299, 299))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(168, 168, 168))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,6 +231,18 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     private void EstadoVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadoVueloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EstadoVueloActionPerformed
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        VUELO.setEstado_de_vuelo(ESTADO_DE_VUELO.COMPLETADO);
+        EstadoVuelo.setText(String.valueOf(VUELO.getEstado_de_vuelo()));
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        this.vueloactual.setEstado_de_vuelo(ESTADO_DE_VUELO.CANCELADO);
+        this.EstadoVuelo.setText(String.valueOf(vueloactual.getEstado_de_vuelo()));
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments

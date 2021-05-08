@@ -189,12 +189,15 @@ public class ModuloAdministracion extends javax.swing.JFrame {
         if(PuestojComboBox1.getSelectedItem()=="Departamento de Administración" && Usuario.getText().equals("Admin2021") && ContraseñajPasswordField1.getText().equals("12345")){
             Administracion administracion = new Administracion();
             administracion.setVisible(true);
+            this.dispose();
         }else if(PuestojComboBox1.getSelectedItem()=="Gerencia de Aerolínea" && Usuario.getText().equals("Gerencia2021") && ContraseñajPasswordField1.getText().equals("678910")){
             Gerencia gerencia = new Gerencia();
             gerencia.setVisible(true);
+            this.dispose();
         }else if(PuestojComboBox1.getSelectedItem()=="Operador De Vuelos" && Usuario.getText().equals("Operador2021") && ContraseñajPasswordField1.getText().equals("111213")){
             Operador operador = new Operador();
             operador.setVisible(true);
+            this.dispose();
         }else{
             JOptionPane.showMessageDialog(null, "Datos incorrectos, por favor verifiquelos");
             System.out.println(ContraseñajPasswordField1.getText());

@@ -81,15 +81,22 @@ public class VUELO {
         this.FECHA_SALIDA = FECHA_SALIDAD;
     }
 
+    public String getFECHA_SALIDA() {
+        return FECHA_SALIDA;
+    }
+
+    public void setFECHA_SALIDA(String FECHA_SALIDA) {
+        this.FECHA_SALIDA = FECHA_SALIDA;
+    }
+
     public static ESTADO_DE_VUELO getEstado_de_vuelo() {
         return estado_de_vuelo;
     }
 
-    //Declaro mis getters y setters
-    public static void setEstado_de_vuelo(ESTADO_DE_VUELO estado_de_vuelo) {    
+    public static void setEstado_de_vuelo(ESTADO_DE_VUELO estado_de_vuelo) {
         VUELO.estado_de_vuelo = estado_de_vuelo;
     }
-
+    
     @Override
     public String toString() {
         return "CODIGO_VUELO=" + CODIGO_VUELO + ", CODIGO_AVION=" + CODIGO_AVION + ", NOMBRE_AEROPUERTO_ORIGEN=" + NOMBRE_AEROPUERTO_ORIGEN + ", NOMBRE_AEROPUERTO_DESTINO=" + NOMBRE_AEROPUERTO_DESTINO + ", PRECIO_BOLETO=" + PRECIO_BOLETO + ", FECHA_SALIDAD=" + FECHA_SALIDA + '}';
