@@ -17,7 +17,7 @@ public abstract class AEROPUERTO {
     private String NOMBRE_AEROPUERTO;
     private String CIUDAD;
     private String PAIS;
-    private Integer CANTIDAD_DE_AVIONES;
+    private Integer CANTIDAD_DE_AVIONES=1;
 
     //Declaro mi constructor
     public AEROPUERTO(String NOMBRE_AEROPUERTO, String CIUDAD, String PAIS) {

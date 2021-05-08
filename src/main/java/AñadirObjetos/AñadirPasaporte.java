@@ -43,15 +43,12 @@ public class AñadirPasaporte extends javax.swing.JFrame {
         }
         else{
             this.NOPasaprte.setText("");
-            this.FechaNacimiento.setDateFormatString("");
             this.Contraseña.setText("");
             this.Nacionalidad.setText("");
             this.EstadoCivil.setText("");;
             this.Nombre.setText("");
             this.Apellido1.setText("");
             this.Sexo.setText("");
-            this.FechaVencimiento.setDateFormatString("");
-            this.FechaEmisión.setDateFormatString("");
             this.PaisActual.setText("");
             this.Millas.setText("");
             //nuevo

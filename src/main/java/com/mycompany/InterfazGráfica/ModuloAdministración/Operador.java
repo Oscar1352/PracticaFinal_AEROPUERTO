@@ -8,46 +8,49 @@ package com.mycompany.InterfazGráfica.ModuloAdministración;
 import AñadirObjetos.AñadirVuelos;
 import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
+import com.mycompany.Objetos.PASAPORTE;
 import com.mycompany.Objetos.VUELO;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Vector;
+import javax.swing.JComboBox;
 
 /**
  *
  * @author Oscar Luna
  */
-public class Operador extends javax.swing.JFrame {
+public class Operador extends javax.swing.JFrame implements ActionListener {
+    
    //Aeropuerto
     private Vector listaAeropuertos;
     private Vector NombreAeropuertos = new Vector();
+    private VUELO vueloactual;
     private AEROPUERTO aeropuertoactual;
     
-    //Aeropuerto
-    public void actualizarAeropuerto(String NOMBRE_AEROPUERTO, String CIUDAD, String PAIS){
-        if (NOMBRE_AEROPUERTO!=null)
-        listaAeropuertos.add(new AEROPUERTO(NOMBRE_AEROPUERTO,CIUDAD,PAIS) {});
-        NombreAeropuertos.add(NOMBRE_AEROPUERTO); 
+    
+     //Estado Vuelo
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JComboBox comboBox = (JComboBox) e.getSource();
+        vueloactual = (VUELO) comboBox.getSelectedItem();
+        this.EstadoVuelo.setText(String.valueOf(VUELO.getEstado_de_vuelo()));
     }
     
-     //AVuelo
+     //Vuelo
     private Vector listaVuelos = new Vector();
-    private Vector VueloOrigen = new Vector();
-    private Vector VueloDestino = new Vector();
-    private VUELO vueloactual;
+    private Vector VueloPendiente = new Vector();
     
    
     //Vuelo
     public void actualizarVuelo(Integer CODIGO_VUELO, Integer CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer PRECIO_BOLETO, String FECHA_SALIDAD){
         if (CODIGO_VUELO!=0)
         listaVuelos.add(new VUELO(CODIGO_VUELO,CODIGO_AVION,NOMBRE_AEROPUERTO_ORIGEN,NOMBRE_AEROPUERTO_DESTINO,PRECIO_BOLETO,FECHA_SALIDAD) {});
-        VueloOrigen.add(NOMBRE_AEROPUERTO_ORIGEN);
-        VueloDestino.add(NOMBRE_AEROPUERTO_DESTINO);
     }
     /**
      * Creates new form Operador
      */
     public Operador() {
         initComponents();
-        this.EstadoVuelo.setText(String.valueOf(VUELO.getEstado_de_vuelo()));
         
     }
 
@@ -68,7 +71,7 @@ public class Operador extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         EstadoVuelo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        Vuelos = new javax.swing.JComboBox<>();
+        Vuelos = new javax.swing.JComboBox(listaVuelos);
         jButton4 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -92,7 +95,27 @@ public class Operador extends javax.swing.JFrame {
 
         jLabel1.setText("Estado Vuelo:");
 
+        EstadoVuelo.setEditable(false);
+        EstadoVuelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EstadoVueloActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("Vuelo:");
+
+        Vuelos.addActionListener( this );
+        /*comboBoxListaPasaportes.addActionListener( new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                JComboBox comboBox = (JComboBox)e.getSource();
+                Pelicula item = (Pelicula)comboBox.getSelectedItem();
+                System.out.println( item.toString());
+                System.out.println( item.getId());
+            }
+        } );*/
+        Vuelos.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
 
         jButton4.setText("INICIAR");
 
@@ -189,8 +212,13 @@ public class Operador extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
+
         new AñadirVuelos(null,this);
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void EstadoVueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadoVueloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EstadoVueloActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,6 +254,15 @@ public class Operador extends javax.swing.JFrame {
             }
         });
     }
+
+    public Vector getListaVuelos() {
+        return listaVuelos;
+    }
+
+    public void setListaVuelos(Vector listaVuelos) {
+        this.listaVuelos = listaVuelos;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EstadoVuelo;

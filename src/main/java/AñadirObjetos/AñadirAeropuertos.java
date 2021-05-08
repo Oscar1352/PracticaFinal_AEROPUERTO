@@ -19,7 +19,7 @@ public class AñadirAeropuertos extends javax.swing.JFrame {
     private Administracion vent;
     /**
      * Creates new form AñadirAeropuertos
-     */
+     */ 
     public AñadirAeropuertos(AEROPUERTO aeropuerto,Administracion vent) {
         initComponents();
         this.aeropuerto = aeropuerto;
@@ -126,7 +126,7 @@ public class AñadirAeropuertos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarCambiosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardarCambiosMouseClicked
-        System.out.println("hola amigos");
+        
         /*int peliYear = 0;
         try{
             peliYear = Integer.valueOf(year.toString().trim());

@@ -165,6 +165,12 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="EstadoVuelo">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EstadoVueloActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
@@ -178,7 +184,8 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox&lt;&gt;()"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(listaVuelos)"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="Vuelos.addActionListener( this );&#xa;/*comboBoxListaPasaportes.addActionListener( new ActionListener(){&#xa;    @Override&#xa;    public void actionPerformed(ActionEvent e)&#xa;    {&#xa;        JComboBox comboBox = (JComboBox)e.getSource();&#xa;        Pelicula item = (Pelicula)comboBox.getSelectedItem();&#xa;        System.out.println( item.toString());&#xa;        System.out.println( item.getId());&#xa;    }&#xa;} );*/&#xa;Vuelos.putClientProperty(&quot;JComboBox.isTableCellEditor&quot;, Boolean.TRUE);"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>

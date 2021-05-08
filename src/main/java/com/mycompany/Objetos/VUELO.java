@@ -19,17 +19,17 @@ public class VUELO {
     private String NOMBRE_AEROPUERTO_ORIGEN;
     private String NOMBRE_AEROPUERTO_DESTINO;
     private Integer PRECIO_BOLETO;
-    private String FECHA_SALIDAD;
+    private String FECHA_SALIDA;
     private static ESTADO_DE_VUELO estado_de_vuelo= ESTADO_DE_VUELO.EN_ESPERA;
 
     //Declaro mi constructor
-    public VUELO(Integer CODIGO_VUELO, Integer CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer PRECIO_BOLETO, String FECHA_SALIDAD) {
+    public VUELO(Integer CODIGO_VUELO, Integer CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer PRECIO_BOLETO, String FECHA_SALIDA) {
         this.CODIGO_VUELO = CODIGO_VUELO;
         this.CODIGO_AVION = CODIGO_AVION;
         this.NOMBRE_AEROPUERTO_ORIGEN = NOMBRE_AEROPUERTO_ORIGEN;
         this.NOMBRE_AEROPUERTO_DESTINO = NOMBRE_AEROPUERTO_DESTINO;
         this.PRECIO_BOLETO = PRECIO_BOLETO;
-        this.FECHA_SALIDAD = FECHA_SALIDAD;
+        this.FECHA_SALIDA = FECHA_SALIDA;
     }
     
 
@@ -74,11 +74,11 @@ public class VUELO {
     }
 
     public String getFECHA_SALIDAD() {
-        return FECHA_SALIDAD;
+        return FECHA_SALIDA;
     }
 
     public void setFECHA_SALIDAD(String FECHA_SALIDAD) {
-        this.FECHA_SALIDAD = FECHA_SALIDAD;
+        this.FECHA_SALIDA = FECHA_SALIDAD;
     }
 
     public static ESTADO_DE_VUELO getEstado_de_vuelo() {
@@ -92,7 +92,7 @@ public class VUELO {
 
     @Override
     public String toString() {
-        return "CODIGO_VUELO=" + CODIGO_VUELO + ", CODIGO_AVION=" + CODIGO_AVION + ", NOMBRE_AEROPUERTO_ORIGEN=" + NOMBRE_AEROPUERTO_ORIGEN + ", NOMBRE_AEROPUERTO_DESTINO=" + NOMBRE_AEROPUERTO_DESTINO + ", PRECIO_BOLETO=" + PRECIO_BOLETO + ", FECHA_SALIDAD=" + FECHA_SALIDAD + '}';
+        return "CODIGO_VUELO=" + CODIGO_VUELO + ", CODIGO_AVION=" + CODIGO_AVION + ", NOMBRE_AEROPUERTO_ORIGEN=" + NOMBRE_AEROPUERTO_ORIGEN + ", NOMBRE_AEROPUERTO_DESTINO=" + NOMBRE_AEROPUERTO_DESTINO + ", PRECIO_BOLETO=" + PRECIO_BOLETO + ", FECHA_SALIDAD=" + FECHA_SALIDA + '}';
     }
 
     @Override
@@ -128,7 +128,7 @@ public class VUELO {
         if (!Objects.equals(this.NOMBRE_AEROPUERTO_DESTINO, other.NOMBRE_AEROPUERTO_DESTINO)) {
             return false;
         }
-        if (!Objects.equals(this.FECHA_SALIDAD, other.FECHA_SALIDAD)) {
+        if (!Objects.equals(this.FECHA_SALIDA, other.FECHA_SALIDA)) {
             return false;
         }
         return true;
