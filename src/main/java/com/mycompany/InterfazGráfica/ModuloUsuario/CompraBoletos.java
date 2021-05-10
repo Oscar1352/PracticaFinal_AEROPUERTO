@@ -5,6 +5,7 @@
  */
 package com.mycompany.InterfazGráfica.ModuloUsuario;
 
+import AñadirObjetos.AñadirAerolinea;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Operador;
 import com.mycompany.Objetos.VUELO;
@@ -18,6 +19,7 @@ import javax.swing.JOptionPane;
 public class CompraBoletos extends javax.swing.JFrame {
 private Operador op;
 private Administracion admin;
+private AñadirAerolinea añadirAerolinea;
 private Vector VuelosDisponibles;
     /**
      * Creates new form CompraBoletos
@@ -43,10 +45,10 @@ private Vector VuelosDisponibles;
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        AerolíneajComboBox2 = new javax.swing.JComboBox<>(admin.getListaAerolineas());
+        AerolíneajComboBox2 = new javax.swing.JComboBox<>(AñadirAerolinea.getListaAerolineas());
         jLabel7 = new javax.swing.JLabel();
         CompraBoletosjFormattedTextField1 = new javax.swing.JFormattedTextField();
-        VuelosDisponiblesCombobox = new javax.swing.JComboBox<>(VuelosDisponibles);
+        VuelosDisponiblesCombobox = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         BuscarVuelosjButton2 = new javax.swing.JButton();
         CiudadDeOrigen = new javax.swing.JTextField();
@@ -204,6 +206,7 @@ private Vector VuelosDisponibles;
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

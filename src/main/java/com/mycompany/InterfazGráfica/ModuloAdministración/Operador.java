@@ -49,9 +49,6 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     public void actualizarVuelo(Integer CODIGO_VUELO, Integer CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer PRECIO_BOLETO, String FECHA_SALIDAD){
         if (CODIGO_VUELO!=0)
         listaVuelos.add(new VUELO(CODIGO_VUELO,CODIGO_AVION,NOMBRE_AEROPUERTO_ORIGEN,NOMBRE_AEROPUERTO_DESTINO,PRECIO_BOLETO,FECHA_SALIDAD) {});
-        CiudadAeropuertoOrigen.add(NOMBRE_AEROPUERTO_ORIGEN);
-        CiudadAeropuertoDestino.add(NOMBRE_AEROPUERTO_DESTINO);
-        FechaVuelo.add(FECHA_SALIDAD);
     }
     /**
      * Creates new form Operador

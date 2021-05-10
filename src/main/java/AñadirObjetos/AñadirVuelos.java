@@ -33,10 +33,11 @@ import javax.swing.JOptionPane;
  */
 public class AñadirVuelos extends javax.swing.JFrame implements ActionListener {
     //Aeropuerto
-    Vector listaAeropuertos;
+    private static Vector listaAeropuertos;
     private Vector NombreAeropuertos;
     private AEROPUERTO AeropuertoOrigen;
     private AEROPUERTO AeropuertoDestino;
+    private Administracion admin;
     private VUELO vuelo;
     private Operador vent;
     
@@ -98,12 +99,12 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
 
         jLabel15 = new javax.swing.JLabel();
         FechaSalida = new com.toedter.calendar.JDateChooser();
-        AeropuertosOrigenCombobox = new javax.swing.JComboBox(Administracion.getListaAeropuertos());
+        AeropuertosOrigenCombobox = new javax.swing.JComboBox(admin.getListaAeropuertos());
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         CrearVuelo = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        AeropuertosDestinoCombobox = new javax.swing.JComboBox(Administracion.getListaAeropuertos());
+        AeropuertosDestinoCombobox = new javax.swing.JComboBox(admin.getListaAeropuertos());
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -245,9 +246,8 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
              vent.actualizarVuelo(Integer.valueOf(CodigoVuelo.getText()),Integer.valueOf(CodigoAvion.getText()),AeropuertoOrigen.getNOMBRE_AEROPUERTO(),AeropuertoDestino.getNOMBRE_AEROPUERTO(),Integer.valueOf(PrecioBoleto.getText()),"05/03/2020");
             System.out.println(vent.getListaVuelos());
              JOptionPane.showMessageDialog(null, "Vuelo Planificado con éxito");
-            
-       
-       }this.dispose();
+             this.dispose();
+       }
     }//GEN-LAST:event_CrearVueloMouseClicked
 
     

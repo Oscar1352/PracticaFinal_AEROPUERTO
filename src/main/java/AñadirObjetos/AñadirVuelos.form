@@ -129,7 +129,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(Administracion.getListaAeropuertos())"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(admin.getListaAeropuertos())"/>
         <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="AeropuertosOrigenCombobox.addActionListener( this );&#xa;/*comboBoxListaPasaportes.addActionListener( new ActionListener(){&#xa;    @Override&#xa;    public void actionPerformed(ActionEvent e)&#xa;    {&#xa;        JComboBox comboBox = (JComboBox)e.getSource();&#xa;        Pelicula item = (Pelicula)comboBox.getSelectedItem();&#xa;        System.out.println( item.toString());&#xa;        System.out.println( item.getId());&#xa;    }&#xa;} );*/&#xa;AeropuertosOrigenCombobox.putClientProperty(&quot;JComboBox.isTableCellEditor&quot;, Boolean.TRUE);"/>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
@@ -167,7 +167,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(Administracion.getListaAeropuertos())"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(admin.getListaAeropuertos())"/>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
