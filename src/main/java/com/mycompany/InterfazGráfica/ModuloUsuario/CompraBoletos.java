@@ -24,6 +24,7 @@ private Vector VuelosDisponibles;
     /**
      * Creates new form CompraBoletos
      */
+
     public CompraBoletos() {
         initComponents();
     }
@@ -55,7 +56,7 @@ private Vector VuelosDisponibles;
         CiudadDestino = new javax.swing.JTextField();
         ComprarjButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("COMPRA DE BOLETOS");
@@ -194,12 +195,6 @@ private Vector VuelosDisponibles;
 
     private void BuscarVuelosjButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarVuelosjButton2MouseClicked
         // TODO add your handling code here:
-        if(CiudadDeOrigen.equals(op.getCiudadAeropuertoOrigen()) && CiudadDestino.equals(op.getCiudadAeropuertoDestino()) && jDateChooser1.getDateFormatString().equals(op.getFechaVuelo())){
-            VuelosDisponibles.add(CiudadDeOrigen);
-        }else{
-            JOptionPane.showMessageDialog(null, "No hay vuelos disponiSbles");
-            VuelosDisponiblesCombobox.setSelectedItem("");
-        }
     }//GEN-LAST:event_BuscarVuelosjButton2MouseClicked
 
     /**
