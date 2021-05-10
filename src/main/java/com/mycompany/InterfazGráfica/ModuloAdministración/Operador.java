@@ -24,6 +24,9 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     
    //Aeropuerto
     private Vector listaAeropuertos;
+    private Vector CiudadAeropuertoOrigen;
+    private Vector CiudadAeropuertoDestino;
+    private Vector FechaVuelo;
     private Vector NombreAeropuertos = new Vector();
     private VUELO vueloactual;
     private AEROPUERTO aeropuertoactual;
@@ -46,6 +49,9 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     public void actualizarVuelo(Integer CODIGO_VUELO, Integer CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer PRECIO_BOLETO, String FECHA_SALIDAD){
         if (CODIGO_VUELO!=0)
         listaVuelos.add(new VUELO(CODIGO_VUELO,CODIGO_AVION,NOMBRE_AEROPUERTO_ORIGEN,NOMBRE_AEROPUERTO_DESTINO,PRECIO_BOLETO,FECHA_SALIDAD) {});
+        CiudadAeropuertoOrigen.add(NOMBRE_AEROPUERTO_ORIGEN);
+        CiudadAeropuertoDestino.add(NOMBRE_AEROPUERTO_DESTINO);
+        FechaVuelo.add(FECHA_SALIDAD);
     }
     /**
      * Creates new form Operador
@@ -286,6 +292,32 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     public void setListaVuelos(Vector listaVuelos) {
         this.listaVuelos = listaVuelos;
     }
+
+    public Vector getCiudadAeropuertoOrigen() {
+        return CiudadAeropuertoOrigen;
+    }
+
+    public void setCiudadAeropuertoOrigen(Vector CiudadAeropuertoOrigen) {
+        this.CiudadAeropuertoOrigen = CiudadAeropuertoOrigen;
+    }
+
+    public Vector getCiudadAeropuertoDestino() {
+        return CiudadAeropuertoDestino;
+    }
+
+    public void setCiudadAeropuertoDestino(Vector CiudadAeropuertoDestino) {
+        this.CiudadAeropuertoDestino = CiudadAeropuertoDestino;
+    }
+
+    public Vector getFechaVuelo() {
+        return FechaVuelo;
+    }
+
+    public void setFechaVuelo(Vector FechaVuelo) {
+        this.FechaVuelo = FechaVuelo;
+    }
+    
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

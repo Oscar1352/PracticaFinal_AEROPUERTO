@@ -7,6 +7,7 @@ package AñadirObjetos;
 
 import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
+import javax.swing.JTextField;
 
 /**
  *
@@ -145,9 +146,18 @@ public class AñadirAeropuertos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_guardarCambiosActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
+
+    public JTextField getPais() {
+        return pais;
+    }
+
+    public void setPais(JTextField pais) {
+        this.pais = pais;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ciudad;

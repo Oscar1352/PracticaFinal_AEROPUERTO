@@ -250,6 +250,8 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
        }this.dispose();
     }//GEN-LAST:event_CrearVueloMouseClicked
 
+    
+    
     public static LocalDate darFormatoAFecha(String fechaCadena){
         String[] fechaDividida=fechaCadena.split("/");
         int dia = Integer.valueOf(fechaDividida[0]);

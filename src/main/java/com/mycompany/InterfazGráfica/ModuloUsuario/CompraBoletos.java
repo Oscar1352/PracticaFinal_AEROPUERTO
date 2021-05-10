@@ -5,12 +5,20 @@
  */
 package com.mycompany.InterfazGráfica.ModuloUsuario;
 
+import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
+import com.mycompany.InterfazGráfica.ModuloAdministración.Operador;
+import com.mycompany.Objetos.VUELO;
+import java.util.Vector;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Oscar Luna
  */
 public class CompraBoletos extends javax.swing.JFrame {
-
+private Operador op;
+private Administracion admin;
+private Vector VuelosDisponibles;
     /**
      * Creates new form CompraBoletos
      */
@@ -30,19 +38,19 @@ public class CompraBoletos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        OrigenjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        DestinojComboBox2 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        AerolíneajComboBox2 = new javax.swing.JComboBox<>();
+        AerolíneajComboBox2 = new javax.swing.JComboBox<>(admin.getListaAerolineas());
         jLabel7 = new javax.swing.JLabel();
         CompraBoletosjFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        VuelosDisponiblesCombobox = new javax.swing.JComboBox<>(VuelosDisponibles);
         jLabel8 = new javax.swing.JLabel();
         BuscarVuelosjButton2 = new javax.swing.JButton();
+        CiudadDeOrigen = new javax.swing.JTextField();
+        CiudadDestino = new javax.swing.JTextField();
         ComprarjButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,13 +71,18 @@ public class CompraBoletos extends javax.swing.JFrame {
 
         jLabel7.setText("Aerolínea");
 
-        CompraBoletosjFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        CompraBoletosjFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        jComboBox1.setAutoscrolls(true);
+        VuelosDisponiblesCombobox.setAutoscrolls(true);
 
         jLabel8.setText("VUELOS DISPONIBLES");
 
         BuscarVuelosjButton2.setText("BUSCAR VUELOS");
+        BuscarVuelosjButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BuscarVuelosjButton2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -97,15 +110,15 @@ public class CompraBoletos extends javax.swing.JFrame {
                                     .addComponent(jLabel6))
                                 .addGap(18, 18, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(OrigenjComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(DestinojComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(AerolíneajComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                                    .addComponent(CompraBoletosjFormattedTextField1)))
+                                    .addComponent(CompraBoletosjFormattedTextField1)
+                                    .addComponent(CiudadDeOrigen)
+                                    .addComponent(CiudadDestino)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(VuelosDisponiblesCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(70, 70, 70))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -118,35 +131,39 @@ public class CompraBoletos extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(OrigenjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
+                        .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(DestinojComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2))
-                    .addComponent(CompraBoletosjFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(CiudadDeOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CiudadDestino, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CompraBoletosjFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AerolíneajComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(BuscarVuelosjButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VuelosDisponiblesCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addContainerGap())
+                .addGap(29, 29, 29))
         );
 
         ComprarjButton1.setText("COMPRAR");
@@ -167,11 +184,21 @@ public class CompraBoletos extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ComprarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 16, Short.MAX_VALUE))
+                .addGap(0, 34, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BuscarVuelosjButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarVuelosjButton2MouseClicked
+        // TODO add your handling code here:
+        if(CiudadDeOrigen.equals(op.getCiudadAeropuertoOrigen()) && CiudadDestino.equals(op.getCiudadAeropuertoDestino()) && jDateChooser1.getDateFormatString().equals(op.getFechaVuelo())){
+            VuelosDisponibles.add(CiudadDeOrigen);
+        }else{
+            JOptionPane.showMessageDialog(null, "No hay vuelos disponiSbles");
+            VuelosDisponiblesCombobox.setSelectedItem("");
+        }
+    }//GEN-LAST:event_BuscarVuelosjButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -211,11 +238,11 @@ public class CompraBoletos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> AerolíneajComboBox2;
     private javax.swing.JButton BuscarVuelosjButton2;
+    private javax.swing.JTextField CiudadDeOrigen;
+    private javax.swing.JTextField CiudadDestino;
     private javax.swing.JFormattedTextField CompraBoletosjFormattedTextField1;
     private javax.swing.JButton ComprarjButton1;
-    private javax.swing.JComboBox<String> DestinojComboBox2;
-    private javax.swing.JComboBox<String> OrigenjComboBox1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> VuelosDisponiblesCombobox;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
