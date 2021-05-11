@@ -10,6 +10,7 @@ package com.mycompany.InterfazGráfica.ModuloAdministración;
 import AñadirObjetos.AñadirAerolinea;
 import AñadirObjetos.AñadirAeropuertos;
 import EscritorBinario.BinariosAeropuertos;
+import ManejadoresDeDatos.ImportExportAerolinea;
 import ManejadoresDeDatos.ImportExportAeropuerto;
 import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
@@ -40,7 +41,7 @@ import javax.swing.JTextArea;
  */
 public class Administracion extends javax.swing.JFrame implements ActionListener {
     private BinariosAeropuertos binariosAeropuertos;
-    private ImportExportAeropuerto importExportAeropuerto;
+    private ImportExportAeropuerto importExportAeropuerto    ;
     private AñadirAerolinea añadirAerolinea;
     
 //Aeropuerto
@@ -79,13 +80,6 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     //Imprimir Aeropuertos
     public void ImprimirAeropuertos(String NOMBRE_AEROPUERTO){
         NombreAeropuertos.add(NOMBRE_AEROPUERTO);
-    }
-    
-    //Aerolinea
-    public void actualizarAerolinea(String AEROPUERTO, String NOMBRE_AEROLINEA){
-        if (AEROPUERTO!=null)
-        listaAeropuertos.add(new AEROLINEA(AEROPUERTO,NOMBRE_AEROLINEA) {});
-        
     }
     
     /**
@@ -178,7 +172,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
 
         jLabel2.setText("Aerolineas Disponibles:");
 
-        CrearVuelo.setText("CREAR AEROLÍNEA");
+        CrearVuelo.setText("CREAR O CARGAR AEROLÍNEA");
         CrearVuelo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CrearVueloMouseClicked(evt);
@@ -193,11 +187,11 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AeropuertosCombobox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(396, Short.MAX_VALUE)
-                .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(303, 303, 303))
+                .addComponent(AeropuertosCombobox1, 0, 702, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(334, 334, 334)
+                .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,9 +200,9 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(AeropuertosCombobox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
                 .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("AEROLINEA", jPanel2);

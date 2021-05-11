@@ -5,6 +5,7 @@
  */
 package ManejadoresDeDatos;
 
+import AñadirObjetos.AñadirAerolinea;
 import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
@@ -26,14 +27,15 @@ import javax.swing.JTextArea;
  *
  * @author Oscar
  */
-public class ImportExportAeropuerto extends javax.swing.JFrame {
+public class ImportExportAerolinea extends javax.swing.JFrame {
 
-    private Administracion vent;
+    private AñadirAerolinea vent;
+    
 
     /**
      * Creates new form ImportExport
      */
-    public ImportExportAeropuerto(Administracion vent) {
+    public ImportExportAerolinea(AñadirAerolinea vent) {
 
         this.vent = vent;
         initComponents();
@@ -113,7 +115,7 @@ public class ImportExportAeropuerto extends javax.swing.JFrame {
 
     private void buttonArchivoEntradaCargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonArchivoEntradaCargarMouseClicked
         // TODO add your handling code here:-
-        AEROPUERTO aeropuertoActual=null;
+        AEROLINEA aerolineaactual=null;
         JFileChooser fileChooser = new JFileChooser("Seleccione archivo de texto");
         fileChooser.showOpenDialog(null);
         System.out.println(fileChooser.getSelectedFile().getPath());
@@ -133,8 +135,8 @@ public class ImportExportAeropuerto extends javax.swing.JFrame {
                 String[] parte2 = partes[1].split("\\)");
                 String[] data = parte2[0].split(",");
 
-                if ((partes[0].equalsIgnoreCase("Aeropuerto")) && (data.length == 3)) {
-                    vent.actualizarAeropuerto(data[0],data[1],data[2]);
+                if ((partes[0].equalsIgnoreCase("Aerolinea")) && (data.length == 2)) {
+                    vent.actualizarAerolinea(data[0],data[1]);
                 } else {
                     System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
                 }
