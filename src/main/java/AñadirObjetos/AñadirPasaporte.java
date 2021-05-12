@@ -277,7 +277,6 @@ public class AñadirPasaporte extends javax.swing.JFrame {
             System.out.println(year.getText());
             return;
         }*/
-        if(NOPasaprte!=null && Nacionalidad!=null && EstadoCivil!=null && Nombre!=null && Apellido1!=null && Sexo!=null && PaisActual!=null){
              try {
 Date date = FechaNacimiento.getDate();
 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -288,17 +287,13 @@ Date date2 = FechaEmisión.getDate();
 SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
 
 vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),String.valueOf(sdf.format(date)),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(), Sexo.getText(),String.valueOf(sdf1.format(date1)),String.valueOf(sdf2.format(date2)),PaisActual.getText());
-
+this.dispose();
 
 } catch (Exception e) {
 JOptionPane.showMessageDialog(null, "Al menos elija FECHAS VALIDAS ", "Error..!!", JOptionPane.ERROR_MESSAGE);
 
 }
-        this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(null, "Al menos  INFORMACIÓN VALIDA ", "Error..!!", JOptionPane.ERROR_MESSAGE);
-
-        }
+        
        
     }//GEN-LAST:event_GuardarjButton1MouseClicked
 

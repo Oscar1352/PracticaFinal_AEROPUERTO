@@ -35,6 +35,10 @@ public class AEROLINEA {
         this.NOMBRE_AEROLINEA = NOMBRE_AEROLINEA;
     }
 
+    public String getNOMBRE_AEROLINEA() {
+        return NOMBRE_AEROLINEA;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;

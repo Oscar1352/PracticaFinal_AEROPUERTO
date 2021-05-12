@@ -186,14 +186,14 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
                                 .addGap(58, 58, 58)
                                 .addComponent(jLabel2)
                                 .addGap(50, 50, 50)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(AeropuertosOrigenCombobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AeropuertosDestinoCombobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(FechaSalida, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(FechaSalida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(PrecioBoleto)
-                            .addComponent(CodigoVuelo)
-                            .addComponent(CodigoAvion))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                            .addComponent(CodigoVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CodigoAvion)
+                            .addComponent(AeropuertosOrigenCombobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(216, 216, 216))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,11 +242,19 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
         if(AeropuertoOrigen.equals(AeropuertoDestino)){
             JOptionPane.showMessageDialog(null, "El vuelo no se puede relizar Origen y Destino Iguales");
         }else{
-        //Añadir
-             vent.actualizarVuelo(Integer.valueOf(CodigoVuelo.getText()),Integer.valueOf(CodigoAvion.getText()),AeropuertoOrigen.getNOMBRE_AEROPUERTO(),AeropuertoDestino.getNOMBRE_AEROPUERTO(),Integer.valueOf(PrecioBoleto.getText()),"05/03/2020");
-            System.out.println(vent.getListaVuelos());
-             JOptionPane.showMessageDialog(null, "Vuelo Planificado con éxito");
-             this.dispose();
+        //Añadir          }
+        try {
+            
+Date date = FechaSalida.getDate();
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+vent.actualizarVuelo(Integer.valueOf(CodigoVuelo.getText()),Integer.valueOf(CodigoAvion.getText()),AeropuertoOrigen.getNOMBRE_AEROPUERTO(),AeropuertoDestino.getNOMBRE_AEROPUERTO(),Integer.valueOf(PrecioBoleto.getText()),String.valueOf(sdf.format(date)));
+JOptionPane.showMessageDialog(null, "Vuelo Planificado con éxito");
+this.dispose();
+
+} catch (Exception e) {
+JOptionPane.showMessageDialog(null, "Al menos elija FECHAS VALIDAS ", "Error..!!", JOptionPane.ERROR_MESSAGE);
+
+}
        }
     }//GEN-LAST:event_CrearVueloMouseClicked
 

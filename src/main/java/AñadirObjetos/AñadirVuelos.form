@@ -58,17 +58,17 @@
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="AeropuertosOrigenCombobox" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="AeropuertosDestinoCombobox" alignment="0" max="32767" attributes="0"/>
-                          <Component id="FechaSalida" alignment="0" pref="201" max="32767" attributes="0"/>
+                          <Component id="FechaSalida" alignment="0" max="32767" attributes="0"/>
                           <Component id="PrecioBoleto" max="32767" attributes="0"/>
-                          <Component id="CodigoVuelo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="CodigoVuelo" min="-2" pref="312" max="-2" attributes="0"/>
                           <Component id="CodigoAvion" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AeropuertosOrigenCombobox" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
