@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author Oscar Luna
  */
-public class AVIONES {
+public class AVION {
      //Declaro mis atributos
     private String NOMBRE_AEROLINEA;
     private String NOMBRE_AEROPUERTO_ACTUAL;
@@ -22,7 +22,7 @@ public class AVIONES {
 
     //Declaro mi constructor
 
-    public AVIONES(String NOMBRE_AEROLINEA, String NOMBRE_AEROPUERTO_ACTUAL, Integer CODIGO_AVION, Integer CANTIDAD_PASAJEROS, Integer CAPACIADAD_GASOLINA, Integer CONSUMO_POR_MILLA) {
+    public AVION(String NOMBRE_AEROLINEA, String NOMBRE_AEROPUERTO_ACTUAL, Integer CODIGO_AVION, Integer CANTIDAD_PASAJEROS, Integer CAPACIADAD_GASOLINA, Integer CONSUMO_POR_MILLA) {
         this.NOMBRE_AEROLINEA = NOMBRE_AEROLINEA;
         this.NOMBRE_AEROPUERTO_ACTUAL = NOMBRE_AEROPUERTO_ACTUAL;
         this.CODIGO_AVION = CODIGO_AVION;
@@ -111,7 +111,7 @@ public class AVIONES {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final AVIONES other = (AVIONES) obj;
+        final AVION other = (AVION) obj;
         if (!Objects.equals(this.NOMBRE_AEROLINEA, other.NOMBRE_AEROLINEA)) {
             return false;
         }

@@ -9,6 +9,7 @@ import ManejadoresDeDatos.ImportExportAerolinea;
 import ManejadoresDeDatos.ImportExportAviones;
 import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
+import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.AEROLINEA;
 import java.util.Vector;
 import javax.swing.JOptionPane;
@@ -26,6 +27,7 @@ public class AñadirAviones extends javax.swing.JFrame {
     private AEROPUERTO aeropuertoelegido;
     private Administracion admin;
     private AñadirAerolinea añadirAerolinea;
+    private Principal principal;
     
     //Aerolinea
     public void actualizarAerolinea(String AEROPUERTO, String NOMBRE_AEROLINEA){
@@ -145,8 +147,7 @@ public class AñadirAviones extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(23, 23, 23)
-                                        .addComponent(jLabel3)
-                                        .addGap(8, 8, 8))
+                                        .addComponent(jLabel3))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel5)
                                         .addComponent(jLabel6)))
@@ -210,7 +211,7 @@ public class AñadirAviones extends javax.swing.JFrame {
                 .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

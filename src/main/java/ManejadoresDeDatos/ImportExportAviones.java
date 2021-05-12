@@ -10,7 +10,7 @@ import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.AEROLINEA;
-import com.mycompany.Objetos.AVIONES;
+import com.mycompany.Objetos.AVION;
 import com.mycompany.Objetos.PASAPORTE;
 import data.ManejoArchivos;
 import java.io.BufferedReader;
@@ -116,7 +116,7 @@ public class ImportExportAviones extends javax.swing.JFrame {
 
     private void buttonArchivoEntradaCargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonArchivoEntradaCargarMouseClicked
         // TODO add your handling code here:-
-        AVIONES avionesactuales=null;
+        AVION avionesactuales=null;
         JFileChooser fileChooser = new JFileChooser("Seleccione archivo de texto");
         fileChooser.showOpenDialog(null);
         System.out.println(fileChooser.getSelectedFile().getPath());

@@ -17,7 +17,7 @@ import ManejadoresDeDatos.ImportExportAeropuerto;
 import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.AEROLINEA;
-import com.mycompany.Objetos.AVIONES;
+import com.mycompany.Objetos.AVION;
 import com.mycompany.Objetos.PASAPORTE;
 import com.mycompany.Objetos.TARJETA;
 import com.mycompany.Objetos.VUELO;
@@ -56,7 +56,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     
     //Aviones
     private static Vector listaAviones = new Vector();
-    private AVIONES avionactual;
+    private AVION avionactual;
     
     //Aerolinea
     private Vector listaAerolineas = new Vector();
@@ -76,7 +76,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     //Aviones
     public static void actualizarAvion(String NOMBRE_AEROLINEA, String NOMBRE_AEROPUERTO_ACTUAL, Integer CODIGO_AVION, Integer CANTIDAD_PASAJEROS, Integer CAPACIADAD_GASOLINA, Integer CONSUMO_POR_MILLA){
         if (NOMBRE_AEROLINEA!=null)
-        listaAviones.add(new AVIONES(NOMBRE_AEROLINEA,NOMBRE_AEROPUERTO_ACTUAL,CODIGO_AVION,CANTIDAD_PASAJEROS,CAPACIADAD_GASOLINA,CONSUMO_POR_MILLA) {});
+        listaAviones.add(new AVION(NOMBRE_AEROLINEA,NOMBRE_AEROPUERTO_ACTUAL,CODIGO_AVION,CANTIDAD_PASAJEROS,CAPACIADAD_GASOLINA,CONSUMO_POR_MILLA) {});
     }
     
     
@@ -84,7 +84,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) {
         JComboBox comboBox = (JComboBox) e.getSource();
-        avionactual = (AVIONES) comboBox.getSelectedItem();
+        avionactual = (AVION) comboBox.getSelectedItem();
         System.out.println(aeropuertoactual.toString());
         System.out.println(aeropuertoactual.getNOMBRE_AEROPUERTO());
     }
@@ -92,7 +92,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     
     public void actionPerformeda(ActionEvent ae) {
         JComboBox comboBox = (JComboBox) ae.getSource();
-        avionactual = (AVIONES) comboBox.getSelectedItem();
+        avionactual = (AVION) comboBox.getSelectedItem();
     }
     
     //Imprimir Aeropuertos

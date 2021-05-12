@@ -10,7 +10,7 @@ import ManejadoresDeDatos.ImportExportAviones;
 import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
 import com.mycompany.Objetos.AEROLINEA;
-import com.mycompany.Objetos.AVIONES;
+import com.mycompany.Objetos.AVION;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 
@@ -37,7 +37,7 @@ public class EditarAviones extends javax.swing.JFrame {
     /**
      * Creates new form AñadirAerolinea
      */
-    public EditarAviones(AVIONES aviones, Administracion vent) {
+    public EditarAviones(AVION aviones, Administracion vent) {
         initComponents();
         
                 if (aviones!= null){
