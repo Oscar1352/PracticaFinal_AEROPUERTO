@@ -9,7 +9,10 @@ import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.PASAPORTE;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,7 +32,7 @@ public class AñadirPasaporte extends javax.swing.JFrame {
         if (pasaporte!= null){
             //edición 
             this.NOPasaprte.setText(String.valueOf(pasaporte.getNO_PASAPORTE()));
-            this.FechaNacimiento.setDateFormatString(pasaporte.getFECHA_NACIMIENTO()+"");
+            this.FechaNacimiento.setDateFormatString("dd/MM/yyyy");
             this.Contraseña.setText(pasaporte.getCONTRASEÑA());
             this.Nacionalidad.setText(pasaporte.getNACIONALIDAD());
             this.EstadoCivil.setText(pasaporte.getESTADO_CIVIL());
@@ -45,7 +48,7 @@ public class AñadirPasaporte extends javax.swing.JFrame {
             this.NOPasaprte.setText("");
             this.Contraseña.setText("");
             this.Nacionalidad.setText("");
-            this.EstadoCivil.setText("");;
+            this.EstadoCivil.setText("");
             this.Nombre.setText("");
             this.Apellido1.setText("");
             this.Sexo.setText("");
@@ -131,7 +134,7 @@ public class AñadirPasaporte extends javax.swing.JFrame {
         jLabel22.setText("Añadir De Pasaporte");
 
         try {
-            NOPasaprte.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-####")));
+            NOPasaprte.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -274,8 +277,29 @@ public class AñadirPasaporte extends javax.swing.JFrame {
             System.out.println(year.getText());
             return;
         }*/
-        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),FechaNacimiento.getDateFormatString(),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(), Sexo.getText(), FechaVencimiento.getDateFormatString(),FechaEmisión.getDateFormatString(),PaisActual.getText(),Integer.valueOf(Millas.getText()));
+        if(NOPasaprte!=null && Nacionalidad!=null && EstadoCivil!=null && Nombre!=null && Apellido1!=null && Sexo!=null && PaisActual!=null){
+             try {
+Date date = FechaNacimiento.getDate();
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+Date date1 = FechaVencimiento.getDate();
+SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
+Date date2 = FechaEmisión.getDate();
+SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
+
+vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),String.valueOf(sdf.format(date)),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(), Sexo.getText(),String.valueOf(sdf1.format(date1)),String.valueOf(sdf2.format(date2)),PaisActual.getText());
+
+
+} catch (Exception e) {
+JOptionPane.showMessageDialog(null, "Al menos elija FECHAS VALIDAS ", "Error..!!", JOptionPane.ERROR_MESSAGE);
+
+}
         this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Al menos  INFORMACIÓN VALIDA ", "Error..!!", JOptionPane.ERROR_MESSAGE);
+
+        }
+       
     }//GEN-LAST:event_GuardarjButton1MouseClicked
 
     private void GuardarjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarjButton1ActionPerformed

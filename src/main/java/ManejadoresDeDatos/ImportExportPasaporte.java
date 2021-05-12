@@ -119,8 +119,8 @@ public class ImportExportPasaporte extends javax.swing.JFrame {
                 String[] parte2 = partes[1].split("\\)");
                 String[] data = parte2[0].split(",");
 
-                if ((partes[0].equalsIgnoreCase("Pasaporte")) && (data.length == 11) && Integer.valueOf(data[0].length())>=8) {
-                    vent.actualizarPasaporte(Integer.valueOf(data[0]),data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],Integer.valueOf(data[10]));
+                if ((partes[0].equalsIgnoreCase("Pasaporte")) && (data.length == 10) && Integer.valueOf(data[0].length())>=8) {
+                    vent.actualizarPasaporte(Integer.valueOf(data[0]),data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9]);
                 } else {
                     System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
                 }

@@ -6,6 +6,7 @@
 package com.mycompany.InterfazGráfica.ModuloUsuario;
 
 import AñadirObjetos.AñadirPasaporte;
+import AñadirObjetos.AñadirTarjetas;
 import AñadirObjetos.EditarPasaporte;
 import ManejadoresDeDatos.ImportExportPasaporte;
 import ManejadoresDeDatos.ImportExportTarjeta;
@@ -27,11 +28,11 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     
     //Principal
     //Pasaporte
-    private Vector listaPasaportes = new Vector();
+    private static Vector listaPasaportes = new Vector();
     private PASAPORTE pasaporteActual;
     
     //Tarjeta
-    private Vector listaTarjetas = new Vector();
+    private static Vector listaTarjetas = new Vector();
     private Vector NOTarjeta = new Vector();
     private TARJETA tarjetaactual;
     
@@ -44,16 +45,14 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         System.out.println(pasaporteActual.getNO_PASAPORTE());
     }
     //Pasaporte
-    public void actualizarPasaporte(Integer NO_PASAPORTE, String FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, String FECHA_VENCIMIENTO, String FECHA_EMISION, String PAIS_ACTUAL, Integer MILLAS_RECORRIDAS){
+    public void actualizarPasaporte(Integer NO_PASAPORTE, String FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, String FECHA_VENCIMIENTO, String FECHA_EMISION, String PAIS_ACTUAL){
         if (NO_PASAPORTE!=null)
-            listaPasaportes.remove(NO_PASAPORTE);
-        listaPasaportes.add(new PASAPORTE(NO_PASAPORTE,FECHA_NACIMIENTO,NACIONALIDAD,ESTADO_CIVIL,NOMBRE,APELLIDOS,SEXO,FECHA_VENCIMIENTO,FECHA_EMISION,PAIS_ACTUAL,MILLAS_RECORRIDAS));
+        listaPasaportes.add(new PASAPORTE(NO_PASAPORTE,FECHA_NACIMIENTO,NACIONALIDAD,ESTADO_CIVIL,NOMBRE,APELLIDOS,SEXO,FECHA_VENCIMIENTO,FECHA_EMISION,PAIS_ACTUAL));
         
     }
     
     //Tarjeta
     public void actualizarTarjeta(Integer NO_TARJETA, Integer NO_PASAPORTE, Integer DINERO_ACTUAL, Integer CODIGO_CVC){
-            listaTarjetas.remove(NO_TARJETA);
         listaTarjetas.add(new TARJETA(NO_TARJETA,NO_PASAPORTE,DINERO_ACTUAL,CODIGO_CVC));
     }
     
@@ -97,6 +96,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         ;
         jLabel14 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         RegistrarPasaportejButton1 = new javax.swing.JButton();
         RenovarPasaportejButton1 = new javax.swing.JButton();
@@ -132,8 +132,9 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         UsuariojMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Bienvenido al Aeropuerto  AeroBalamDevs esperamos que el servicio sea para su");
@@ -186,6 +187,18 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jLabel14.setText("Tarjetas Registradas");
 
+        jButton3.setText("NUEVAS TARJETAS");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -197,9 +210,11 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addComponent(comboBoxListaTarjetas, 0, 603, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(212, 212, 212)
+                .addGap(83, 83, 83)
                 .addComponent(MetodoDePagojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,9 +223,11 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxListaTarjetas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addGap(57, 57, 57)
-                .addComponent(MetodoDePagojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addGap(80, 80, 80)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MetodoDePagojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("METODO DE PAGO", jPanel3);
@@ -454,6 +471,14 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jMenu2.setText("AYUDA");
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setText("SALIR");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu3);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -575,6 +600,20 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         // TODO add your handling code here:
     }//GEN-LAST:event_BuscarjButton1MouseEntered
 
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        new AñadirTarjetas(null,this);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -610,6 +649,23 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         });
     }
 
+    public static Vector getListaPasaportes() {
+        return listaPasaportes;
+    }
+
+    public static void setListaPasaportes(Vector listaPasaportes) {
+        Principal.listaPasaportes = listaPasaportes;
+    }
+
+    public static Vector getListaTarjetas() {
+        return listaTarjetas;
+    }
+
+    public static void setListaTarjetas(Vector listaTarjetas) {
+        Principal.listaTarjetas = listaTarjetas;
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BuscarjButton1;
     private javax.swing.JButton CompraBoletojButton1;
@@ -622,6 +678,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JComboBox<String> comboBoxListaTarjetas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -631,6 +688,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;

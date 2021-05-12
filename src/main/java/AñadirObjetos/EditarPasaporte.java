@@ -72,7 +72,7 @@ public class EditarPasaporte extends javax.swing.JFrame {
       SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
       Date fechaDate = formato.parse(fecha);
       this.FechaEmisión.setDate(fechaDate);
-      } catch (ParseException ex) {
+      } catch (Exception ex) {
         Logger.getLogger(EditarPasaporte.class.getName()).log(Level.SEVERE, null, ex);
       }
        
@@ -185,7 +185,7 @@ public class EditarPasaporte extends javax.swing.JFrame {
 
         NOPasaprte.setEditable(false);
         try {
-            NOPasaprte.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###-####")));
+            NOPasaprte.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -321,7 +321,7 @@ public class EditarPasaporte extends javax.swing.JFrame {
 
     private void GuardarjButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarjButton1MouseClicked
         // TODO add your handling code here:
-        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),FechaNacimiento.getDateFormatString(),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(),Sexo.getText(),FechaVencimiento.getDateFormatString(),FechaEmisión.getDateFormatString(),Pais.getText(),Integer.valueOf(Millas.getText()));
+        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),FechaNacimiento.getDateFormatString(),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(),Sexo.getText(),FechaVencimiento.getDateFormatString(),FechaEmisión.getDateFormatString(),Pais.getText());
         this.dispose();
     }//GEN-LAST:event_GuardarjButton1MouseClicked
 
