@@ -29,7 +29,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     //Principal
     //Pasaporte
     private static Vector listaPasaportes = new Vector();
-    private PASAPORTE pasaporteActual;
+    private static PASAPORTE pasaporteActual;
     
     //Tarjeta
     private static Vector listaTarjetas = new Vector();
@@ -663,6 +663,14 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
     public static void setListaTarjetas(Vector listaTarjetas) {
         Principal.listaTarjetas = listaTarjetas;
+    }
+
+    public static PASAPORTE getPasaporteActual() {
+        return pasaporteActual;
+    }
+
+    public static void setPasaporteActual(PASAPORTE pasaporteActual) {
+        Principal.pasaporteActual = pasaporteActual;
     }
 
 

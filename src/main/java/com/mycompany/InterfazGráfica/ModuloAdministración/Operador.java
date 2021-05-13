@@ -6,6 +6,8 @@
 package com.mycompany.InterfazGráfica.ModuloAdministración;
 
 import AñadirObjetos.AñadirVuelos;
+import AñadirObjetos.EditarAviones;
+import AñadirObjetos.EditarVuelos;
 import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.Enums.ESTADO_DE_VUELO;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
@@ -102,6 +104,11 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
         });
 
         jButton3.setText("POSPONER VUELO");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("Estado Vuelo:");
 
@@ -261,6 +268,11 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        new EditarVuelos(vueloactual,this);
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments

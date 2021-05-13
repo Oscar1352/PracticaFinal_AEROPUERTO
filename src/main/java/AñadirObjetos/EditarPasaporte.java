@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -321,8 +322,21 @@ public class EditarPasaporte extends javax.swing.JFrame {
 
     private void GuardarjButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarjButton1MouseClicked
         // TODO add your handling code here:
-        vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),FechaNacimiento.getDateFormatString(),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(),Sexo.getText(),FechaVencimiento.getDateFormatString(),FechaEmisión.getDateFormatString(),Pais.getText());
-        this.dispose();
+       try {
+Date date = FechaNacimiento.getDate();
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+Date date1 = FechaVencimiento.getDate();
+SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
+Date date2 = FechaEmisión.getDate();
+SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
+
+vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),String.valueOf(sdf.format(date)),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(), Sexo.getText(),String.valueOf(sdf1.format(date1)),String.valueOf(sdf2.format(date2)),Pais.getText());
+this.dispose();
+
+} catch (Exception e) {
+JOptionPane.showMessageDialog(null, "Al menos elija FECHAS VALIDAS ", "Error..!!", JOptionPane.ERROR_MESSAGE);
+} 
     }//GEN-LAST:event_GuardarjButton1MouseClicked
 
     private void ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaActionPerformed

@@ -10,6 +10,7 @@ package com.mycompany.InterfazGráfica.ModuloAdministración;
 import AñadirObjetos.AñadirAerolinea;
 import AñadirObjetos.AñadirAeropuertos;
 import AñadirObjetos.AñadirAviones;
+import AñadirObjetos.AñadirDistancia;
 import AñadirObjetos.EditarAviones;
 import EscritorBinario.BinariosAeropuertos;
 import ManejadoresDeDatos.ImportExportAerolinea;
@@ -18,6 +19,7 @@ import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.AEROLINEA;
 import com.mycompany.Objetos.AVION;
+import com.mycompany.Objetos.DISTANCIA;
 import com.mycompany.Objetos.PASAPORTE;
 import com.mycompany.Objetos.TARJETA;
 import com.mycompany.Objetos.VUELO;
@@ -54,6 +56,8 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     private AEROPUERTO aeropuertoelegido;
     private AEROPUERTO aeropuertoactual;
     
+    //Distancias
+    private static Vector Distancias = new Vector();
     //Aviones
     private static Vector listaAviones = new Vector();
     private AVION avionactual;
@@ -79,14 +83,18 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
         listaAviones.add(new AVION(NOMBRE_AEROLINEA,NOMBRE_AEROPUERTO_ACTUAL,CODIGO_AVION,CANTIDAD_PASAJEROS,CAPACIADAD_GASOLINA,CONSUMO_POR_MILLA) {});
     }
     
+    //Aviones
+    public static void actualizarDistancia(String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer CANTIDAD_MILLAS){
+        if (NOMBRE_AEROPUERTO_ORIGEN!=null)
+        Distancias.add(new DISTANCIA(NOMBRE_AEROPUERTO_ORIGEN,NOMBRE_AEROPUERTO_DESTINO,CANTIDAD_MILLAS) {});
+    }
+    
     
     //Aeropuerto
     @Override
     public void actionPerformed(ActionEvent e) {
         JComboBox comboBox = (JComboBox) e.getSource();
         avionactual = (AVION) comboBox.getSelectedItem();
-        System.out.println(aeropuertoactual.toString());
-        System.out.println(aeropuertoactual.getNOMBRE_AEROPUERTO());
     }
     
     
@@ -117,6 +125,8 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -132,6 +142,14 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
         jLabel3 = new javax.swing.JLabel();
         CrearVuelo1 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        DistanciasCombobox2 = new javax.swing.JComboBox(Distancias);
+        jPanel5 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         UsuariojMenu3 = new javax.swing.JMenu();
@@ -175,7 +193,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                 .addComponent(AeropuertosCombobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 280, Short.MAX_VALUE)
+                .addGap(0, 224, Short.MAX_VALUE)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,7 +210,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("AEROPUERTOS", jPanel1);
@@ -214,7 +232,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AeropuertosCombobox1, 0, 702, Short.MAX_VALUE))
+                .addComponent(AeropuertosCombobox1, 0, 646, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(334, 334, 334)
                 .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,7 +247,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                     .addComponent(AeropuertosCombobox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
                 .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("AEROLINEA", jPanel2);
@@ -271,7 +289,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AvionesCombobox2, 0, 715, Short.MAX_VALUE))
+                .addComponent(AvionesCombobox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(175, 175, 175)
                 .addComponent(CrearVuelo1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -293,10 +311,118 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("AVIONES", jPanel3);
+
+        jButton6.setText("AÑADIR DISTANCIA");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        jLabel4.setText("Distancias Actuales:");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 259, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addGap(34, 34, 34)
+                        .addComponent(DistanciasCombobox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(DistanciasCombobox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("DISTANCIA", jPanel7);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("ADMINISTRACIÓN", jPanel4);
+
+        jButton2.setText("ABRIR PANEL OPERADOR");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(218, 218, 218)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(257, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("OPERADOR", jPanel5);
+
+        jButton5.setText("ABRIR PANEL GERENCIA");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(271, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("GERENCIA", jPanel6);
 
         jMenu1.setText("MODULOS");
 
@@ -335,16 +461,16 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -399,6 +525,23 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
         // TODO add your handling code here:
         new EditarAviones(avionactual,this); 
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        Operador operador = new Operador();
+        operador.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        Gerencia gerencia= new Gerencia();
+        gerencia.setVisible(true);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        new AñadirDistancia(null,this);
+    }//GEN-LAST:event_jButton6MouseClicked
 
     /**
      * @param args the command line arguments
@@ -474,13 +617,18 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     private javax.swing.JComboBox<String> AvionesCombobox2;
     private javax.swing.JButton CrearVuelo;
     private javax.swing.JButton CrearVuelo1;
+    private javax.swing.JComboBox<String> DistanciasCombobox2;
     private javax.swing.JMenu UsuariojMenu3;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -490,6 +638,11 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     // End of variables declaration//GEN-END:variables
 }
