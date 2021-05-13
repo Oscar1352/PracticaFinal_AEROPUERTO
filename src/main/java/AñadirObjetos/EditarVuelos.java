@@ -135,7 +135,7 @@ public class EditarVuelos extends javax.swing.JFrame implements ActionListener {
 
         jLabel2.setText("Codigo Vuelo");
 
-        CrearVuelo.setText("CREAR VUELO");
+        CrearVuelo.setText("GUARDAR  VUELO");
         CrearVuelo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CrearVueloMouseClicked(evt);
@@ -150,10 +150,13 @@ public class EditarVuelos extends javax.swing.JFrame implements ActionListener {
 
         jLabel7.setText("Fecha De Salida:");
 
+        PrecioBoleto.setEditable(false);
         PrecioBoleto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
+        CodigoVuelo.setEditable(false);
         CodigoVuelo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
+        CodigoAvion.setEditable(false);
         CodigoAvion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,9 +170,6 @@ public class EditarVuelos extends javax.swing.JFrame implements ActionListener {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel15))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,6 +195,10 @@ public class EditarVuelos extends javax.swing.JFrame implements ActionListener {
                             .addComponent(CodigoAvion)
                             .addComponent(AeropuertosOrigenCombobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(216, 216, 216))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(262, 262, 262)
+                .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

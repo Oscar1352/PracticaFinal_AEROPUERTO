@@ -27,6 +27,8 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
    //Aeropuerto
     private Vector listaAeropuertos;
     private Vector CiudadAeropuertoOrigen;
+    private AEROPUERTO aeropuertoOrigen;
+    private AEROPUERTO aeropuertoDestino;
     private Vector CiudadAeropuertoDestino;
     private Vector FechaVuelo;
     private Vector NombreAeropuertos = new Vector();
@@ -38,8 +40,8 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JComboBox comboBox = (JComboBox) e.getSource();
-        vueloactual = (VUELO) comboBox.getSelectedItem();
-        this.EstadoVuelo.setText(String.valueOf(vueloactual.getEstado_de_vuelo()));
+        this.vueloactual = (VUELO) comboBox.getSelectedItem();
+        EstadoVuelo.setText(String.valueOf(vueloactual.getEstado_de_vuelo()));
     }
     
      //Vuelo
@@ -254,14 +256,18 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
-        VUELO.setEstado_de_vuelo(ESTADO_DE_VUELO.COMPLETADO);
+        this.vueloactual.setEstado_de_vuelo(ESTADO_DE_VUELO.COMPLETADO);
         EstadoVuelo.setText(String.valueOf(VUELO.getEstado_de_vuelo()));
+        
+        
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         this.vueloactual.setEstado_de_vuelo(ESTADO_DE_VUELO.CANCELADO);
         this.EstadoVuelo.setText(String.valueOf(vueloactual.getEstado_de_vuelo()));
+        aeropuertoOrigen.setCANTIDAD_DE_AVIONES(aeropuertoOrigen.getCANTIDAD_DE_AVIONES()-1);
+        aeropuertoDestino.setCANTIDAD_DE_AVIONES(aeropuertoDestino.getCANTIDAD_DE_AVIONES()+1);
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
