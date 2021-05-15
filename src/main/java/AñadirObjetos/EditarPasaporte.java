@@ -331,7 +331,9 @@ SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
 Date date2 = FechaEmisión.getDate();
 SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
 
-vent.actualizarPasaporte(Integer.valueOf(NOPasaprte.getText()),String.valueOf(sdf.format(date)),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(), Sexo.getText(),String.valueOf(sdf1.format(date1)),String.valueOf(sdf2.format(date2)),Pais.getText());
+vent.actualizarPasaporte(Long.valueOf(NOPasaprte.getText()),String.valueOf(sdf.format(date)),Nacionalidad.getText(),EstadoCivil.getText(),Nombre.getText(),Apellido1.getText(), Sexo.getText(),String.valueOf(sdf1.format(date1)),String.valueOf(sdf2.format(date2)),Pais.getText());
+                JOptionPane.showMessageDialog(null, "Datos añadidos correctamente","Continua", JOptionPane.INFORMATION_MESSAGE);
+
 this.dispose();
 
 } catch (Exception e) {

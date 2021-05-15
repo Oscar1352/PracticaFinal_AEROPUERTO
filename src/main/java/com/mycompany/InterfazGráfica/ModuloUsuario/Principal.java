@@ -31,6 +31,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     private static Vector listaPasaportes = new Vector();
     private static PASAPORTE pasaporteActual;
     
+    
     //Tarjeta
     private static Vector listaTarjetas = new Vector();
     private Vector NOTarjeta = new Vector();
@@ -45,14 +46,13 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         System.out.println(pasaporteActual.getNO_PASAPORTE());
     }
     //Pasaporte
-    public void actualizarPasaporte(Integer NO_PASAPORTE, String FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, String FECHA_VENCIMIENTO, String FECHA_EMISION, String PAIS_ACTUAL){
-        if (NO_PASAPORTE!=null)
+    public void actualizarPasaporte(long NO_PASAPORTE, String FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, String FECHA_VENCIMIENTO, String FECHA_EMISION, String PAIS_ACTUAL){
+        if (NO_PASAPORTE!=0)
         listaPasaportes.add(new PASAPORTE(NO_PASAPORTE,FECHA_NACIMIENTO,NACIONALIDAD,ESTADO_CIVIL,NOMBRE,APELLIDOS,SEXO,FECHA_VENCIMIENTO,FECHA_EMISION,PAIS_ACTUAL));
-        
     }
     
     //Tarjeta
-    public void actualizarTarjeta(Integer NO_TARJETA, Integer NO_PASAPORTE, Integer DINERO_ACTUAL, Integer CODIGO_CVC){
+    public void actualizarTarjeta(long NO_TARJETA, long NO_PASAPORTE, long DINERO_ACTUAL, Integer CODIGO_CVC){
         listaTarjetas.add(new TARJETA(NO_TARJETA,NO_PASAPORTE,DINERO_ACTUAL,CODIGO_CVC));
     }
     
@@ -81,7 +81,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jPanel3 = new javax.swing.JPanel();
         MetodoDePagojButton1 = new javax.swing.JButton();
         comboBoxListaTarjetas = comboBoxListaPasaportes = new JComboBox(listaTarjetas);
-        comboBoxListaPasaportes.addActionListener( this );
+
         /*comboBoxListaPasaportes.addActionListener( new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e)
@@ -92,7 +92,6 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 System.out.println( item.getId());
             }
         } );*/
-        comboBoxListaPasaportes.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
 
         ;
         jLabel14 = new javax.swing.JLabel();

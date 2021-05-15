@@ -121,7 +121,8 @@ public class ImportExportTarjeta extends javax.swing.JFrame {
                 String[] data = parte2[0].split(",");
 
                 if ((partes[0].equalsIgnoreCase("Tarjeta")) && (data.length == 4)) {
-                    vent.actualizarTarjeta(Integer.valueOf(data[0]),Integer.valueOf(data[1]),Integer.valueOf(data[2]),Integer.valueOf(data[3]));
+                    vent.actualizarTarjeta(Long.valueOf(data[0]),Long.valueOf(data[1]),Long.valueOf(data[2]),Integer.valueOf(data[3]));
+                this.hide();
                 } else {
                     System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
                 }

@@ -225,7 +225,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxListaTarjetasActionPerformed"/>
                   </Events>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="comboBoxListaPasaportes = new JComboBox(listaTarjetas);&#xa;comboBoxListaPasaportes.addActionListener( this );&#xa;/*comboBoxListaPasaportes.addActionListener( new ActionListener(){&#xa;    @Override&#xa;    public void actionPerformed(ActionEvent e)&#xa;    {&#xa;        JComboBox comboBox = (JComboBox)e.getSource();&#xa;        Pelicula item = (Pelicula)comboBox.getSelectedItem();&#xa;        System.out.println( item.toString());&#xa;        System.out.println( item.getId());&#xa;    }&#xa;} );*/&#xa;comboBoxListaPasaportes.putClientProperty(&quot;JComboBox.isTableCellEditor&quot;, Boolean.TRUE);&#xa;&#xa;"/>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="comboBoxListaPasaportes = new JComboBox(listaTarjetas);&#xa;&#xa;/*comboBoxListaPasaportes.addActionListener( new ActionListener(){&#xa;    @Override&#xa;    public void actionPerformed(ActionEvent e)&#xa;    {&#xa;        JComboBox comboBox = (JComboBox)e.getSource();&#xa;        Pelicula item = (Pelicula)comboBox.getSelectedItem();&#xa;        System.out.println( item.toString());&#xa;        System.out.println( item.getId());&#xa;    }&#xa;} );*/&#xa;&#xa;"/>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>

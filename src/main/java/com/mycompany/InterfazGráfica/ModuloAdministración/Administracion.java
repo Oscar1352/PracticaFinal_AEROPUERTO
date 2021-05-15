@@ -60,6 +60,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     private static Vector Distancias = new Vector();
     //Aviones
     private static Vector listaAviones = new Vector();
+    private static Vector CodigosAviones= new Vector();
     private AVION avionactual;
     
     //Aerolinea
@@ -78,9 +79,10 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     }
     
     //Aviones
-    public static void actualizarAvion(String NOMBRE_AEROLINEA, String NOMBRE_AEROPUERTO_ACTUAL, Integer CODIGO_AVION, Integer CANTIDAD_PASAJEROS, Integer CAPACIADAD_GASOLINA, Integer CONSUMO_POR_MILLA){
+    public static void actualizarAvion(String NOMBRE_AEROLINEA, String NOMBRE_AEROPUERTO_ACTUAL, long CODIGO_AVION, Integer CANTIDAD_PASAJEROS, Integer CAPACIADAD_GASOLINA, Integer CONSUMO_POR_MILLA){
         if (NOMBRE_AEROLINEA!=null)
         listaAviones.add(new AVION(NOMBRE_AEROLINEA,NOMBRE_AEROPUERTO_ACTUAL,CODIGO_AVION,CANTIDAD_PASAJEROS,CAPACIADAD_GASOLINA,CONSUMO_POR_MILLA) {});
+    CodigosAviones.add(CODIGO_AVION);
     }
     
     //Aviones
@@ -609,6 +611,15 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     public void setListaVuelos(Vector listaVuelos) {
         this.listaVuelos = listaVuelos;
     }
+
+    public static Vector getCodigosAviones() {
+        return CodigosAviones;
+    }
+
+    public static void setCodigosAviones(Vector CodigosAviones) {
+        Administracion.CodigosAviones = CodigosAviones;
+    }
+    
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -7,6 +7,7 @@ package AñadirObjetos;
 
 import com.mycompany.Abstracts.AEROPUERTO;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -139,6 +140,8 @@ public class AñadirAeropuertos extends javax.swing.JFrame {
             return;
         }*/
         vent.actualizarAeropuerto(nombre.getText(), ciudad.getText(), pais.getText());
+                        JOptionPane.showMessageDialog(null, "Datos añadidos correctamente","Continua", JOptionPane.INFORMATION_MESSAGE);
+
         this.dispose();
     }//GEN-LAST:event_guardarCambiosMouseClicked
 

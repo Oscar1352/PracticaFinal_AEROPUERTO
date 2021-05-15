@@ -91,7 +91,7 @@ public class AñadirTarjetas extends javax.swing.JFrame {
         });
 
         try {
-            NoTarjeta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("######")));
+            NoTarjeta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("############")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -180,7 +180,7 @@ public class AñadirTarjetas extends javax.swing.JFrame {
             System.out.println(year.getText());
             return;
         }*/
-        vent.actualizarTarjeta(Integer.valueOf(NoTarjeta.getText()), pasaporte.getNO_PASAPORTE(), Integer.valueOf(DineroActual1.getText()), Integer.valueOf(CodigoCVC.getText()));
+        vent.actualizarTarjeta(Long.valueOf(NoTarjeta.getText()), Long.valueOf(pasaporte.getNO_PASAPORTE()), Long.valueOf(DineroActual1.getText()), Integer.valueOf(CodigoCVC.getText()));
         JOptionPane.showMessageDialog(null, "Tarjeta Guardada con éxito");
         this.dispose();
     }//GEN-LAST:event_guardarCambiosMouseClicked

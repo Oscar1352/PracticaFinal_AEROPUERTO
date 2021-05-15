@@ -11,6 +11,7 @@ import com.mycompany.InterfazGráfica.ModuloAdministración.Operador;
 import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
 import com.mycompany.Objetos.AEROPUERTO_DESTINO;
 import com.mycompany.Objetos.AEROPUERTO_ORIGEN;
+import com.mycompany.Objetos.AVION;
 import com.mycompany.Objetos.PASAPORTE;
 import com.mycompany.Objetos.VUELO;
 import java.awt.event.ActionEvent;
@@ -110,7 +111,7 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
         jLabel7 = new javax.swing.JLabel();
         PrecioBoleto = new javax.swing.JFormattedTextField();
         CodigoVuelo = new javax.swing.JFormattedTextField();
-        CodigoAvion = new javax.swing.JFormattedTextField();
+        CodigoAvion = new javax.swing.JComboBox<>(admin.getCodigosAviones());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -153,8 +154,6 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
 
         CodigoVuelo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
 
-        CodigoAvion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -190,9 +189,11 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
                             .addComponent(AeropuertosDestinoCombobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(FechaSalida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(PrecioBoleto)
-                            .addComponent(CodigoVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CodigoAvion)
-                            .addComponent(AeropuertosOrigenCombobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(AeropuertosOrigenCombobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(CodigoVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(CodigoAvion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(216, 216, 216))
         );
         layout.setVerticalGroup(
@@ -205,10 +206,10 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
                     .addComponent(jLabel2)
                     .addComponent(CodigoVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(CodigoAvion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AeropuertosOrigenCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,7 +227,7 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
                     .addComponent(FechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -239,6 +240,7 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
         //Aeropuerto Destino
         AeropuertoDestino = (AEROPUERTO) AeropuertosDestinoCombobox.getSelectedItem();
         
+        
         if(AeropuertoOrigen.equals(AeropuertoDestino)){
             JOptionPane.showMessageDialog(null, "El vuelo no se puede relizar Origen y Destino Iguales");
         }else{
@@ -247,7 +249,7 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
             
 Date date = FechaSalida.getDate();
 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-vent.actualizarVuelo(Integer.valueOf(CodigoVuelo.getText()),Integer.valueOf(CodigoAvion.getText()),AeropuertoOrigen.getNOMBRE_AEROPUERTO(),AeropuertoDestino.getNOMBRE_AEROPUERTO(),Integer.valueOf(PrecioBoleto.getText()),String.valueOf(sdf.format(date)));
+vent.actualizarVuelo(Long.valueOf(CodigoVuelo.getText()),Long.valueOf(CodigoVuelo.getText()),AeropuertoOrigen.getNOMBRE_AEROPUERTO(),AeropuertoDestino.getNOMBRE_AEROPUERTO(),Integer.valueOf(PrecioBoleto.getText()),String.valueOf(sdf.format(date)));
 JOptionPane.showMessageDialog(null, "Vuelo Planificado con éxito");
 this.dispose();
 
@@ -274,7 +276,7 @@ JOptionPane.showMessageDialog(null, "Al menos elija FECHAS VALIDAS ", "Error..!!
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> AeropuertosDestinoCombobox;
     private javax.swing.JComboBox<String> AeropuertosOrigenCombobox;
-    private javax.swing.JFormattedTextField CodigoAvion;
+    private javax.swing.JComboBox<String> CodigoAvion;
     private javax.swing.JFormattedTextField CodigoVuelo;
     private javax.swing.JButton CrearVuelo;
     private com.toedter.calendar.JDateChooser FechaSalida;

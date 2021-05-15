@@ -15,14 +15,14 @@ public class AVION {
      //Declaro mis atributos
     private String NOMBRE_AEROLINEA;
     private String NOMBRE_AEROPUERTO_ACTUAL;
-    private Integer CODIGO_AVION;
+    private Long CODIGO_AVION;
     private Integer CANTIDAD_PASAJEROS;
     private Integer CAPACIADAD_GASOLINA;
     private Integer CONSUMO_POR_MILLA;
 
     //Declaro mi constructor
 
-    public AVION(String NOMBRE_AEROLINEA, String NOMBRE_AEROPUERTO_ACTUAL, Integer CODIGO_AVION, Integer CANTIDAD_PASAJEROS, Integer CAPACIADAD_GASOLINA, Integer CONSUMO_POR_MILLA) {
+    public AVION(String NOMBRE_AEROLINEA, String NOMBRE_AEROPUERTO_ACTUAL, Long CODIGO_AVION, Integer CANTIDAD_PASAJEROS, Integer CAPACIADAD_GASOLINA, Integer CONSUMO_POR_MILLA) {
         this.NOMBRE_AEROLINEA = NOMBRE_AEROLINEA;
         this.NOMBRE_AEROPUERTO_ACTUAL = NOMBRE_AEROPUERTO_ACTUAL;
         this.CODIGO_AVION = CODIGO_AVION;
@@ -51,11 +51,11 @@ public class AVION {
         this.NOMBRE_AEROPUERTO_ACTUAL = NOMBRE_AEROPUERTO_ACTUAL;
     }
 
-    public Integer getCODIGO_AVION() {
+    public Long getCODIGO_AVION() {
         return CODIGO_AVION;
     }
 
-    public void setCODIGO_AVION(Integer CODIGO_AVION) {
+    public void setCODIGO_AVION(Long CODIGO_AVION) {
         this.CODIGO_AVION = CODIGO_AVION;
     }
 

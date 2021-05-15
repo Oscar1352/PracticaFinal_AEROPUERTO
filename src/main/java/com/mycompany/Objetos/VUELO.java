@@ -14,8 +14,8 @@ import java.util.Objects;
 public class VUELO {
     
     //Declaro mis atributos
-    private Integer CODIGO_VUELO;
-    private Integer CODIGO_AVION;
+    private long CODIGO_VUELO;
+    private long CODIGO_AVION;
     private String NOMBRE_AEROPUERTO_ORIGEN;
     private String NOMBRE_AEROPUERTO_DESTINO;
     private Integer PRECIO_BOLETO;
@@ -23,7 +23,7 @@ public class VUELO {
     private static ESTADO_DE_VUELO estado_de_vuelo= ESTADO_DE_VUELO.EN_ESPERA;
 
     //Declaro mi constructor
-    public VUELO(Integer CODIGO_VUELO, Integer CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer PRECIO_BOLETO, String FECHA_SALIDA) {
+    public VUELO(long CODIGO_VUELO, long CODIGO_AVION, String NOMBRE_AEROPUERTO_ORIGEN, String NOMBRE_AEROPUERTO_DESTINO, Integer PRECIO_BOLETO, String FECHA_SALIDA) {
         this.CODIGO_VUELO = CODIGO_VUELO;
         this.CODIGO_AVION = CODIGO_AVION;
         this.NOMBRE_AEROPUERTO_ORIGEN = NOMBRE_AEROPUERTO_ORIGEN;
@@ -33,19 +33,19 @@ public class VUELO {
     }
     
 
-    public Integer getCODIGO_VUELO() {
+    public long getCODIGO_VUELO() {
         return CODIGO_VUELO;
     }
 
-    public void setCODIGO_VUELO(Integer CODIGO_VUELO) {
+    public void setCODIGO_VUELO(long CODIGO_VUELO) {
         this.CODIGO_VUELO = CODIGO_VUELO;
     }
 
-    public Integer getCODIGO_AVION() {
+    public long getCODIGO_AVION() {
         return CODIGO_AVION;
     }
 
-    public void setCODIGO_AVION(Integer CODIGO_AVION) {
+    public void setCODIGO_AVION(long CODIGO_AVION) {
         this.CODIGO_AVION = CODIGO_AVION;
     }
 

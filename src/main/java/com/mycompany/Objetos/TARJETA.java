@@ -14,9 +14,9 @@ import java.util.Objects;
 public class TARJETA {
 
     //Declaro mis variables
-    private Integer NO_TARJETA;
-    private Integer NO_PASAPORTE; 
-    private Integer DINERO_ACTUAL;
+    private long NO_TARJETA;
+    private long NO_PASAPORTE; 
+    private long DINERO_ACTUAL;
     private Integer CODIGO_CVC;
 
     
@@ -26,7 +26,7 @@ public class TARJETA {
      */
     
     //Declaro mi constructor
-public TARJETA(Integer NO_TARJETA, Integer NO_PASAPORTE, Integer DINERO_ACTUAL, Integer CODIGO_CVC) {
+public TARJETA(long NO_TARJETA, long NO_PASAPORTE, long DINERO_ACTUAL, Integer CODIGO_CVC) {
         this.NO_TARJETA = NO_TARJETA;
         this.NO_PASAPORTE = NO_PASAPORTE;
         this.DINERO_ACTUAL = DINERO_ACTUAL;
@@ -36,27 +36,27 @@ public TARJETA(Integer NO_TARJETA, Integer NO_PASAPORTE, Integer DINERO_ACTUAL, 
         
     //Declaro mis getters y setters
 
-    public Integer getNO_TARJETA() {
+    public long getNO_TARJETA() {
         return NO_TARJETA;
     }
 
-    public void setNO_TARJETA(Integer NO_TARJETA) {
+    public void setNO_TARJETA(long NO_TARJETA) {
         this.NO_TARJETA = NO_TARJETA;
     }
 
-    public Integer getNO_PASAPORTE() {
+    public long getNO_PASAPORTE() {
         return NO_PASAPORTE;
     }
 
-    public void setNO_PASAPORTE(Integer NO_PASAPORTE) {
+    public void setNO_PASAPORTE(long NO_PASAPORTE) {
         this.NO_PASAPORTE = NO_PASAPORTE;
     }
 
-    public Integer getDINERO_ACTUAL() {
+    public long getDINERO_ACTUAL() {
         return DINERO_ACTUAL;
     }
 
-    public void setDINERO_ACTUAL(Integer DINERO_ACTUAL) {
+    public void setDINERO_ACTUAL(long DINERO_ACTUAL) {
         this.DINERO_ACTUAL = DINERO_ACTUAL;
     }
 

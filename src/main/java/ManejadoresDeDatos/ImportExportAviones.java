@@ -22,6 +22,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 /**
@@ -138,6 +139,8 @@ public class ImportExportAviones extends javax.swing.JFrame {
 
                 if ((partes[0].equalsIgnoreCase("Avion")) && (data.length == 6)) {
                     vent.actualizarAvion(data[0],data[1],Integer.valueOf(data[2]),Integer.valueOf(data[3]),Integer.valueOf(data[4]),Integer.valueOf(data[5]));
+                                JOptionPane.showMessageDialog(null, "Datos añadidos correctamente","Continua", JOptionPane.INFORMATION_MESSAGE);
+                                this.hide();
                 } else {
                     System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
                 }

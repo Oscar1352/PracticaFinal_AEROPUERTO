@@ -15,7 +15,7 @@ import java.util.Objects;
 public class PASAPORTE {
     
     //Defino mis atributos
-    private Integer NO_PASAPORTE;
+    private long NO_PASAPORTE;
     private String CONTRASEÑA;
     private String FECHA_NACIMIENTO;
     private String NACIONALIDAD;
@@ -32,7 +32,7 @@ public class PASAPORTE {
 
     //Declaro mi constructor
 
-    public PASAPORTE(Integer NO_PASAPORTE, String FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, String FECHA_VENCIMIENTO, String FECHA_EMISION, String PAIS_ACTUAL) {
+    public PASAPORTE(long NO_PASAPORTE, String FECHA_NACIMIENTO, String NACIONALIDAD, String ESTADO_CIVIL, String NOMBRE, String APELLIDOS, String SEXO, String FECHA_VENCIMIENTO, String FECHA_EMISION, String PAIS_ACTUAL) {
         this.NO_PASAPORTE = NO_PASAPORTE;
         this.FECHA_NACIMIENTO = FECHA_NACIMIENTO;
         this.NACIONALIDAD = NACIONALIDAD;
@@ -49,11 +49,11 @@ public class PASAPORTE {
     
     //Declaro mis getters y setters
 
-    public Integer getNO_PASAPORTE() {
+    public long getNO_PASAPORTE() {
         return NO_PASAPORTE;
     }
 
-    public void setNO_PASAPORTE(Integer NO_PASAPORTE) {
+    public void setNO_PASAPORTE(long NO_PASAPORTE) {
         this.NO_PASAPORTE = NO_PASAPORTE;
     }
 

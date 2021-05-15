@@ -21,6 +21,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
 /**
@@ -137,6 +138,8 @@ public class ImportExportAerolinea extends javax.swing.JFrame {
 
                 if ((partes[0].equalsIgnoreCase("Aerolinea")) && (data.length == 2)) {
                     vent.actualizarAerolinea(data[0],data[1]);
+                                    JOptionPane.showMessageDialog(null, "Datos añadidos correctamente","Continua", JOptionPane.INFORMATION_MESSAGE);
+                                    this.hide();
                 } else {
                     System.out.println(" la linea x no tiene un formato adecuado" + line + data.length);
                 }
