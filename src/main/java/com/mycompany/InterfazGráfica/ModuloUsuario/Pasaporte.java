@@ -109,17 +109,8 @@ public class Pasaporte extends javax.swing.JFrame {
 
         jLabel8.setText("NOMBRE:");
 
-        GuardarjButton7.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("https://www.google.com/url?sa=i&url=https%3A%2F%2Fes.dreamstime.com%2Frect%25C3%25A1ngulo-plano-verde-de-los-colores-en-pastel-para-el-fondo-color-opini%25C3%25B3n-superior-verdes-claros-del-llano-image145167782&psig=AOvVaw2KHi6SP25Mel1Mpp7pivP4&ust=1619021185471000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCICHp4iajfACFQAAAAAdAAAAABAD")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        GuardarjButton7.setBackground(new java.awt.Color(153, 204, 255));
+        GuardarjButton7.setForeground(new java.awt.Color(0, 0, 0));
         GuardarjButton7.setText("GUARDAR");
         GuardarjButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

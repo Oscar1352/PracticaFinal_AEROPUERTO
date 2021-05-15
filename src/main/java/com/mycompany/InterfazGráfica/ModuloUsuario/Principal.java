@@ -166,6 +166,8 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jTabbedPane1.addTab("BIENVENIDA", jPanel2);
 
+        MetodoDePagojButton1.setBackground(new java.awt.Color(153, 204, 255));
+        MetodoDePagojButton1.setForeground(new java.awt.Color(0, 0, 0));
         MetodoDePagojButton1.setText("CARGAR METODO DE PAGO");
         MetodoDePagojButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -186,6 +188,8 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jLabel14.setText("Tarjetas Registradas");
 
+        jButton3.setBackground(new java.awt.Color(153, 255, 153));
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("NUEVAS TARJETAS");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -231,6 +235,8 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jTabbedPane1.addTab("METODO DE PAGO", jPanel3);
 
+        RegistrarPasaportejButton1.setBackground(new java.awt.Color(153, 204, 255));
+        RegistrarPasaportejButton1.setForeground(new java.awt.Color(0, 0, 0));
         RegistrarPasaportejButton1.setText("CARGAR PASAPORTE");
         RegistrarPasaportejButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -243,6 +249,8 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
             }
         });
 
+        RenovarPasaportejButton1.setBackground(new java.awt.Color(255, 153, 153));
+        RenovarPasaportejButton1.setForeground(new java.awt.Color(0, 0, 0));
         RenovarPasaportejButton1.setText("RENOVAR PASAPORTE");
         RenovarPasaportejButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -263,6 +271,8 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jLabel13.setText("Pasaportes Registrados");
 
+        jButton2.setBackground(new java.awt.Color(153, 255, 153));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("NUEVOS PASAPORTE");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -312,13 +322,22 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jTabbedPane1.addTab("PASAPORTE", jPanel4);
 
+        CompraBoletojButton1.setBackground(new java.awt.Color(153, 204, 255));
+        CompraBoletojButton1.setForeground(new java.awt.Color(0, 0, 0));
         CompraBoletojButton1.setText("COMPRAR DE BOLETOS");
+        CompraBoletojButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CompraBoletojButton1MouseClicked(evt);
+            }
+        });
         CompraBoletojButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CompraBoletojButton1ActionPerformed(evt);
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(153, 255, 153));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("CONSULTAR RESERVACIÓN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -349,7 +368,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jTabbedPane1.addTab("VUELO", jPanel6);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("LOGIN DE PASAJEROS");
 
         jLabel12.setText("NO.PASAPORTE:");
@@ -362,6 +381,8 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jLabel16.setText("CONTRASEÑA:");
 
+        BuscarjButton1.setBackground(new java.awt.Color(153, 204, 255));
+        BuscarjButton1.setForeground(new java.awt.Color(0, 0, 0));
         BuscarjButton1.setText("BUSCAR");
         BuscarjButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -388,13 +409,14 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BuscarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(252, 252, 252))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(301, 301, 301)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGap(134, 134, 134)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
@@ -406,16 +428,16 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(PasaportesVinculados, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(BuscarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(272, Short.MAX_VALUE))
+                        .addGap(273, 273, 273)
+                        .addComponent(jLabel3)))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(37, 37, 37)
                 .addComponent(jLabel3)
-                .addGap(29, 29, 29)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(PasaportesVinculados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -423,9 +445,9 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(BuscarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(BuscarjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("LOGIN USUARIO", jPanel5);
@@ -612,6 +634,10 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void CompraBoletojButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CompraBoletojButton1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CompraBoletojButton1MouseClicked
 
     /**
      * @param args the command line arguments

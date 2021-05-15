@@ -58,6 +58,8 @@ public class Gerencia extends javax.swing.JFrame implements ActionListener {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Area de Gerencia");
 
+        jButton2.setBackground(new java.awt.Color(153, 204, 255));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("ABRIR PANEL OPERADOR");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -70,16 +72,16 @@ public class Gerencia extends javax.swing.JFrame implements ActionListener {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(97, 97, 97)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(44, 44, 44)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("OPERADOR AEROLÍNEA", jPanel1);
@@ -99,6 +101,8 @@ public class Gerencia extends javax.swing.JFrame implements ActionListener {
         } );*/
         jComboBox1.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
 
+        jButton1.setBackground(new java.awt.Color(153, 255, 153));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("BUSCAR REPORTE");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

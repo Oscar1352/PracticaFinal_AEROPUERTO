@@ -89,6 +89,8 @@ public class AñadirAviones extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AÑADIR AVIONES");
 
+        CrearVuelo.setBackground(new java.awt.Color(153, 255, 153));
+        CrearVuelo.setForeground(new java.awt.Color(0, 0, 0));
         CrearVuelo.setText("CREAR AVION");
         CrearVuelo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -96,6 +98,8 @@ public class AñadirAviones extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setBackground(new java.awt.Color(153, 204, 255));
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("CARGAR DATOS");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

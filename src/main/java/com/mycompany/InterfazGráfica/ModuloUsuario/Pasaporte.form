@@ -261,8 +261,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="GuardarjButton7">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="1" name="https://www.google.com/url?sa=i&amp;url=https%3A%2F%2Fes.dreamstime.com%2Frect%25C3%25A1ngulo-plano-verde-de-los-colores-en-pastel-para-el-fondo-color-opini%25C3%25B3n-superior-verdes-claros-del-llano-image145167782&amp;psig=AOvVaw2KHi6SP25Mel1Mpp7pivP4&amp;ust=1619021185471000&amp;source=images&amp;cd=vfe&amp;ved=0CAIQjRxqFwoTCICHp4iajfACFQAAAAAdAAAAABAD"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="99" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="GUARDAR"/>
       </Properties>

@@ -44,6 +44,8 @@ public class RenovarPasaporte extends javax.swing.JFrame {
 
         jLabel24.setText("Fecha Nuevo Vencimiento:");
 
+        GuardarjButton1.setBackground(new java.awt.Color(153, 204, 255));
+        GuardarjButton1.setForeground(new java.awt.Color(0, 0, 0));
         GuardarjButton1.setText("GUARDAR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

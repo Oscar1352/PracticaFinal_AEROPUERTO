@@ -135,6 +135,8 @@ public class EditarVuelos extends javax.swing.JFrame implements ActionListener {
 
         jLabel2.setText("Codigo Vuelo");
 
+        CrearVuelo.setBackground(new java.awt.Color(153, 204, 255));
+        CrearVuelo.setForeground(new java.awt.Color(0, 0, 0));
         CrearVuelo.setText("GUARDAR  VUELO");
         CrearVuelo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -194,7 +196,7 @@ public class EditarVuelos extends javax.swing.JFrame implements ActionListener {
                             .addComponent(CodigoVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CodigoAvion)
                             .addComponent(AeropuertosOrigenCombobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(216, 216, 216))
+                .addGap(32, 32, 32))
             .addGroup(layout.createSequentialGroup()
                 .addGap(262, 262, 262)
                 .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)

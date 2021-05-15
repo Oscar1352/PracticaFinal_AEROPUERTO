@@ -69,6 +69,8 @@ public class MetodoDePago extends javax.swing.JFrame {
 
         DinerojFormattedTextField7.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.###"))));
 
+        GuardarjButton1.setBackground(new java.awt.Color(153, 204, 255));
+        GuardarjButton1.setForeground(new java.awt.Color(0, 0, 0));
         GuardarjButton1.setText("GUARDAR");
         GuardarjButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

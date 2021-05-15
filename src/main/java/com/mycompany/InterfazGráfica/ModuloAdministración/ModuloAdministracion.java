@@ -90,6 +90,8 @@ public class ModuloAdministracion extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("CONTRASEÑA:");
 
+        jButton1.setBackground(new java.awt.Color(153, 204, 255));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("INGRESAR");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

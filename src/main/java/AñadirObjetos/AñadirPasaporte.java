@@ -144,6 +144,8 @@ public class AñadirPasaporte extends javax.swing.JFrame {
             }
         });
 
+        GuardarjButton1.setBackground(new java.awt.Color(153, 204, 255));
+        GuardarjButton1.setForeground(new java.awt.Color(0, 0, 0));
         GuardarjButton1.setText("GUARDAR");
         GuardarjButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
