@@ -697,6 +697,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
     public static void setPasaporteActual(PASAPORTE pasaporteActual) {
         Principal.pasaporteActual = pasaporteActual;
     }
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

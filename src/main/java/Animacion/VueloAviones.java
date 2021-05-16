@@ -6,7 +6,10 @@
 package Animacion;
 
 import AñadirObjetos.AñadirVuelos;
+import com.mycompany.InterfazGráfica.ModuloAdministración.Administracion;
 import com.mycompany.InterfazGráfica.ModuloAdministración.Operador;
+import com.mycompany.InterfazGráfica.ModuloUsuario.Principal;
+import com.mycompany.Objetos.PASAPORTE;
 import com.mycompany.Objetos.VUELO;
 import java.awt.event.KeyEvent;
 import java.util.Vector;
@@ -23,6 +26,8 @@ public class VueloAviones extends javax.swing.JFrame {
     
     private VUELO vuelo;
     private Operador vent;
+    private Principal princ;
+    private PASAPORTE pasaporte;
 
     /**
      * Creates new form VueloAviones

@@ -49,7 +49,7 @@ private Vector VuelosDisponibles;
         AerolíneajComboBox2 = new javax.swing.JComboBox<>(AñadirAerolinea.getListaAerolineas());
         jLabel7 = new javax.swing.JLabel();
         CompraBoletosjFormattedTextField1 = new javax.swing.JFormattedTextField();
-        VuelosDisponiblesCombobox = new javax.swing.JComboBox<>();
+        VuelosDisponiblesCombobox = new javax.swing.JComboBox<>(Operador.getListaVuelos());
         jLabel8 = new javax.swing.JLabel();
         BuscarVuelosjButton2 = new javax.swing.JButton();
         CiudadDeOrigen = new javax.swing.JTextField();

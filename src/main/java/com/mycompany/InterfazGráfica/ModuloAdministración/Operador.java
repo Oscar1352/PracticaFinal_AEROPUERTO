@@ -47,7 +47,7 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     }
     
      //Vuelo
-    private Vector listaVuelos = new Vector();
+    private static Vector listaVuelos = new Vector();
     private Vector VueloPendiente = new Vector();
     
    
@@ -300,6 +300,8 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         new EditarVuelos(vueloactual,this);
+        this.vueloactual.setEstado_de_vuelo(ESTADO_DE_VUELO.RETRASADO);
+        this.EstadoVuelo.setText(String.valueOf(vueloactual.getEstado_de_vuelo()));
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -341,13 +343,14 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
         });
     }
 
-    public Vector getListaVuelos() {
+    public static Vector getListaVuelos() {
         return listaVuelos;
     }
 
-    public void setListaVuelos(Vector listaVuelos) {
-        this.listaVuelos = listaVuelos;
+    public static void setListaVuelos(Vector listaVuelos) {
+        Operador.listaVuelos = listaVuelos;
     }
+
 
     public Vector getCiudadAeropuertoOrigen() {
         return CiudadAeropuertoOrigen;
