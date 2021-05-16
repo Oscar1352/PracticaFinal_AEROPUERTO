@@ -384,6 +384,8 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
 
         jTabbedPane2.addTab("ADMINISTRACIÓN", jPanel4);
 
+        jButton2.setBackground(new java.awt.Color(153, 204, 255));
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("ABRIR PANEL OPERADOR");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -410,6 +412,8 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
 
         jTabbedPane2.addTab("OPERADOR", jPanel5);
 
+        jButton5.setBackground(new java.awt.Color(153, 204, 255));
+        jButton5.setForeground(new java.awt.Color(0, 0, 0));
         jButton5.setText("ABRIR PANEL GERENCIA");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

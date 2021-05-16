@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -41,7 +42,7 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JComboBox comboBox = (JComboBox) e.getSource();
-        this.vueloactual = (VUELO) comboBox.getSelectedItem();
+        vueloactual = (VUELO) comboBox.getSelectedItem();
         EstadoVuelo.setText(String.valueOf(vueloactual.getEstado_de_vuelo()));
     }
     
@@ -270,9 +271,19 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
-        this.vueloactual.setEstado_de_vuelo(ESTADO_DE_VUELO.COMPLETADO);
-        EstadoVuelo.setText(String.valueOf(this.vueloactual.getEstado_de_vuelo()));
-        new VueloAviones(vueloactual,this);
+
+        if(vueloactual!=null && vueloactual.getNOMBRE_AEROPUERTO_ORIGEN()!=null && 
+                vueloactual.getNOMBRE_AEROPUERTO_DESTINO()!=null){
+            
+            new VueloAviones(vueloactual,this);
+                vueloactual.setEstado_de_vuelo(ESTADO_DE_VUELO.COMPLETADO);
+                EstadoVuelo.setText(String.valueOf(vueloactual.getEstado_de_vuelo()));
+        
+        }else{
+            JOptionPane.showMessageDialog(null, "Aún No hay un vuelo valido");
+        }
+        
+        
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
