@@ -36,8 +36,8 @@ public class AñadirVuelos extends javax.swing.JFrame implements ActionListener 
     //Aeropuerto
     private static Vector listaAeropuertos;
     private Vector NombreAeropuertos;
-    private AEROPUERTO AeropuertoOrigen;
-    private AEROPUERTO AeropuertoDestino;
+    private static AEROPUERTO AeropuertoOrigen;
+    private static AEROPUERTO AeropuertoDestino;
     private Administracion admin;
     private VUELO vuelo;
     private Operador vent;
@@ -276,6 +276,26 @@ JOptionPane.showMessageDialog(null, "Al menos elija FECHAS VALIDAS ", "Error..!!
      * @param args the command line arguments
      */
 
+    public static AEROPUERTO getAeropuertoOrigen() {
+        return AeropuertoOrigen;
+    }
+
+    public static void setAeropuertoOrigen(AEROPUERTO AeropuertoOrigen) {
+        AñadirVuelos.AeropuertoOrigen = AeropuertoOrigen;
+    }
+
+    public static AEROPUERTO getAeropuertoDestino() {
+        return AeropuertoDestino;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void setAeropuertoDestino(AEROPUERTO AeropuertoDestino) {
+        AñadirVuelos.AeropuertoDestino = AeropuertoDestino;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> AeropuertosDestinoCombobox;
     private javax.swing.JComboBox<String> AeropuertosOrigenCombobox;
