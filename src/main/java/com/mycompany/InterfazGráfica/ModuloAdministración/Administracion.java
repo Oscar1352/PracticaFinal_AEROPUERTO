@@ -44,10 +44,7 @@ import javax.swing.JTextArea;
  *
  * @author Oscar Luna
  */
-public class Administracion extends javax.swing.JFrame implements ActionListener {
-    private BinariosAeropuertos binariosAeropuertos;
-    private ImportExportAeropuerto importExportAeropuerto    ;
-    private AñadirAerolinea añadirAerolinea;
+public class Administracion extends javax.swing.JFrame implements ActionListener { 
     
 //Aeropuerto
     private static Vector listaAeropuertos = new Vector();
@@ -138,7 +135,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
         jPanel2 = new javax.swing.JPanel();
         AeropuertosCombobox1 = new javax.swing.JComboBox(AñadirAerolinea.getListaAerolineas());
         jLabel2 = new javax.swing.JLabel();
-        CrearVuelo = new javax.swing.JButton();
+        CrearAerolinea = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         AvionesCombobox2 = new javax.swing.JComboBox(Administracion.getListaAviones());
         jLabel3 = new javax.swing.JLabel();
@@ -226,10 +223,10 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
 
         jLabel2.setText("Aerolineas Disponibles:");
 
-        CrearVuelo.setText("CREAR O CARGAR AEROLÍNEA");
-        CrearVuelo.addMouseListener(new java.awt.event.MouseAdapter() {
+        CrearAerolinea.setText("CREAR O CARGAR AEROLÍNEA");
+        CrearAerolinea.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CrearVueloMouseClicked(evt);
+                CrearAerolineaMouseClicked(evt);
             }
         });
 
@@ -244,7 +241,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                 .addComponent(AeropuertosCombobox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(334, 334, 334)
-                .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrearAerolinea, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -255,7 +252,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
                     .addComponent(jLabel2)
                     .addComponent(AeropuertosCombobox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58)
-                .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CrearAerolinea, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -276,10 +273,15 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
 
         jLabel3.setText("Aviones Disponibles:");
 
-        CrearVuelo1.setText("CREAR O CARGAR AEROLÍNEA");
+        CrearVuelo1.setText("CREAR O CARGAR AVION");
         CrearVuelo1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CrearVuelo1MouseClicked(evt);
+            }
+        });
+        CrearVuelo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearVuelo1ActionPerformed(evt);
             }
         });
 
@@ -519,12 +521,12 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
         moduloAdministracion.setVisible(true);
     }//GEN-LAST:event_jMenu4MouseClicked
 
-    private void CrearVueloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearVueloMouseClicked
+    private void CrearAerolineaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearAerolineaMouseClicked
         // TODO add your handling code here:
         //Aeropuerto Destino
         AñadirAerolinea añadirAerolinea = new AñadirAerolinea();
         añadirAerolinea.setVisible(true);
-    }//GEN-LAST:event_CrearVueloMouseClicked
+    }//GEN-LAST:event_CrearAerolineaMouseClicked
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
@@ -558,6 +560,10 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
         // TODO add your handling code here:
         new AñadirDistancia(null,this);
     }//GEN-LAST:event_jButton6MouseClicked
+
+    private void CrearVuelo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearVuelo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CrearVuelo1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -640,7 +646,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     private javax.swing.JComboBox<String> AeropuertosCombobox;
     private javax.swing.JComboBox<String> AeropuertosCombobox1;
     private javax.swing.JComboBox<String> AvionesCombobox2;
-    private javax.swing.JButton CrearVuelo;
+    private javax.swing.JButton CrearAerolinea;
     private javax.swing.JButton CrearVuelo1;
     private javax.swing.JComboBox<String> DistanciasCombobox2;
     private javax.swing.JMenu UsuariojMenu3;

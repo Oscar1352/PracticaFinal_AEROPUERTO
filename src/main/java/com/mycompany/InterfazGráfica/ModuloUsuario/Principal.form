@@ -182,7 +182,7 @@
                           <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                           <Component id="MetodoDePagojButton1" min="-2" pref="253" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton3" min="-2" pref="233" max="-2" attributes="0"/>
+                          <Component id="AñadirTarjetas" min="-2" pref="233" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -198,7 +198,7 @@
                           <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="MetodoDePagojButton1" alignment="3" min="-2" pref="117" max="-2" attributes="0"/>
-                              <Component id="jButton3" alignment="3" min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="AñadirTarjetas" alignment="3" min="-2" pref="117" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="108" max="32767" attributes="0"/>
                       </Group>
@@ -240,7 +240,7 @@
                     <Property name="text" type="java.lang.String" value="Tarjetas Registradas"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton3">
+                <Component class="javax.swing.JButton" name="A&#xf1;adirTarjetas">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="ff" red="99" type="rgb"/>
@@ -251,8 +251,8 @@
                     <Property name="text" type="java.lang.String" value="NUEVAS TARJETAS"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="A&#xf1;adirTarjetasMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="A&#xf1;adirTarjetasActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -282,7 +282,7 @@
                                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Component id="RenovarPasaportejButton1" min="-2" pref="239" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" pref="196" max="-2" attributes="0"/>
+                                  <Component id="NuevosPasaportes" min="-2" pref="196" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -302,7 +302,7 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="RenovarPasaportejButton1" max="32767" attributes="0"/>
                               <Component id="RegistrarPasaportejButton1" pref="126" max="32767" attributes="0"/>
-                              <Component id="jButton2" max="32767" attributes="0"/>
+                              <Component id="NuevosPasaportes" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
@@ -359,7 +359,7 @@
                     <Property name="text" type="java.lang.String" value="Pasaportes Registrados"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
+                <Component class="javax.swing.JButton" name="NuevosPasaportes">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="ff" red="99" type="rgb"/>
@@ -370,8 +370,8 @@
                     <Property name="text" type="java.lang.String" value="NUEVOS PASAPORTE"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="NuevosPasaportesMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NuevosPasaportesActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -392,7 +392,7 @@
                           <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
                           <Component id="CompraBoletojButton1" min="-2" pref="220" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="219" max="-2" attributes="0"/>
+                          <Component id="ConsultarReservación" min="-2" pref="219" max="-2" attributes="0"/>
                           <EmptySpace pref="130" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -402,7 +402,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jButton1" max="32767" attributes="0"/>
+                              <Component id="ConsultarReservación" max="32767" attributes="0"/>
                               <Component id="CompraBoletojButton1" min="-2" pref="129" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="132" max="32767" attributes="0"/>
@@ -426,7 +426,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CompraBoletojButton1ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton1">
+                <Component class="javax.swing.JButton" name="ConsultarReservaci&#xf3;n">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="ff" red="99" type="rgb"/>
@@ -437,7 +437,8 @@
                     <Property name="text" type="java.lang.String" value="CONSULTAR RESERVACI&#xd3;N"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarReservaci&#xf3;nMouseClicked"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarReservaci&#xf3;nActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

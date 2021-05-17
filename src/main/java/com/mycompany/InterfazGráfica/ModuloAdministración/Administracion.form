@@ -251,7 +251,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
-                              <Component id="CrearVuelo" min="-2" pref="219" max="-2" attributes="0"/>
+                              <Component id="CrearAerolinea" min="-2" pref="219" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -265,7 +265,7 @@
                                   <Component id="AeropuertosCombobox1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                              <Component id="CrearVuelo" min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="CrearAerolinea" min="-2" pref="64" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -288,12 +288,12 @@
                         <Property name="text" type="java.lang.String" value="Aerolineas Disponibles:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="CrearVuelo">
+                    <Component class="javax.swing.JButton" name="CrearAerolinea">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="CREAR O CARGAR AEROL&#xcd;NEA"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CrearVueloMouseClicked"/>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CrearAerolineaMouseClicked"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -368,10 +368,11 @@
                     </Component>
                     <Component class="javax.swing.JButton" name="CrearVuelo1">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="CREAR O CARGAR AEROL&#xcd;NEA"/>
+                        <Property name="text" type="java.lang.String" value="CREAR O CARGAR AVION"/>
                       </Properties>
                       <Events>
                         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CrearVuelo1MouseClicked"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CrearVuelo1ActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="jButton1">

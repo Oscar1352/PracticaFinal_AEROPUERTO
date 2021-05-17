@@ -95,7 +95,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         ;
         jLabel14 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        AñadirTarjetas = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         RegistrarPasaportejButton1 = new javax.swing.JButton();
         RenovarPasaportejButton1 = new javax.swing.JButton();
@@ -115,10 +115,10 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         ;
         jLabel13 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        NuevosPasaportes = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         CompraBoletojButton1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        ConsultarReservación = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -188,17 +188,17 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jLabel14.setText("Tarjetas Registradas");
 
-        jButton3.setBackground(new java.awt.Color(153, 255, 153));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("NUEVAS TARJETAS");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        AñadirTarjetas.setBackground(new java.awt.Color(153, 255, 153));
+        AñadirTarjetas.setForeground(new java.awt.Color(0, 0, 0));
+        AñadirTarjetas.setText("NUEVAS TARJETAS");
+        AñadirTarjetas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                AñadirTarjetasMouseClicked(evt);
             }
         });
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        AñadirTarjetas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                AñadirTarjetasActionPerformed(evt);
             }
         });
 
@@ -216,7 +216,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGap(83, 83, 83)
                 .addComponent(MetodoDePagojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AñadirTarjetas, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78))
         );
         jPanel3Layout.setVerticalGroup(
@@ -229,7 +229,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGap(80, 80, 80)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(MetodoDePagojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AñadirTarjetas, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
@@ -271,17 +271,17 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
         jLabel13.setText("Pasaportes Registrados");
 
-        jButton2.setBackground(new java.awt.Color(153, 255, 153));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("NUEVOS PASAPORTE");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        NuevosPasaportes.setBackground(new java.awt.Color(153, 255, 153));
+        NuevosPasaportes.setForeground(new java.awt.Color(0, 0, 0));
+        NuevosPasaportes.setText("NUEVOS PASAPORTE");
+        NuevosPasaportes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                NuevosPasaportesMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        NuevosPasaportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                NuevosPasaportesActionPerformed(evt);
             }
         });
 
@@ -301,7 +301,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                         .addGap(31, 31, 31)
                         .addComponent(RenovarPasaportejButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NuevosPasaportes, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -316,7 +316,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(RenovarPasaportejButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(RegistrarPasaportejButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(NuevosPasaportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(50, 50, 50))
         );
 
@@ -336,12 +336,17 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(153, 255, 153));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("CONSULTAR RESERVACIÓN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ConsultarReservación.setBackground(new java.awt.Color(153, 255, 153));
+        ConsultarReservación.setForeground(new java.awt.Color(0, 0, 0));
+        ConsultarReservación.setText("CONSULTAR RESERVACIÓN");
+        ConsultarReservación.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultarReservaciónMouseClicked(evt);
+            }
+        });
+        ConsultarReservación.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ConsultarReservaciónActionPerformed(evt);
             }
         });
 
@@ -353,7 +358,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
                 .addGap(135, 135, 135)
                 .addComponent(CompraBoletojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ConsultarReservación, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(130, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -361,7 +366,7 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(109, 109, 109)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ConsultarReservación, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(CompraBoletojButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(132, Short.MAX_VALUE))
         );
@@ -543,11 +548,11 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         compraBoletos.setVisible(true);
     }//GEN-LAST:event_CompraBoletojButton1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ConsultarReservaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarReservaciónActionPerformed
         // TODO add your handling code here:
         ConsultarReservación consultarReservación= new ConsultarReservación();
         consultarReservación.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ConsultarReservaciónActionPerformed
 
     private void comboBoxListaPasaportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxListaPasaportesActionPerformed
         // TODO add your handling code here:
@@ -607,15 +612,15 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         }
     }//GEN-LAST:event_BuscarjButton1MouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void NuevosPasaportesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NuevosPasaportesMouseClicked
         // TODO add your handling code here:
         new AñadirPasaporte(null, this);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_NuevosPasaportesMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void NuevosPasaportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevosPasaportesActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_NuevosPasaportesActionPerformed
 
     private void BuscarjButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarjButton1MouseEntered
         // TODO add your handling code here:
@@ -626,18 +631,23 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
         System.exit(0);
     }//GEN-LAST:event_jMenu3MouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void AñadirTarjetasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AñadirTarjetasMouseClicked
         // TODO add your handling code here:
         new AñadirTarjetas(null,this);
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_AñadirTarjetasMouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void AñadirTarjetasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AñadirTarjetasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_AñadirTarjetasActionPerformed
 
     private void CompraBoletojButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CompraBoletojButton1MouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_CompraBoletojButton1MouseClicked
+
+    private void ConsultarReservaciónMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarReservaciónMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConsultarReservaciónMouseClicked
 
     /**
      * @param args the command line arguments
@@ -701,18 +711,18 @@ public class Principal extends javax.swing.JFrame implements ActionListener{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AñadirTarjetas;
     private javax.swing.JButton BuscarjButton1;
     private javax.swing.JButton CompraBoletojButton1;
+    private javax.swing.JButton ConsultarReservación;
     private javax.swing.JButton MetodoDePagojButton1;
+    private javax.swing.JButton NuevosPasaportes;
     private javax.swing.JComboBox<String> PasaportesVinculados;
     private javax.swing.JButton RegistrarPasaportejButton1;
     private javax.swing.JButton RenovarPasaportejButton1;
     private javax.swing.JMenu UsuariojMenu3;
     private javax.swing.JComboBox<String> comboBoxListaPasaportes;
     private javax.swing.JComboBox<String> comboBoxListaTarjetas;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
