@@ -59,7 +59,7 @@ public class EditarVuelos extends javax.swing.JFrame implements ActionListener {
         this.vent = vent;
         if (vuelo!= null){
             //edición 
-            this.CodigoAvion.setText(String.valueOf(vuelo.getCODIGO_VUELO()));
+            this.CodigoVuelo.setText(String.valueOf(vuelo.getCODIGO_VUELO()));
             this.CodigoAvion.setText(String.valueOf(vuelo.getCODIGO_AVION()));
             this.AeropuertosOrigenCombobox.setSelectedItem(vuelo.getNOMBRE_AEROPUERTO_ORIGEN());
             this.AeropuertosDestinoCombobox.setSelectedItem(vuelo.getNOMBRE_AEROPUERTO_DESTINO());
