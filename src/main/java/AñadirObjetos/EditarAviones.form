@@ -24,20 +24,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="CodigoAvion" min="-2" pref="490" max="-2" attributes="0"/>
-                  <Component id="CantidadPasajeros" alignment="0" min="-2" pref="490" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="ConsumoPorMilla" alignment="1" min="-2" pref="488" max="-2" attributes="0"/>
-                      <Component id="CapacidadGasolina" alignment="0" min="-2" pref="490" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="AerpuertoActual" alignment="0" min="-2" pref="490" max="-2" attributes="0"/>
-                  <Component id="NombreAerolinea" alignment="0" min="-2" pref="490" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -66,6 +52,18 @@
                   </Group>
               </Group>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="CodigoAvion" pref="490" max="32767" attributes="0"/>
+                  <Component id="CantidadPasajeros" alignment="0" pref="490" max="32767" attributes="0"/>
+                  <Component id="ConsumoPorMilla" alignment="1" min="-2" pref="488" max="-2" attributes="0"/>
+                  <Component id="CapacidadGasolina" alignment="0" pref="490" max="32767" attributes="0"/>
+                  <Component id="NombreAerolinea" alignment="0" max="32767" attributes="0"/>
+                  <Component id="AerpuertoActual" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -73,10 +71,10 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="NombreAerolinea" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="NombreAerolinea" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -107,7 +105,7 @@
                   </Group>
                   <Component id="AerpuertoActual" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -196,20 +194,14 @@
         <Property name="text" type="java.lang.String" value="EDITAR AVIONES"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="AerpuertoActual">
+    <Component class="javax.swing.JTextField" name="NombreAerolinea">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="#0" subtype="-1" type="0"/>
-        </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="NombreAerolinea">
+    <Component class="javax.swing.JTextField" name="AerpuertoActual">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="#0" subtype="-1" type="0"/>
-        </Property>
       </Properties>
     </Component>
   </SubComponents>

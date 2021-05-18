@@ -82,8 +82,8 @@ public class EditarAviones extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         ConsumoPorMilla = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
-        AerpuertoActual = new javax.swing.JFormattedTextField();
-        NombreAerolinea = new javax.swing.JFormattedTextField();
+        NombreAerolinea = new javax.swing.JTextField();
+        AerpuertoActual = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AÑADIR AEROLINEA");
@@ -123,27 +123,14 @@ public class EditarAviones extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText("EDITAR AVIONES");
 
-        AerpuertoActual.setEditable(false);
-        AerpuertoActual.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
-
         NombreAerolinea.setEditable(false);
-        NombreAerolinea.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
+
+        AerpuertoActual.setEditable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CodigoAvion, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CantidadPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(ConsumoPorMilla, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(CapacidadGasolina, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(AerpuertoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NombreAerolinea, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,14 +151,24 @@ public class EditarAviones extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addGap(265, 265, 265))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(195, 195, 195)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(CodigoAvion, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                    .addComponent(CantidadPasajeros, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                    .addComponent(ConsumoPorMilla, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CapacidadGasolina, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                    .addComponent(NombreAerolinea)
+                    .addComponent(AerpuertoActual))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel7)
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(NombreAerolinea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -197,7 +194,7 @@ public class EditarAviones extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(CrearVuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(AerpuertoActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
@@ -206,7 +203,7 @@ public class EditarAviones extends javax.swing.JFrame {
     private void CrearVueloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearVueloMouseClicked
         // TODO add your handling code here:
         //Añadir
-        Administracion.actualizarAvion(aerolineaelegida.getNOMBRE_AEROLINEA(), aeropuertoelegido.getNOMBRE_AEROPUERTO(), Integer.valueOf(CodigoAvion.getText()), Integer.valueOf(CantidadPasajeros.getText()), Integer.valueOf(CapacidadGasolina.getText()), Integer.valueOf(ConsumoPorMilla.getText()));
+        Administracion.actualizarAvion(NombreAerolinea.getText(), AerpuertoActual.getText(), Long.valueOf(CodigoAvion.getText()), Integer.valueOf(CantidadPasajeros.getText()), Integer.valueOf(CapacidadGasolina.getText()), Integer.valueOf(ConsumoPorMilla.getText()));
         JOptionPane.showMessageDialog(null, "Avion Agregada con exito con éxito");
 
         this.dispose();
@@ -226,13 +223,13 @@ public class EditarAviones extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField AerpuertoActual;
+    private javax.swing.JTextField AerpuertoActual;
     private javax.swing.JFormattedTextField CantidadPasajeros;
     private javax.swing.JFormattedTextField CapacidadGasolina;
     private javax.swing.JFormattedTextField CodigoAvion;
     private javax.swing.JFormattedTextField ConsumoPorMilla;
     private javax.swing.JButton CrearVuelo;
-    private javax.swing.JFormattedTextField NombreAerolinea;
+    private javax.swing.JTextField NombreAerolinea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
