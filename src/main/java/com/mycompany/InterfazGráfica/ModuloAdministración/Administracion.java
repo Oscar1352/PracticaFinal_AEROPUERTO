@@ -463,6 +463,11 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("AYUDA");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("SALIR");
@@ -530,6 +535,7 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Esperamos su regreso");
          System.exit(0);
     }//GEN-LAST:event_jMenu3MouseClicked
 
@@ -564,6 +570,19 @@ public class Administracion extends javax.swing.JFrame implements ActionListener
     private void CrearVuelo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearVuelo1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CrearVuelo1ActionPerformed
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        // TODO add your handling code here:
+        try
+{
+Process p = Runtime.getRuntime().exec ("rundll32 SHELL32.DLL,ShellExec_RunDLL "+"D:\\Documentos\\Cunoc\\Segundo año\\Progra\\PRACTICA FINAL\\Manual De Usuario.pdf");
+}
+catch (Exception evvv)
+{
+JOptionPane.showMessageDialog(null, "No se puede abrir el archivo de ayuda, probablemente fue borrado","ERROR",JOptionPane.ERROR_MESSAGE);
+ 
+}
+    }//GEN-LAST:event_jMenu2MouseClicked
 
     /**
      * @param args the command line arguments
