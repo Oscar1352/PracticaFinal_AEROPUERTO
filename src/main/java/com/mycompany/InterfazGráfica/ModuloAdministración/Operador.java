@@ -266,7 +266,6 @@ public class Operador extends javax.swing.JFrame implements ActionListener {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-
         new AñadirVuelos(null,this);
     }//GEN-LAST:event_jButton2MouseClicked
 
